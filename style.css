@@ -1,11 +1,11 @@
 /* Paleta de Colores y Variables */
 :root {
-    --fondo-principal: #FDF8FF; /* Un lila/rosa ultra claro */
+    --fondo-principal: #f1dff8; /* Un lila/rosa ultra claro */
     --texto-oscuro: #2C1A4D; /* Morado muy oscuro para leer bien */
     --lila-pastel: #E2D1F9;
     --rosa-pastel: #FFC4D9;
     --azul-claro: #AEC6CF;
-    --blanco-tarjetas: #FFFFFF;
+    --blanco-tarjetas: #ffffff;
     --sombra-suave: rgba(177, 156, 217, 0.2);
 }
 
@@ -480,3 +480,112 @@ footer h2::after {
 .color-morado .fecha-badge { background-color: #6A388F; }
 .color-morado .btn-certificado { background-color: #6A388F; }
 .color-morado .btn-certificado:hover { background-color: #552d70; }
+
+/* --- habilidades blandas --- */
+.soft-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+@media (max-width: 992px) {
+    .soft-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .soft-container { grid-template-columns: 1fr; }
+}
+.item-soft {
+    background: #61f3f1;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.item-soft:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.soft-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.item-soft h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.item-soft p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* --- idiomas --- */
+.idiomas-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+@media (max-width: 992px) {
+    .idiomas-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .idiomas-container { grid-template-columns: 1fr; }
+}
+.item-idiomas {
+    background: #fd5b8c;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.item-idiomas:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.idiomas-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.item-idiomas h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.item-idiomas p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
