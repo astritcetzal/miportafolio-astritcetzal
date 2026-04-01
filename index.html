@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrit Cetzal | Portafolio Profesional</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .astrit-avatar {
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0px 10px 15px rgba(177, 156, 217, 0.4));
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .ojos {
+            transform-origin: 100px 102px;
+            animation: blinkCute 4s infinite;
+        }
+        @keyframes blinkCute {
+            0%, 90%, 100% { transform: scaleY(1); }
+            95% { transform: scaleY(0.1); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Astrit Cetzal</div>
+            <ul class="menu">
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#educacion">Educación y Comunidad</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="sobre-mi" class="hero-section">
+        <div class="hero-content">
+            
+            <div class="intro-text">
+                <h1>¡Hola! Soy Astrit</h1>
+                <h2>Estudiante en ingenieria en Desarrollo de software</h2>
+                <p>Estudiante de desarrollo de software apasionada por la tecnología, el trabajo en equipo y la creación de soluciones creativas. Constantemente aprendiendo y buscando nuevos retos para crecer profesionalmente.</p>
+                <a href="#contacto" class="btn-principal">Contáctame</a>
+            </div>
+
+            <div class="avatar-container">
+                <svg viewBox="0 0 200 200" class="astrit-avatar">
+                    
+                    <defs>
+                        <pattern id="cuadricula" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+                            <line x1="0" y1="0" x2="0" y2="4" stroke="#D32F2F" stroke-width="0.6" opacity="0.4"/>
+                            <line x1="0" y1="0" x2="4" y2="0" stroke="#D32F2F" stroke-width="0.6" opacity="0.4"/>
+                        </pattern>
+                    </defs>
+
+                    <g transform="translate(30, 40)">
+                        <g>
+                            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+                            <ellipse rx="7" ry="3" fill="#FFC4D9" transform="rotate(0)"/>
+                            <ellipse rx="7" ry="3" fill="#FFC4D9" transform="rotate(72)"/>
+                            <ellipse rx="7" ry="3" fill="#FFC4D9" transform="rotate(144)"/>
+                            <ellipse rx="7" ry="3" fill="#FFC4D9" transform="rotate(216)"/>
+                            <ellipse rx="7" ry="3" fill="#FFC4D9" transform="rotate(288)"/>
+                            <circle r="3" fill="#FFFFFF"/>
+                        </g>
+                    </g>
+                    <g transform="translate(170, 60)">
+                        <g>
+                            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="10s" repeatCount="indefinite"/>
+                            <ellipse rx="6" ry="2.5" fill="#E2D1F9" transform="rotate(0)"/>
+                            <ellipse rx="6" ry="2.5" fill="#E2D1F9" transform="rotate(72)"/>
+                            <ellipse rx="6" ry="2.5" fill="#E2D1F9" transform="rotate(144)"/>
+                            <ellipse rx="6" ry="2.5" fill="#E2D1F9" transform="rotate(216)"/>
+                            <ellipse rx="6" ry="2.5" fill="#E2D1F9" transform="rotate(288)"/>
+                            <circle r="2.5" fill="#FFFFFF"/>
+                        </g>
+                    </g>
+                    <g transform="translate(40, 160)">
+                        <g>
+                            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
+                            <ellipse rx="5" ry="2" fill="#AEC6CF" transform="rotate(0)"/>
+                            <ellipse rx="5" ry="2" fill="#AEC6CF" transform="rotate(72)"/>
+                            <ellipse rx="5" ry="2" fill="#AEC6CF" transform="rotate(144)"/>
+                            <ellipse rx="5" ry="2" fill="#AEC6CF" transform="rotate(216)"/>
+                            <ellipse rx="5" ry="2" fill="#AEC6CF" transform="rotate(288)"/>
+                            <circle r="2" fill="#FFFFFF"/>
+                        </g>
+                    </g>
+
+                    <g class="personaje">
+                        <path d="M 40 100 C 35 70 50 40 100 35 C 150 40 165 70 160 100 L 160 140 C 160 155 145 160 130 160 L 70 160 C 55 160 40 155 40 140 Z" fill="#1A1A1A"/>
+
+                        <rect x="90" y="130" width="20" height="30" fill="#BE8B5E"/>
+                        <path d="M 30 200 C 30 150 170 150 170 200 Z" fill="#2C1A4D"/>
+                        <path d="M 50 200 L 100 155 L 150 200 Z" fill="#4B367C"/>
+                        <path d="M 85 200 L 100 155 L 115 200 Z" fill="#FFFFFF"/>
+
+                        <circle cx="100" cy="105" r="42" fill="#D8AA8A"/>
+
+                        <path d="M 58 105 C 58 60 85 55 98 60 C 85 75 75 80 58 105 Z" fill="#1A1A1A"/>
+                        <path d="M 142 105 C 142 60 115 55 102 60 C 115 75 125 80 142 105 Z" fill="#1A1A1A"/>
+
+                        <path d="M 97 110 Q 100 114 103 110" stroke="#B88A6A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <path d="M 88 130 Q 100 138 112 130" stroke="#3E2723" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+                        <g class="ojos">
+                            <ellipse cx="80" cy="102" rx="6" ry="8" fill="#3E2723"/>
+                            <circle cx="78" cy="99" r="2" fill="#FFFFFF"/>
+                            <circle cx="82" cy="105" r="1" fill="#FFFFFF"/>
+                            <path d="M 74 95 Q 72 93 70 91" stroke="#1A1A1A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                            <path d="M 86 95 Q 88 93 90 91" stroke="#1A1A1A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+                            <ellipse cx="120" cy="102" rx="6" ry="8" fill="#3E2723"/>
+                            <circle cx="118" cy="99" r="2" fill="#FFFFFF"/>
+                            <circle cx="122" cy="105" r="1" fill="#FFFFFF"/>
+                            <path d="M 114 95 Q 112 93 110 91" stroke="#1A1A1A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                            <path d="M 126 95 Q 128 93 130 91" stroke="#1A1A1A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+        </div>
+    </section>
+
+    ---
+
+    <section id="habilidades" class="skills-section">
+    <h2>Habilidades Técnicas</h2>
+    <div class="skills-container-grid">
+        
+        <div class="skill-item-box">
+            <span class="skill-name">JavaScript <span class="percent"></span></span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill skill-js" style="width: 30%;"></div>
+            </div>
+        </div>
+
+        <div class="skill-item-box">
+            <span class="skill-name">HTML <span class="percent"></span></span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill skill-html" style="width: 50%;"></div>
+            </div>
+        </div>
+
+        <div class="skill-item-box">
+            <span class="skill-name">CSS <span class="percent"></span></span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill skill-css" style="width: 50%;"></div>
+            </div>
+        </div>
+
+        <div class="skill-item-box">
+            <span class="skill-name">Java <span class="percent"></span></span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill skill-java" style="width: 80%;"></div>
+            </div>
+        </div>
+
+        <div class="skill-item-box">
+            <span class="skill-name">Python <span class="percent"></span></span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill skill-python" style="width: 30%;"></div>
+            </div>
+        </div>
+        <div class="skill-item-box">
+            <span class="skill-name">Inglés A2 <span class="percent"></span></span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill skill-python" style="width: 40%;"></div>
+            </div>
+        </div>
+        <div class="skill-item-box">
+            <span class="skill-name">Git hub <span class="percent"></span></span>
+        </div>
+
+    </div>
+</section>
+
+    <section id="proyectos" class="projects-section">
+        <h2>Proyectos y participaciones</h2>
+        <div class="projects-grid">
+            <article class="project-card">
+                <img src="imagenes\bootcamp.jpeg" alt="Crear contratos inteligentes" class="card-img">
+                <h3>Bootcamp de Starknet - marzo 2026</h3>
+                <p>Bootcamp para crear nuestro primer contrato inteligente, conocer nuevas herramientas y sobre todo aprender nuevas cosas.</p>
+            </article>
+
+            <article class="project-card">
+                <img src="imagenes\tech.jpg" alt="technolatinas" class="card-img">
+                <h3>La cumbre - Technolatinas - 20 de Marzo 2026</h3>
+                <p>La cumbre de comunidades de technolatinas, evento llevado a cabo del 20 al 22 de marzo, dicho evento conecto a mujeres de STEM</p>
+            </article>
+
+            <article class="project-card">
+                <img src="imagenes\iftp.jpg" alt="Equipo ganador del primer lugar en Invent for the Planet" class="card-img">
+                <h3>Invent for the Planet - 28 de febrero al 2 de marzo de 2026</h3>
+                <p>Proyecto ganador del primer lugar a nivel universitario, compitiendo contra 31 universidades. Solución innovadora desarrollada en equipo.</p>
+            </article>
+
+            <article class="project-card">
+                <img src="imagenes/cuantrix.jpeg" alt="Cuantrix" class="card-img">
+                <h3>PROYECTO: CONTADOR DE COCHES PARA  ESTUDIO VIAL - junio 2025</h3>
+                <p>El arquitecto Hector Cabañas y la empresa Camsac nos pidió llevar a cabo un proyecto en donde, en un caso hipotético, se quisiera abrir un centro comercial, se tendría que revisar el tráfico vehicular para analizar si le conviene a la empresa colocar el centro comercial en dicho lugar.</p>
+            </article>
+            
+
+        </div>
+    </section>
+
+    <section id="educacion" class="education-section">
+    <h2>Educación</h2>
+    <div class="education-container">
+        
+        <div class="item-educacion color-cian">
+            <div class="card-icon">
+                <span class="icon-placeholder">🎓</span>
+            </div>
+            <div class="card-content">
+                <span class="fecha-badge">Presente</span>
+                <h3>Estudiante de Desarrollo de Software</h3>
+                <p>Tecnológico de Software</p>
+            </div>
+        </div>
+
+        <div class="item-educacion color-verde">
+            <div class="card-icon">
+                <span class="icon-placeholder">🚀</span>
+            </div>
+            <div class="card-content">
+                <span class="fecha-badge">Marzo 2026</span>
+                <h3>Bootcamp</h3>
+                <a href="" class="btn-certificado">Bootcamp de Starknet</a>
+            </div>
+        </div>
+
+        <div class="item-educacion color-amarillo">
+            <div class="card-icon">
+                <span class="icon-placeholder">💡</span>
+            </div>
+            <div class="card-content">
+                <span class="fecha-badge">Marzo 2026</span>
+                <h3>Certificación</h3>
+                <a href="certificados/IFTP.pdf" target="_blank" class="btn-certificado">Invent for the Planet</a>
+            </div>
+        </div>
+
+        <div class="item-educacion color-naranja">
+            <div class="card-icon">
+                <span class="icon-placeholder">🌐</span>
+            </div>
+            <div class="card-content">
+                <span class="fecha-badge">De febrero 2026 a diciembre 2026</span>
+                <h3>Membresía</h3>
+                <a href="certificados/ieee.pdf" target="_blank" class="btn-certificado">Miembro de la IEEE</a>
+            </div>
+        </div>
+
+        <div class="item-educacion color-cian">
+            <div class="card-icon">
+                <span class="icon-placeholder">💻</span>
+            </div>
+            <div class="card-content">
+                <span class="fecha-badge">2024</span>
+                <h3>Certificación</h3>
+                <a href="certificados/Coursera certificado final_COURSERA.pdf" target="_blank" class="btn-certificado">Soporte de TI de Google</a>
+            </div>
+        </div>
+
+        <div class="item-educacion color-verde">
+            <div class="card-icon">
+                <span class="icon-placeholder">📖</span>
+            </div>
+            <div class="card-content">
+                <span class="fecha-badge">Marzo 2026</span>
+                <h3>Certificación</h3>
+                <a href="certificados/Astrit_EnglishForBusinessAndEntrepreneurshipMOOC.pdf" target="_blank" class="btn-certificado">English for Business...</a>
+            </div>
+        </div>
+
+        <div class="item-educacion color-amarillo">
+            <div class="card-icon">
+                <span class="icon-placeholder">💼</span>
+            </div>
+            <div class="card-content">
+                <span class="fecha-badge">Marzo 2026</span>
+                <h3>Certificación</h3>
+                <a href="certificados/Actrit_EnglishForCareerDevelopmentMOOC.pdf" target="_blank" class="btn-certificado">English for Career...</a>
+            </div>
+        </div>
+
+        <div class="item-educacion color-morado">
+            <div class="card-icon">
+                <span class="icon-placeholder">📊</span>
+            </div>
+            <div class="card-content">
+                <span class="fecha-badge">2024</span>
+                <h3>Certificación</h3>
+                <a href="" class="btn-certificado">Manejo de hojas de cálculo</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+    
+    <footer id="contacto">
+        <h2>¡Hablemos!</h2>
+        <p>Encuéntrame en mis redes profesionales:</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/astrit-airan-cetzal-cetzal-289a472b9">LinkedIn</a>
+            <a href="https://github.com/astritcetzal">GitHub</a>
+        </div>
+        <p>© 2026 Astrit Cetzal. Diseñado y programado con ♥.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
