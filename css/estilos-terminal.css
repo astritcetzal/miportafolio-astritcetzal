@@ -1,0 +1,78 @@
+/* --- EFECTO MÁQUINA DE ESCRIBIR --- */
+.cursor-titilante::after {
+    content: '|';
+    animation: parpadeo 1s infinite;
+    color: var(--texto-oscuro);
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* --- VENTANA TERMINAL ESTILO PASTEL --- */
+.terminal-pastel {
+    background-color: var(--blanco-tarjetas);
+    border: 2px solid var(--texto-oscuro); /* Borde fuerte para que parezca ventana real */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px var(--sombra-suave);
+    overflow: hidden;
+    margin: 0 auto 40px auto;
+    max-width: 800px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.terminal-pastel:hover {
+    transform: translateY(-5px); /* Pequeño salto al pasar el mouse */
+}
+
+.terminal-header {
+    background-color: var(--lila-pastel);
+    border-bottom: 2px solid var(--texto-oscuro);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.circulo {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+/* Los clásicos botones de ventana */
+.circulo.rojo { background-color: #ffffff; }
+.circulo.amarillo { background-color: #f9f2a7; }
+.circulo.verde { background-color: #95eaff; }
+
+.terminal-titulo {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Courier New', Courier, monospace; /* Fuente de código */
+    color: var(--texto-oscuro);
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding-right: 40px; /* Para centrarlo bien */
+}
+
+.terminal-body {
+    padding: 30px;
+    background-color: var(--fondo-principal); 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Estilo para los elementos dentro de la terminal */
+.tag-pastel {
+    background-color: var(--blanco-tarjetas);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: var(--texto-oscuro);
+    border: 2px solid var(--rosa-pastel);
+}
