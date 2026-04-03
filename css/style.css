@@ -431,3 +431,42 @@ footer h2::after {
 
 
 
+/* =========================================
+   AJUSTES PARA CELULARES (RESPONSIVE DESIGN)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Evitamos que la pantalla se desborde hacia los lados */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* 2. Arreglamos el encabezado y el menú */
+    header {
+        flex-direction: column; /* Pone el nombre arriba y los botones abajo */
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap; /* Permite que los enlaces bajen de línea si no caben */
+        justify-content: center; /* Centra los botones */
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 0.85rem; /* Hace la letra un poquitín más pequeña */
+        text-align: center;
+    }
+
+    /* 3. Ajustamos los espacios de las secciones para celulares */
+    section {
+        padding: 50px 20px; /* Menos espacio a los lados para aprovechar la pantalla */
+    }
+
+    /* 4. Ajustamos el tamaño del subtítulo de la máquina de escribir */
+    .intro-text h2 {
+        font-size: 1.5rem; 
+    }
+}
