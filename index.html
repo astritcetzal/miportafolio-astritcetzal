@@ -13,9 +13,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astrit Cetzal | Portafolio Profesional</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="avatar.css">
-    <link rel="stylesheet" href="animacion.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/avatar.css">
+    <link rel="stylesheet" href="css/animacion.css">
+    <link rel="stylesheet" href="css/estilos-terminal.css">
     <style>
         .astrit-avatar {
             animation: float 4s ease-in-out infinite;
@@ -78,7 +79,7 @@
             
             <div class="intro-text">
                 <h1>¡Hola! Soy Astrit</h1>
-                <h2>Estudiante en ingenieria en Desarrollo de software</h2>
+                <h2 id="subtitulo-maquina" class="cursor-titilante"></h2>
                 <p>Estudiante de desarrollo de software apasionada por la tecnología, el trabajo en equipo y la creación de soluciones creativas. Constantemente aprendiendo y buscando nuevos retos para crecer profesionalmente.</p>
                 <a href="#contacto" class="btn-principal">Contáctame</a>
             </div>
@@ -165,109 +166,125 @@
 
 <section id="habilidades" class="skills-section">
     <h2>Habilidades y conocimientos</h2>
-    <div class="skills-container-grid">
+    
+    <div class="terminal-pastel">
         
-        <div class="skill-item-box">
-            <span class="skill-name">
-                <img src="imagenes/javascript-original.svg" class="skill-icon" alt="JS">
-                JavaScript <span class="percent"></span>
-            </span>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill skill-js" style="width: 30%;"></div>
-            </div>
+        <div class="terminal-header">
+            <div class="circulo rojo"></div>
+            <div class="circulo amarillo"></div>
+            <div class="circulo verde"></div>
+            <div class="terminal-titulo">habilidades_tecnicas.exe</div>
         </div>
 
-        <div class="skill-item-box">
-            <span class="skill-name">
-                <img src="imagenes/html5-original.svg" class="skill-icon" alt="HTML">
-                HTML <span class="percent"></span>
-            </span>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill skill-html" style="width: 50%;"></div>
+        <div class="terminal-body" style="display: block;"> <div class="skills-container-grid">
+                
+                <div class="skill-item-box">
+                    <span class="skill-name">
+                        <img src="imagenes/javascript-original.svg" class="skill-icon" alt="JS">
+                        JavaScript <span class="percent"></span>
+                    </span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill skill-js" style="width: 30%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item-box">
+                    <span class="skill-name">
+                        <img src="imagenes/html5-original.svg" class="skill-icon" alt="HTML">
+                        HTML <span class="percent"></span>
+                    </span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill skill-html" style="width: 50%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item-box">
+                    <span class="skill-name">
+                        <img src="imagenes/css3-original.svg" class="skill-icon" alt="CSS">
+                        CSS <span class="percent"></span>
+                    </span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill skill-css" style="width: 50%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item-box">
+                    <span class="skill-name">
+                        <img src="imagenes/java-original.svg" class="skill-icon" alt="Java">
+                        Java <span class="percent"></span>
+                    </span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill skill-java" style="width: 80%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item-box">
+                    <span class="skill-name">
+                        <img src="imagenes/python-original.svg" class="skill-icon" alt="Python">
+                        Python <span class="percent"></span>
+                    </span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill skill-python" style="width: 30%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item-box">
+                    <span class="skill-name">
+                        <img src="imagenes/vscode-original.svg" class="skill-icon" alt="VS Code">
+                        VS Code <span class="percent"></span>
+                    </span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill skill-js" style="width: 60%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item-box">
+                    <span class="skill-name">
+                        <img src="imagenes/github-original.svg" class="skill-icon" alt="GitHub">
+                        GitHub <span class="percent"></span>
+                    </span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill skill-html" style="width: 50%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item-box">
+                    <span class="skill-name">
+                        <img src="imagenes/bash-original.svg" class="skill-icon" alt="Terminal Bash">
+                        WSL  <span class="percent"></span>
+                    </span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill skill-python" style="width: 40%;"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <div class="skill-item-box">
-            <span class="skill-name">
-                <img src="imagenes/css3-original.svg" class="skill-icon" alt="CSS">
-                CSS <span class="percent"></span>
-            </span>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill skill-css" style="width: 50%;"></div>
-            </div>
-        </div>
-
-        <div class="skill-item-box">
-            <span class="skill-name">
-                <img src="imagenes/java-original.svg" class="skill-icon" alt="Java">
-                Java <span class="percent"></span>
-            </span>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill skill-java" style="width: 80%;"></div>
-            </div>
-        </div>
-
-        <div class="skill-item-box">
-            <span class="skill-name">
-                <img src="imagenes/python-original.svg" class="skill-icon" alt="Python">
-                Python <span class="percent"></span>
-            </span>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill skill-python" style="width: 30%;"></div>
-            </div>
-        </div>
-
-        <div class="skill-item-box">
-            <span class="skill-name">
-                <img src="imagenes/vscode-original.svg" class="skill-icon" alt="JS">
-                VS Code <span class="percent"></span>
-            </span>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill skill-js" style="width: 60%;"></div>
-            </div>
-        </div>
-        
-
-        <div class="skill-item-box">
-            <span class="skill-name">
-                <img src="imagenes/github-original.svg" class="skill-icon" alt="GitHub">
-                GitHub <span class="percent"></span>
-            </span>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill skill-html" style="width: 50%;"></div>
-            </div>
-        </div>
-
-        <div class="skill-item-box">
-    <span class="skill-name">
-        <img src="imagenes/bash-original.svg" class="skill-icon" alt="Terminal Bash">
-        WSL  <span class="percent"></span>
-    </span>
-    <div class="progress-bar-bg">
-        <div class="progress-bar-fill skill-python" style="width: 40%;"></div>
-    </div>
-</div>
-
     </div>
 </section>
 
-    <section id="softskills" class="soft-skills">
-    <h2>Habilidades blandas</h2>
-        <div class="soft-container"> 
-            <div class= "item-soft">
-                <div class="soft-card-content">
-                <UL><H3>Pensamiento crítico</H3> </UL>
-                <UL><H3>Liderazgo</H3></UL>
-                <UL><H3>Trabajo en equipo</H3></UL>
-                <UL><H3>Organización</H3> </UL>
-                <UL><H3>Adaptabilidad y rápido aprendizaje</H3> </UL>
-                <UL><H3>Resolución de problemas</H3></UL>
-                <UL><H3>Comunicación efectiva</H3> </UL>
-                <UL><H3>Aprendizaje autónomo</H3></UL>
+    <section id="habilidades-blandas">
+        <h2>Habilidades blandas</h2>
+            <div class="terminal-pastel">
+                <div class="terminal-header">
+                    <div class="circulo rojo"></div>
+                    <div class="circulo amarillo"></div>
+                    <div class="circulo verde"></div>
+                    <div class="terminal-titulo">soft_skills.exe</div>
+                </div>
+                <div class="terminal-body">
+                    <span class="tag-pastel">Pensamiento crítico</span>
+                    <span class="tag-pastel">Liderazgo</span>
+                    <span class="tag-pastel">Trabajo en equipo</span>
+                    <span class="tag-pastel">Organización</span>
+                    <span class="tag-pastel">Adaptabilidad</span>
+                    <span class="tag-pastel">Resolución de problemas</span>
+                    <span class="tag-pastel">Comunicación efectiva</span>
+                    <span class="tag-pastel">Aprendizaje autónomo</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
 
     <section id="proyectos" class="projects-section">
         <h2>Proyectos y participaciones</h2>
@@ -405,23 +422,23 @@
     </div>
 </section>
 
-
-<section id="idiomas" class="idiomas">
+<section id="idiomas">
     <h2>Idiomas</h2>
-    <div class="idiomas-container"> 
-        <div class= "item-idiomas">
-            <div class="idioms-card-content">
-               <H3>Español lengua materna</H3H3> 
-            </div>
+    
+    <div class="terminal-pastel">
+        <div class="terminal-header">
+            <div class="circulo rojo"></div>
+            <div class="circulo amarillo"></div>
+            <div class="circulo verde"></div>
+            <div class="terminal-titulo">idiomas_config.sys</div>
         </div>
-
-        <div class= "item-idiomas">
-            <div class="idioms-card-content">
-               <H3>Inglés A2</H3> 
-            </div>
+        <div class="terminal-body">
+            <span class="tag-pastel">Español (Lengua materna)</span>
+            <span class="tag-pastel">🌍 Inglés (A2)</span>
         </div>
     </div>
 </section>
+
     
     <footer id="contacto">
         <h2>¡Hablemos!</h2>
