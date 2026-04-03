@@ -62,3 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Crear una burbuja nueva cada 1.5 segundos para mantener el flujo
     setInterval(createBubble, 1500);
 });
+
+//
+// Efecto de máquina de escribir
+const texto = "Estudiante en ingeniería en Desarrollo de software";
+let indice = 0;
+
+function escribirTexto() {
+    const elemento = document.getElementById("subtitulo-maquina");
+    if (indice < texto.length) {
+        elemento.innerHTML += texto.charAt(indice);
+        indice++;
+        setTimeout(escribirTexto, 100); // Velocidad en milisegundos (puedes cambiar el 50 para hacerlo más rápido o lento)
+    }
+}
+
+// Inicia la animación cuando la página carga
+window.onload = escribirTexto;
