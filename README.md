@@ -1,6 +1,6 @@
 # 👩‍💻 Astrit Cetzal | Portafolio Profesional
 
-🌍 *[🇺🇸 Click here to skip to the English version](#english-version)*
+🌍 *[Click here to skip to the English version](#english-version)*
 
 ¡Hola! Bienvenida/o al repositorio de mi portafolio personal. Este proyecto fue desarrollado desde cero para mostrar mi evolución como estudiante de Ingeniería en Desarrollo de Software, mis proyectos destacados y mis habilidades técnicas.
 
@@ -43,7 +43,7 @@ La arquitectura del proyecto está pensada para ser modular y escalable:
 ├── certificados/           # Certificados
 ├── index.html              # Archivo principal con las etiquetas data-i18n
 └── script.js               # Lógica de traducción y efectos visuales
-
+````
 
 -----
 
@@ -64,7 +64,7 @@ This project is not just a static page; it includes several interesting technica
 
 - ✨ **Advanced CSS Animations**: Immersive background with floating stars using random positions and animation-delay.
 
-  -Custom SVG avatar with continuous orbit and blinking animations.
+  - Custom SVG avatar with continuous orbit and blinking animations.
 
 - 💻 **Typewriter Effect**: A dynamic JS script that renders text in real-time and automatically adapts to the selected language.
 
