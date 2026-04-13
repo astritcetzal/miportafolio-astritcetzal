@@ -64,18 +64,85 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //
-// Efecto de máquina de escribir
-const texto = "Estudiante en ingeniería en Desarrollo de software";
-let indice = 0;
 
+
+
+//traducciones
+const traducciones = {
+    es: {
+        menu_sobre_mi: "Sobre Mí",
+        menu_habilidades: "Habilidades y conocimientos",
+        menu_softskills: "Habilidades blandas",
+        menu_proyectos: "Proyectos y participaciones",
+        mune_educacion:"Educación",
+        menu_idiomas:"Idiomas",
+        hero_saludo:"¡Hola! Soy Astrit",
+        btn_idioma: "EN | <strong>ES</strong>"
+    },
+    en: {
+        menu_sobre_mi: "About me",
+        menu_habilidades: "Skills & Knowledge",
+        menu_softskills: "Soft skills",
+        menu_proyectos: "Proyects & Participation",
+        menu_educacion:"Education",
+        menu_idiomas:"Languages",
+        hero_saludo:"Hi! I'm Astrit",
+        btn_idioma: "<strong>EN</strong> | ES"
+    }
+};
+let idiomaActual = "es"; //español por defecto
+// 
+// Efecto de máquina de escribir
+const textoCarrera  = { 
+    es: "Estudiante en ingeniería en Desarrollo de software",
+    en: "Software Engineering Student"
+}
+let indice = 0;
+let timeoutId; //guardar el temoporizador para poder reiniciarlo al cambiar de idioma
 function escribirTexto() {
     const elemento = document.getElementById("subtitulo-maquina");
-    if (indice < texto.length) {
-        elemento.innerHTML += texto.charAt(indice);
+    const textoActual = textoCarrera[idiomaActual];
+    if (indice < textoActual.length) {
+        elemento.innerHTML += textoActual.charAt(indice);
         indice++;
-        setTimeout(escribirTexto, 100); // Velocidad en milisegundos (puedes cambiar el 50 para hacerlo más rápido o lento)
+        timeoutId = setTimeout(escribirTexto, 70); //50ms es la velocidad
     }
 }
-
 // Inicia la animación cuando la página carga
 window.onload = escribirTexto;
+// el motor de traduccion
+
+function cambiarIdioma(){
+    //cambiamos la variable de idioma
+    if (idiomaActual === "es"){
+        idiomaActual = "en";
+    }else{
+        idiomaActual ="es";
+    }
+
+
+//traducir todos los elementos estaticos 
+    const elementos = document.querySelectorAll("[data-i18n]");
+    elementos.forEach((elemento) => {
+        const clave = elemento.getAttribute("data-i18n");
+        if(traducciones[idiomaActual][clave]){
+            elemento.innerHTML = traducciones[idiomaActual][clave];
+        }
+    })
+
+    // Actualizar las letras del botón de idioma
+    document.getElementById("btn-idioma").innerHTML = traducciones[idiomaActual].btn_idioma;
+    // Reiniciar y traducir la máquina de escribir
+    clearTimeout(timeoutId); // Detiene la animación actual
+    document.getElementById("subtitulo-maquina").innerHTML = ""; // Limpia el texto
+    indice = 0; // Regresa el contador a cero
+    escribirTexto(); // Vuelve a empezar en el nuevo idioma
+}
+
+
+    // --- 4. ACTIVAR EL BOTÓN ---
+    // Le decimos al botón que escuche cuando le den clic
+    document.getElementById("btn-idioma").addEventListener("click", function(evento) {
+        evento.preventDefault(); // Evita que la página salte bruscamente hacia arriba
+        cambiarIdioma();
+    });
