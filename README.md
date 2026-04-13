@@ -43,3 +43,57 @@ La arquitectura del proyecto está pensada para ser modular y escalable:
 ├── certificados/           # Certificados
 ├── index.html              # Archivo principal con las etiquetas data-i18n
 └── script.js               # Lógica de traducción y efectos visuales
+
+
+-----
+
+## English Version
+Hello! Welcome to my personal portfolio repository. This project was built from scratch to showcase my evolution as a Software Engineering student, my featured projects, and my technical skills.
+
+🔗 **[View the live portfolio here](https://astritcetzal.github.io/miportafolio-astritcetzal/)** 
+
+---
+
+## ✨ Key Features
+
+This project is not just a static page; it includes several interesting technical implementations:
+
+- 🎨 **"Pastel Tech" Design**: A unique interface that combines the friendly aesthetics of pastel lilac and pink colors with code terminal elements and modern UI/UX.
+
+- 🌐 **Bilingual Architecture (i18n)**: Implementation of a custom translation engine using Vanilla JavaScript and data-i18n attributes to instantly switch between Spanish and English without reloading the page.
+
+- ✨ **Advanced CSS Animations**: Immersive background with floating stars using random positions and animation-delay.
+
+  -Custom SVG avatar with continuous orbit and blinking animations.
+
+- 💻 **Typewriter Effect**: A dynamic JS script that renders text in real-time and automatically adapts to the selected language.
+
+-📱 **100% Responsive Design**: Use of Media Queries and Flexbox/Grid for a perfect user experience on both desktop monitors and mobile devices.
+
+## 🛠️ Tecnologías Utilizadas
+
+- **HTML5**: Web semantics for structure.
+
+- **CSS3**: Color variables (:root), Flexbox, CSS Grid, animations (@keyframes), and modular design.
+
+- **JavaScript (Vanilla)**: DOM logic for the dynamic bubble generator and the internationalization system.
+
+- **Devicon**: Library for development tool icons.
+
+- **GitHub Pages**: Hosting and continuous deployment.
+
+## 📁 Project Structure
+
+The project architecture is designed to be modular and scalable:
+
+```text
+/
+├── css/
+│   ├── animacion.css       # Environment animations (stars, bubbles)
+│   ├── avatar.css          # Exclusive styles for the main SVG
+│   ├── estilos-terminal.css # UI for the code windows
+│   └── style.css           # Global variables, reset, and responsive
+├── imagenes/               # Visual assets
+├── certificados/           # Certificates
+├── index.html              # Main file with data-i18n tags
+└── script.js               # Translation logic and visual effects
