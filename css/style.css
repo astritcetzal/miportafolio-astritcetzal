@@ -1,5 +1,6 @@
 /* Paleta de Colores y Variables */
 :root {
+    --fondo-gradiente:linear-gradient(135deg, #81b2a9 0%, #a48ba7 45%, #768f9a 100%);
     --fondo-principal: #f1dff8; /* Un lila/rosa ultra claro */
     --texto-oscuro: #2C1A4D; /* Morado muy oscuro para leer bien */
     --lila-pastel: #E2D1F9;
@@ -7,6 +8,7 @@
     --azul-claro: #AEC6CF;
     --blanco-tarjetas: #ffffff;
     --sombra-suave: rgba(177, 156, 217, 0.2);
+    --verde-menta: #8ee5cc;
 }
 
 /* Reset básico para que se vea igual en todos los navegadores */
@@ -18,7 +20,10 @@
 }
 
 body {
-    background-color: var(--fondo-principal);
+    background: var(--fondo-gradiente);
+    
+    background-attachment: fixed; /* El fondo se queda fijo al hacer scroll */
+    min-height: 100vh;
     color: var(--texto-oscuro);
     line-height: 1.6;
 }
@@ -123,14 +128,15 @@ h2::after {
     background-color: var(--blanco-tarjetas);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 20px var(--sombra-suave);
+    border: 3px solida var(--verde-menta);
+    box-shadow: 0 4px 15px rgba(142, 229, 204, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 5px solid var(--azul-claro);
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(177, 156, 217, 0.4);
+    box-shadow: 0 12px 25px rgba(142,229,204,0.8);
 }
 
 .project-card h3 {
@@ -279,16 +285,16 @@ footer h2::after {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     justify-content: space-between;
+    border: 1.5px solid var(--verde-menta);
+    box-shadow: 0 4px 15px rgba(142, 229, 204, 0.4); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .item-educacion:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 25px rgba(142, 229, 204, 0.8);
 }
 
 .card-icon {
