@@ -172,6 +172,8 @@ const traducciones = {
         proj5_desc: "Collection of practices and algorithms developed during my first semesters. It demonstrates my progression from <strong>structured programming</strong> to <strong>object-oriented programming (OOP)</strong>.",
         proj6_title: "University Lab: Python",
         proj6_desc: "Collection of practices and algorithms developed in Python.",
+        proj7_title: "HTML/CSS/JS Projects Evidence Portfolio",
+        proj7_desc: "This repository is an evidence portfolio of all the practical HTML/CSS/JS activities completed throughout the Fundamentals of Algebra course. This portfolio will serve as a project demonstrating the functionality, cohesive design, and development history of all my submissions",
         btn_github: "View Code on GitHub",
 
         titulo_educacion: "Education",
