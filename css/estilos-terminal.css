@@ -13,18 +13,20 @@
 /* --- VENTANA TERMINAL ESTILO PASTEL --- */
 .terminal-pastel {
     background-color: var(--blanco-tarjetas);
-    border: 2px solid var(--texto-oscuro); /* Borde fuerte para que parezca ventana real */
     border-radius: 10px;
-    box-shadow: 0 8px 20px var(--sombra-suave);
     overflow: hidden;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 20px auto;
     max-width: 800px;
     text-align: left;
     transition: transform 0.3s ease;
+    border: 1.5px solid var(--verde-menta);
+    box-shadow: 0 4px 15px rgba(142, 229, 204, 0.4); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .terminal-pastel:hover {
     transform: translateY(-5px); /* Pequeño salto al pasar el mouse */
+    box-shadow: 0 12px 25px rgba(142, 229, 204, 0.8);
 }
 
 .terminal-header {
