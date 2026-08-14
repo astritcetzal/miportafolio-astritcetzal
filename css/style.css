@@ -1,5 +1,5 @@
 /* =========================================
-   1. PALETA PASTEL (PAGINA 7) Y VARIABLES
+   1. PALETA PASTEL Y VARIABLES GLOBALES
    ========================================= */
 :root {
     --fondo-gradiente: linear-gradient(135deg, #a0c4ff 0%, #bdb2ff 40%, #ffc6ff 80%, #ffd6a5 100%);
@@ -31,12 +31,13 @@ body {
 }
 
 /* =========================================
-   2. ENCABEZADO Y MENU
+   2. ENCABEZADO Y NAVEGACION
    ========================================= */
 header {
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(8px);
-    padding: 18px 40px;
+    padding: 15px 40px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -49,6 +50,7 @@ header {
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .logo {
@@ -76,163 +78,21 @@ header {
 }
 
 /* =========================================
-   3. HERO / SOBRE MI (PAGINA 1 DEL BOCETO)
-   ========================================= */
-.hero-section {
-    padding: 60px 20px 80px 20px;
-    text-align: center;
-    position: relative;
-}
-
-.hero-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.hero-title {
-    font-size: 2.3rem;
-    font-weight: 800;
-    margin-bottom: 35px;
-    color: var(--texto-oscuro);
-}
-
-/* Escenario del Avatar con Stickers */
-.avatar-stage {
-    position: relative;
-    width: 320px;
-    height: 320px;
-    margin: 0 auto 35px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.avatar-center {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: var(--blanco-puro);
-    padding: 10px;
-    box-shadow: 0 8px 25px var(--sombra-pastel);
-    z-index: 5;
-}
-
-.astrit-avatar {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* Stickers Flotantes */
-.floating-badge {
-    position: absolute;
-    background-color: var(--blanco-puro);
-    border: 2px solid var(--texto-oscuro);
-    border-radius: 50px;
-    padding: 8px 14px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    box-shadow: 3px 3px 0px var(--texto-oscuro);
-    z-index: 6;
-    animation: flotarSuave 4s ease-in-out infinite;
-}
-
-.badge-dog {
-    top: 15px;
-    left: -10px;
-    background-color: var(--rosa-pastel);
-    animation-delay: 0s;
-}
-
-.badge-vinyl {
-    bottom: 40px;
-    left: -20px;
-    padding: 6px;
-    border-radius: 50%;
-    background-color: var(--morado-pastel);
-    animation-delay: 1s;
-}
-
-.vinyl-disc {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #2C1A4D 30%, #1A1A1A 70%);
-    border: 2px solid #fff;
-    animation: girarDisco 5s linear infinite;
-}
-
-.badge-books {
-    top: 20px;
-    right: -15px;
-    background-color: var(--azul-pastel);
-    animation-delay: 1.5s;
-}
-
-.badge-icecream {
-    bottom: 35px;
-    right: -10px;
-    background-color: var(--lila-pastel);
-    animation-delay: 0.5s;
-}
-
-@keyframes girarDisco {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes flotarSuave {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-}
-
-.hero-bio {
-    max-width: 750px;
-    margin: 0 auto;
-    font-size: 1.15rem;
-}
-
-.sub-bio {
-    font-size: 1rem;
-    margin-top: 12px;
-    opacity: 0.9;
-}
-
-.hero-links {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn-pill {
-    background-color: var(--blanco-puro);
-    color: var(--texto-oscuro);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    padding: 10px 22px;
-    border-radius: 30px;
-    border: 2px solid var(--texto-oscuro);
-    box-shadow: 3px 3px 0px var(--texto-oscuro);
-    transition: all 0.2s ease;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.btn-pill:hover {
-    background-color: var(--rosa-pastel);
-    transform: translateY(-2px);
-    box-shadow: 4px 4px 0px var(--texto-oscuro);
-}
-
-/* =========================================
-   4. SECCIONES Y TITULOS
+   3. SECCIONES Y CONTENEDORES GENERALES
    ========================================= */
 section {
+    width: 100%;
     padding: 70px 20px;
     text-align: center;
+}
+
+.section-container,
+.hero-container,
+.projects-grid,
+.timeline-container,
+.carousel-wrapper,
+.languages-row,
+.marquee-group {
     max-width: 1050px;
     margin: 0 auto;
 }
@@ -256,7 +116,150 @@ h2::after {
 }
 
 /* =========================================
-   5. HABILIDADES INFINITAS (PAGINA 2 DEL BOCETO)
+   4. HERO / SOBRE MI Y STICKERS
+   ========================================= */
+.hero-section {
+    width: 100%;
+    padding: 40px 20px 60px 20px;
+    position: relative;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: var(--texto-oscuro);
+}
+
+.avatar-stage {
+    position: relative;
+    width: 380px;
+    height: 300px;
+    margin: 0 auto 35px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-center {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background-color: var(--blanco-puro);
+    box-shadow: 0 10px 30px var(--sombra-pastel);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 5;
+    border: 3px solid var(--texto-oscuro);
+}
+
+.astrit-avatar {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    object-fit: contain;
+}
+
+.floating-sticker {
+    position: absolute;
+    filter: drop-shadow(3px 5px 8px var(--sombra-pastel));
+    transition: transform 0.3s ease;
+    z-index: 6;
+}
+
+.floating-sticker:hover {
+    transform: scale(1.2);
+}
+
+/* Posiciones y Dimensiones de Stickers */
+.sticker-dog {
+    width: 72px;
+    height: 72px;
+    top: 5px;
+    left: 10px;
+    animation: flotarSuave 4s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+.sticker-vinyl {
+    width: 65px;
+    height: 65px;
+    bottom: 15px;
+    left: 10px;
+    animation: girarDisco 6s linear infinite, flotarSuave 4s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.sticker-books {
+    width: 72px;
+    height: 72px;
+    top: 5px;
+    right: 10px;
+    animation: flotarSuave 4s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.sticker-icecream {
+    width: 60px;
+    height: 60px;
+    bottom: 10px;
+    right: 15px;
+    animation: flotarSuave 4s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
+.hero-bio {
+    max-width: 750px;
+    margin: 20px auto 0 auto;
+    font-size: 1.15rem;
+    clear: both;
+    position: relative;
+    z-index: 10;
+}
+
+.sub-bio {
+    font-size: 1rem;
+    margin-top: 12px;
+    opacity: 0.9;
+}
+
+/* Botones de enlace en el Hero */
+.hero-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.hero-links a,
+.btn-pill {
+    background-color: var(--blanco-puro);
+    color: var(--texto-oscuro);
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 26px;
+    border-radius: 30px;
+    border: 2px solid var(--texto-oscuro);
+    box-shadow: 3px 3px 0px var(--texto-oscuro);
+    transition: all 0.25s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hero-links a:hover,
+.btn-pill:hover {
+    background-color: var(--lila-pastel);
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 0px var(--texto-oscuro);
+}
+
+/* =========================================
+   5. HABILIDADES EN MOVIMIENTO CONTINUO
    ========================================= */
 .marquee-group {
     margin-bottom: 30px;
@@ -296,16 +299,6 @@ h2::after {
     animation-play-state: paused;
 }
 
-@keyframes marqueeLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-@keyframes marqueeRight {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
-}
-
 .skill-pill {
     display: inline-block;
     padding: 10px 24px;
@@ -317,14 +310,13 @@ h2::after {
     box-shadow: 2px 2px 0px var(--texto-oscuro);
 }
 
-/* Colores de pildoras */
 .color-lila   { background-color: var(--lila-pastel); }
 .color-rosa   { background-color: var(--rosa-pastel); }
 .color-azul   { background-color: var(--azul-pastel); }
 .color-morado { background-color: var(--morado-pastel); }
 
 /* =========================================
-   6. PROYECTOS (PAGINA 3 DEL BOCETO)
+   6. PROYECTOS
    ========================================= */
 .projects-grid {
     display: grid;
@@ -386,7 +378,7 @@ h2::after {
 }
 
 /* =========================================
-   7. PARTICIPACIONES (PAGINA 4 DEL BOCETO)
+   7. PARTICIPACIONES (LINEA DE TIEMPO)
    ========================================= */
 .timeline-container {
     position: relative;
@@ -469,7 +461,7 @@ h2::after {
 }
 
 /* =========================================
-   8. CERTIFICACIONES (PAGINA 5 DEL BOCETO)
+   8. CERTIFICACIONES (CARRUSEL)
    ========================================= */
 .carousel-wrapper {
     position: relative;
@@ -537,7 +529,7 @@ h2::after {
 }
 
 /* =========================================
-   9. IDIOMAS (PAGINA 6 DEL BOCETO)
+   9. IDIOMAS
    ========================================= */
 .languages-row {
     display: flex;
@@ -569,7 +561,7 @@ h2::after {
 }
 
 /* =========================================
-   10. MODALES GENERALES
+   10. VENTANAS MODALES
    ========================================= */
 .modal {
     display: none;
@@ -635,13 +627,36 @@ h2::after {
     margin-top: 15px;
 }
 
+/* =========================================
+   11. ANIMACIONES
+   ========================================= */
+@keyframes girarDisco {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes flotarSuave {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes marqueeLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
 @keyframes modalPop {
     from { transform: scale(0.85); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
 
 /* =========================================
-   11. FOOTER Y RESPONSIVE
+   12. FOOTER Y RESPONSIVE
    ========================================= */
 footer {
     background-color: var(--texto-oscuro);

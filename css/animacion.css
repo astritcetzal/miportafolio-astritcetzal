@@ -1,11 +1,7 @@
 /* --- Hero Section (Sobre Mí) CON BURBUJAS --- */
 .hero-section {
-    background: linear-gradient(135deg, var(--lila-pastel), var(--rosa-pastel));
-    padding: 120px 50px;
-    border-radius: 0 0 50px 50px;
-    box-shadow: 0 10px 20px var(--sombra-suave);
-    position: relative; /* Necesario para contener las burbujas */
-    overflow: hidden;    /* Para que las burbujas no se salgan de la sección */
+    position: relative;
+    overflow: hidden;
 }
 
 /* Aseguramos que el texto esté por encima de las burbujas */
