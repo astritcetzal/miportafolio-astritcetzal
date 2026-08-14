@@ -4,31 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio Profesional</title>
+  
   <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/avatar.css">
-    <link rel="stylesheet" href="css/animacion.css">
-    <link rel="stylesheet" href="css/estilos-terminal.css">
-    <style>
-        .astrit-avatar {
-            animation: float 4s ease-in-out infinite;
-            filter: drop-shadow(0px 10px 15px rgba(177, 156, 217, 0.4));
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-        .ojos {
-            transform-origin: 100px 102px;
-            animation: blinkCute 4s infinite;
-        }
-        @keyframes blinkCute {
-            0%, 90%, 100% { transform: scaleY(1); }
-            95% { transform: scaleY(0.1); }
-        }
-    </style>
+  <link rel="stylesheet" href="css/avatar.css">
+  <link rel="stylesheet" href="css/animacion.css">
+  <link rel="stylesheet" href="css/estilos-terminal.css">
 </head>
 <body>
-<!-- NAVEGACIÓN (Conectado con tu style.css) -->
+
+  <!-- NAVEGACIÓN -->
   <header>
     <div class="nav-principal">
       <div class="logo">Mi Portafolio</div>
@@ -38,14 +22,19 @@
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#participaciones">Participaciones</a></li>
         <li><a href="#certificaciones">Certificaciones</a></li>
+        <li><a href="#idiomas">Idiomas</a></li>
       </ul>
     </div>
   </header>
 
   <main>
-    <!-- 1. SOBRE MÍ (Conectado con tu avatar.css y animacion.css) -->
+    <!-- 1. SOBRE MÍ -->
     <section id="sobre-mi" class="hero-section">
       <div class="hero-content">
+        <!-- Avatar desde archivo externo -->
+        <div class="avatar-container">
+          <img src="imagenes/avatar.svg" alt="Avatar de Astrit" class="astrit-avatar">
+        </div>
         <div class="intro-text">
           <h1>¡Hola! Soy Astrit</h1>
           <p class="bio">
@@ -57,10 +46,7 @@
           </div>
         </div>
 
-        <!-- Aquí va el Avatar SVG animado que ya tenías -->
-        <div class="avatar-container">
-          <!-- Si tienes el SVG de tu avatar, va aquí adentro -->
-        </div>
+        
       </div>
     </section>
 
@@ -104,27 +90,21 @@
         <div class="carousel-track-container">
           <div class="carousel-track" id="proj-track">
             
-            <!-- Card de Proyecto 1 -->
             <article class="project-card">
               <h3>Mi Catálogo Web</h3>
               <p>Aplicación web para gestión de catálogos musicales.</p>
-
               <button class="btn-details" onclick="openModal('modal-p1')">Ver detalles</button>
             </article>
 
-            <!-- Card de Proyecto 2 -->
             <article class="project-card">
               <h3>Sistema de Citas</h3>
               <p>Backend REST API con arquitectura hexagonal y persistencia.</p>
-
               <button class="btn-details" onclick="openModal('modal-p2')">Ver detalles</button>
             </article>
 
-            <!-- Card de Proyecto 3 -->
             <article class="project-card">
               <h3>Visualizador de Dijkstra</h3>
               <p>Aplicación en Java Swing para grafos y algoritmos de rutas de menor costo.</p>
-
               <button class="btn-details" onclick="openModal('modal-p3')">Ver detalles</button>
             </article>
 
@@ -135,83 +115,44 @@
       </div>
     </section>
 
-    
-
-    <!-- PARTICIPACIONES (LÍNEA DEL TIEMPO HORIZONTAL) -->
-<section id="participaciones" class="section">
-  <h2>Participaciones y Experiencias</h2>
-  
-  <div class="horizontal-timeline">
-    <!-- Línea conectora horizontal -->
-    <div class="timeline-line"></div>
-    
-    <!-- Puntos / Nodos en la línea -->
-    <div class="timeline-nodes">
+    <!-- 5. PARTICIPACIONES (LÍNEA DEL TIEMPO HORIZONTAL) -->
+    <section id="participaciones" class="section">
+      <h2>Participaciones y Experiencias</h2>
       
-      <!-- Nodo 1 -->
-      <div class="timeline-node active" onclick="selectTimelineNode(this, 'info-node-1')">
-        <div class="node-dot"></div>
-        <span class="node-date">Marzo 2026</span>
-        <span class="node-label">Starknet Bootcamp</span>
+      <div class="horizontal-timeline">
+        <div class="timeline-line"></div>
+        
+        <div class="timeline-nodes">
+          <div class="timeline-node active" onclick="selectTimelineNode(this, 'info-node-1')">
+            <div class="node-dot"></div>
+            <span class="node-date">Marzo 2026</span>
+            <span class="node-label">Starknet Bootcamp</span>
+          </div>
+
+          <div class="timeline-node" onclick="selectTimelineNode(this, 'info-node-2')">
+            <div class="node-dot"></div>
+            <span class="node-date">Mayo 2026</span>
+            <span class="node-label">Invent for the Planet</span>
+          </div>
+        </div>
+
+        <div class="timeline-details-container">
+          <div id="info-node-1" class="timeline-info-card active">
+            <h3>Bootcamp Starknet Developer</h3>
+            <span class="badge-date">Marzo 2026</span>
+            <p>Entrenamiento técnico intensivo sobre desarrollo en Starknet, ejecución de comandos y despliegue de contratos utilizando herramientas como Scarb, Starkli y Katana.</p>
+          </div>
+
+          <div id="info-node-2" class="timeline-info-card">
+            <h3>Hackathon "Invent for the Planet" — 1er Lugar 🏆</h3>
+            <span class="badge-date">Mayo 2026</span>
+            <p>Desarrollo de una solución tecnológica innovadora y sostenible en equipo durante un entorno intensivo de 48 horas, obteniendo el primer lugar en la competencia.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Nodo 2 -->
-      <div class="timeline-node" onclick="selectTimelineNode(this, 'info-node-2')">
-        <div class="node-dot"></div>
-        <span class="node-date">Mayo 2026</span>
-        <span class="node-label">Invent for the Planet</span>
-      </div>
-
-    </div>
-
-    <!-- Contenedor donde se desglosa la información seleccionada -->
-    <div class="timeline-details-container">
-      
-      <div id="info-node-1" class="timeline-info-card active">
-        <h3>Bootcamp Starknet Developer</h3>
-        <span class="badge-date">Marzo 2026</span>
-        <p>Entrenamiento técnico intensivo sobre desarrollo en Starknet, ejecución de comandos y despliegue de contratos utilizando herramientas como Scarb, Starkli y Katana.</p>
-      </div>
-
-      <div id="info-node-2" class="timeline-info-card">
-        <h3>Hackathon "Invent for the Planet" — 1er Lugar 🏆</h3>
-        <span class="badge-date">Mayo 2026</span>
-        <p>Desarrollo de una solución tecnológica innovadora y sostenible en equipo durante un entorno intensivo de 48 horas, obteniendo el primer lugar en la competencia.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-  </main>
-
-  <!-- MODALES DE PROYECTOS (Información desplegable al presionar un proyecto) -->
-  <div id="modal-p1" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('modal-p1')">&times;</span>
-      <h3>Mi Catálogo Web</h3>
-      <p>Detalle completo: Desarrollado en ASP.NET Core MVC con C#, manejo de carga de imágenes y estructura orientada a objetos.</p>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-link">Ver repositorio en GitHub</a>
-    </div>
-  </div>
-
-  <div id="modal-p2" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('modal-p2')">&times;</span>
-      <h3>Sistema de Citas</h3>
-      <p>Detalle completo: Backend API RESTful aplicando arquitectura hexagonal, bases de datos PostgreSQL/SQLite y despliegue en la nube.</p>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-link">Ver repositorio en GitHub</a>
-    </div>
-  </div>
-
-  <div id="modal-p3" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('modal-p3')">&times;</span>
-      <h3>Visualizador de Dijkstra</h3>
-      <p>Detalle completo: Proyecto Java Swing para modelado de grafos, colas de prioridad y representación gráfica de rutas mínimas.</p>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-link">Ver repositorio en GitHub</a>
-    </div>
-  </div>
-<!-- 6. CERTIFICACIONES (CARRUSEL) -->
+    <!-- 6. CERTIFICACIONES (CARRUSEL) -->
     <section id="certificaciones" class="section">
       <h2>Certificaciones</h2>
       <div class="carousel-wrapper">
@@ -241,7 +182,53 @@
         <button class="carousel-btn next-btn" id="cert-next" aria-label="Siguiente">&#10095;</button>
       </div>
     </section>
+
+    <!-- 7. IDIOMAS -->
+    <section id="idiomas" class="section">
+      <h2>Idiomas</h2>
+      <div class="terminal-pastel">
+        <div class="terminal-header">
+          <div class="circulo rojo"></div>
+          <div class="circulo amarillo"></div>
+          <div class="circulo verde"></div>
+          <div class="terminal-titulo">languages_config.sys</div>
+        </div>
+        <div class="terminal-body">
+          <span class="tag-pastel">Español (Lengua materna)</span>
+          <span class="tag-pastel">🌍 Inglés (A2 - Práctica activa)</span>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- MODALES DE PROYECTOS -->
+  <div id="modal-p1" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-p1')">&times;</span>
+      <h3>Mi Catálogo Web</h3>
+      <p>Detalle completo: Desarrollado en ASP.NET Core MVC con C#, manejo de carga de imágenes y estructura orientada a objetos.</p>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-link">Ver repositorio en GitHub</a>
+    </div>
+  </div>
+
+  <div id="modal-p2" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-p2')">&times;</span>
+      <h3>Sistema de Citas</h3>
+      <p>Detalle completo: Backend API RESTful aplicando arquitectura hexagonal, bases de datos PostgreSQL/SQLite y despliegue en la nube.</p>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-link">Ver repositorio en GitHub</a>
+    </div>
+  </div>
+
+  <div id="modal-p3" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-p3')">&times;</span>
+      <h3>Visualizador de Dijkstra</h3>
+      <p>Detalle completo: Proyecto Java Swing para modelado de grafos, colas de prioridad y representación gráfica de rutas mínimas.</p>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-link">Ver repositorio en GitHub</a>
+    </div>
+  </div>
+
   <footer>
     <p>&copy; 2026 - Desarrollado por Astrit Cetzal</p>
   </footer>
