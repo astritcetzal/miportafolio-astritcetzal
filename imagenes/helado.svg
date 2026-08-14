@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cono -->
+  <path d="M 32 48 L 50 90 L 68 48 Z" fill="#FCE7AF" stroke="#2C1A4D" stroke-width="2.5"/>
+  <line x1="41" y1="48" x2="56" y2="76" stroke="#E5B97A" stroke-width="1.5"/>
+  <line x1="59" y1="48" x2="44" y2="76" stroke="#E5B97A" stroke-width="1.5"/>
+  
+  <!-- Bola inferior -->
+  <circle cx="50" cy="45" r="20" fill="#E2D1F9" stroke="#2C1A4D" stroke-width="2.5"/>
+  <!-- Bola superior -->
+  <circle cx="50" cy="30" r="17" fill="#FFC6FF" stroke="#2C1A4D" stroke-width="2.5"/>
+  
+  <!-- Cereza -->
+  <circle cx="50" cy="13" r="6" fill="#D32F2F" stroke="#2C1A4D" stroke-width="2"/>
+  <path d="M 50 8 Q 58 4 60 1" fill="none" stroke="#2C1A4D" stroke-width="2" stroke-linecap="round"/>
+</svg>
