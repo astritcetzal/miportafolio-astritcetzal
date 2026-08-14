@@ -1,25 +1,19 @@
 /* =========================================
-   1. PALETA DE COLORES (LILA Y AZUL PASTEL)
+   1. PALETA PASTEL (PAGINA 7) Y VARIABLES
    ========================================= */
 :root {
-    /* Fondo con gradiente suave de azul pastel a lila */
-    --fondo-gradiente: linear-gradient(135deg, #a0c4ff 0%, #bdb2ff 50%, #e7c6ff 100%);
-    --fondo-principal: #f5efff;       /* Lila ultra claro */
-    --texto-oscuro: #2C1A4D;           /* Morado oscuro para contraste */
-    
-    /* Tonos Pastel Principales */
+    --fondo-gradiente: linear-gradient(135deg, #a0c4ff 0%, #bdb2ff 40%, #ffc6ff 80%, #ffd6a5 100%);
     --lila-pastel: #E2D1F9;
-    --lila-suave: #D0BDF4;
-    --morado-claro: #E7C6FF;
-    --azul-pastel: #B8C0FF;
+    --morado-pastel: #BDB2FF;
+    --rosa-pastel: #FFC6FF;
+    --azul-pastel: #A0C4FF;
     --azul-suave: #CAE9FF;
-    
-    --blanco-tarjetas: #ffffff;
-    --sombra-suave: rgba(180, 160, 230, 0.25);
-    --borde-suave: rgba(44, 26, 77, 0.12);
+    --blanco-puro: #ffffff;
+    --texto-oscuro: #2C1A4D;
+    --borde-tarjeta: rgba(44, 26, 77, 0.15);
+    --sombra-pastel: rgba(189, 178, 255, 0.35);
 }
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -33,32 +27,32 @@ body {
     min-height: 100vh;
     color: var(--texto-oscuro);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* =========================================
-   2. ENCABEZADO Y NAVEGACIÓN
+   2. ENCABEZADO Y MENU
    ========================================= */
 header {
-    background-color: var(--blanco-tarjetas);
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 15px var(--sombra-suave);
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 18px 40px;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 4px 15px var(--sombra-pastel);
 }
 
 .nav-principal {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.3rem;
     font-weight: bold;
     color: var(--texto-oscuro);
 }
@@ -73,23 +67,178 @@ header {
     text-decoration: none;
     color: var(--texto-oscuro);
     font-weight: 600;
-    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
 }
 
 .menu a:hover {
-    color: var(--lila-suave);
+    color: var(--morado-pastel);
 }
 
 /* =========================================
-   3. SECCIONES Y BOTONES GENERALES
+   3. HERO / SOBRE MI (PAGINA 1 DEL BOCETO)
+   ========================================= */
+.hero-section {
+    padding: 60px 20px 80px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: var(--texto-oscuro);
+}
+
+/* Escenario del Avatar con Stickers */
+.avatar-stage {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto 35px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-center {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--blanco-puro);
+    padding: 10px;
+    box-shadow: 0 8px 25px var(--sombra-pastel);
+    z-index: 5;
+}
+
+.astrit-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Stickers Flotantes */
+.floating-badge {
+    position: absolute;
+    background-color: var(--blanco-puro);
+    border: 2px solid var(--texto-oscuro);
+    border-radius: 50px;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 3px 3px 0px var(--texto-oscuro);
+    z-index: 6;
+    animation: flotarSuave 4s ease-in-out infinite;
+}
+
+.badge-dog {
+    top: 15px;
+    left: -10px;
+    background-color: var(--rosa-pastel);
+    animation-delay: 0s;
+}
+
+.badge-vinyl {
+    bottom: 40px;
+    left: -20px;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: var(--morado-pastel);
+    animation-delay: 1s;
+}
+
+.vinyl-disc {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #2C1A4D 30%, #1A1A1A 70%);
+    border: 2px solid #fff;
+    animation: girarDisco 5s linear infinite;
+}
+
+.badge-books {
+    top: 20px;
+    right: -15px;
+    background-color: var(--azul-pastel);
+    animation-delay: 1.5s;
+}
+
+.badge-icecream {
+    bottom: 35px;
+    right: -10px;
+    background-color: var(--lila-pastel);
+    animation-delay: 0.5s;
+}
+
+@keyframes girarDisco {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes flotarSuave {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.hero-bio {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+}
+
+.sub-bio {
+    font-size: 1rem;
+    margin-top: 12px;
+    opacity: 0.9;
+}
+
+.hero-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-pill {
+    background-color: var(--blanco-puro);
+    color: var(--texto-oscuro);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 10px 22px;
+    border-radius: 30px;
+    border: 2px solid var(--texto-oscuro);
+    box-shadow: 3px 3px 0px var(--texto-oscuro);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-pill:hover {
+    background-color: var(--rosa-pastel);
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px var(--texto-oscuro);
+}
+
+/* =========================================
+   4. SECCIONES Y TITULOS
    ========================================= */
 section {
-    padding: 80px 50px;
+    padding: 70px 20px;
     text-align: center;
+    max-width: 1050px;
+    margin: 0 auto;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 2rem;
     margin-bottom: 40px;
     color: var(--texto-oscuro);
     position: relative;
@@ -98,130 +247,234 @@ h2 {
 
 h2::after {
     content: '';
-    width: 50%;
+    width: 60%;
     height: 4px;
-    background-color: var(--lila-pastel);
+    background-color: var(--morado-pastel);
     display: block;
-    margin: 10px auto 0;
+    margin: 8px auto 0 auto;
     border-radius: 2px;
 }
 
-.btn-link, .btn-details {
-    display: inline-block;
-    background-color: var(--lila-pastel);
-    color: var(--texto-oscuro);
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border: 2px solid var(--texto-oscuro);
-    box-shadow: 2px 2px 0px var(--texto-oscuro);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    margin: 8px 5px 0 5px;
-    font-size: 0.9rem;
-}
-
-.btn-link:hover, .btn-details:hover {
-    background-color: var(--azul-pastel);
-    transform: translateY(-2px);
-    box-shadow: 4px 4px 0px var(--texto-oscuro);
-}
-
 /* =========================================
-   4. HABILIDADES BLANDAS (PÍLDORAS PASTEL)
+   5. HABILIDADES INFINITAS (PAGINA 2 DEL BOCETO)
    ========================================= */
-.soft-skills-container {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    max-width: 850px;
-    margin: 0 auto;
+.marquee-group {
+    margin-bottom: 30px;
+    text-align: left;
 }
 
-.soft-pill {
-    padding: 10px 22px;
+.marquee-label {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--texto-oscuro);
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+    display: inline-flex;
+    gap: 15px;
+}
+
+.scroll-left {
+    animation: marqueeLeft 22s linear infinite;
+}
+
+.scroll-right {
+    animation: marqueeRight 22s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes marqueeLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+.skill-pill {
+    display: inline-block;
+    padding: 10px 24px;
     border-radius: 50px;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 0.95rem;
     color: var(--texto-oscuro);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1.5px solid var(--borde-suave);
+    border: 2px solid var(--texto-oscuro);
+    box-shadow: 2px 2px 0px var(--texto-oscuro);
 }
 
-.soft-pill:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(44, 26, 77, 0.15);
-}
-
-/* Paleta de Píldoras Lila/Azul */
-.pill-pink, .pill-purple { background-color: var(--lila-pastel); }
-.pill-yellow             { background-color: var(--morado-claro); }
-.pill-blue               { background-color: var(--azul-pastel); }
-.pill-green              { background-color: var(--azul-suave); }
+/* Colores de pildoras */
+.color-lila   { background-color: var(--lila-pastel); }
+.color-rosa   { background-color: var(--rosa-pastel); }
+.color-azul   { background-color: var(--azul-pastel); }
+.color-morado { background-color: var(--morado-pastel); }
 
 /* =========================================
-   5. HABILIDADES TÉCNICAS (TARJETAS BLOQUE)
+   6. PROYECTOS (PAGINA 3 DEL BOCETO)
    ========================================= */
-.skills-grid {
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    max-width: 1000px;
-    margin: 0 auto;
 }
 
-.skill-card {
-    border-radius: 24px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 8px 20px var(--sombra-suave);
-    transition: transform 0.3s ease;
-    border: 1.5px solid var(--borde-suave);
-}
-
-.skill-card:hover {
-    transform: translateY(-6px);
-}
-
-.skill-card h3 {
-    font-size: 1.25rem;
-    color: var(--texto-oscuro);
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-/* Fondos de las tarjetas de habilidades */
-.card-yellow, .card-pink { background-color: var(--lila-pastel); }
-.card-blue              { background-color: var(--azul-pastel); }
-
-.tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-}
-
-.tech-pill {
-    background-color: var(--blanco-tarjetas);
-    color: var(--texto-oscuro);
-    padding: 6px 14px;
+.project-card {
+    background-color: var(--blanco-puro);
     border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    border: 2px solid var(--texto-oscuro);
+    box-shadow: 4px 4px 0px var(--texto-oscuro);
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-thumb {
+    width: 100%;
+    height: 170px;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    border: 1.5px solid var(--borde-tarjeta);
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-hint {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(44, 26, 77, 0.85);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 6px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .overlay-hint {
+    opacity: 1;
+}
+
+.project-card h4 {
+    margin-top: 14px;
+    font-size: 1.05rem;
+    color: var(--texto-oscuro);
 }
 
 /* =========================================
-   6. CARRUSEL (PROYECTOS Y CERTIFICACIONES)
+   7. PARTICIPACIONES (PAGINA 4 DEL BOCETO)
+   ========================================= */
+.timeline-container {
+    position: relative;
+    padding: 70px 10px;
+    margin: 20px auto;
+}
+
+.timeline-main-bar {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    height: 6px;
+    background-color: var(--blanco-puro);
+    border: 2px solid var(--texto-oscuro);
+    border-radius: 4px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.timeline-events {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+}
+
+.timeline-point {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.point-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--rosa-pastel);
+    border: 3px solid var(--texto-oscuro);
+    box-shadow: 2px 2px 0px var(--texto-oscuro);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.timeline-point:hover .point-circle {
+    transform: scale(1.3);
+    background-color: var(--azul-pastel);
+}
+
+.point-meta {
+    position: absolute;
+    width: 140px;
+    background-color: var(--blanco-puro);
+    border: 1.5px solid var(--texto-oscuro);
+    box-shadow: 2px 2px 0px var(--texto-oscuro);
+    padding: 6px 10px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.point-top .point-meta {
+    bottom: 38px;
+}
+
+.point-bottom .point-meta {
+    top: 38px;
+}
+
+.point-date {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--morado-pastel);
+}
+
+.point-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* =========================================
+   8. CERTIFICACIONES (PAGINA 5 DEL BOCETO)
    ========================================= */
 .carousel-wrapper {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -229,7 +482,7 @@ h2::after {
 .carousel-track-container {
     overflow: hidden;
     width: 100%;
-    padding: 20px 5px;
+    padding: 15px 5px;
 }
 
 .carousel-track {
@@ -238,215 +491,85 @@ h2::after {
     transition: transform 0.4s ease-in-out;
 }
 
-.project-card, .cert-card {
-    min-width: 280px;
+.cert-item {
+    min-width: 260px;
     flex: 0 0 calc(33.333% - 14px);
-    background-color: var(--blanco-tarjetas);
-    border: 1.5px solid var(--lila-suave);
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 4px 15px var(--sombra-suave);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.project-card:hover, .cert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(180, 160, 230, 0.5);
-}
-
-.carousel-btn {
-    background-color: var(--blanco-tarjetas);
+    background-color: var(--blanco-puro);
     border: 2px solid var(--texto-oscuro);
-    color: var(--texto-oscuro);
-    font-size: 1.2rem;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-    box-shadow: 2px 2px 0px var(--texto-oscuro);
+    box-shadow: 4px 4px 0px var(--texto-oscuro);
+    border-radius: 18px;
+    padding: 15px;
+    text-align: center;
 }
 
-.carousel-btn:hover {
-    background-color: var(--lila-pastel);
+.cert-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--borde-tarjeta);
+    margin-bottom: 10px;
+}
+
+.cert-item p {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.carousel-nav {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--blanco-puro);
+    border: 2px solid var(--texto-oscuro);
+    box-shadow: 3px 3px 0px var(--texto-oscuro);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    z-index: 10;
+}
+
+.carousel-nav:hover {
+    background-color: var(--azul-pastel);
     transform: scale(1.1);
 }
 
 /* =========================================
-   7. LÍNEA DEL TIEMPO HORIZONTAL
+   9. IDIOMAS (PAGINA 6 DEL BOCETO)
    ========================================= */
-.horizontal-timeline {
-    position: relative;
-    max-width: 850px;
-    margin: 40px auto 10px auto;
-}
-
-.timeline-line {
-    position: absolute;
-    top: 12px;
-    left: 10%;
-    width: 80%;
-    height: 4px;
-    background-color: var(--lila-pastel);
-    z-index: 1;
-}
-
-.timeline-nodes {
-    position: relative;
+.languages-row {
     display: flex;
-    justify-content: space-around;
-    z-index: 2;
-}
-
-.timeline-node {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.node-dot {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: var(--blanco-tarjetas);
-    border: 3px solid var(--texto-oscuro);
-    transition: all 0.3s ease;
-}
-
-.timeline-node:hover .node-dot,
-.timeline-node.active .node-dot {
-    background-color: var(--azul-pastel);
-    border-color: var(--texto-oscuro);
-    transform: scale(1.3);
-    box-shadow: 0 0 12px var(--azul-pastel);
-}
-
-.node-date {
-    font-size: 0.85rem;
-    font-weight: bold;
-    margin-top: 10px;
-    color: var(--texto-oscuro);
-}
-
-.node-label {
-    font-size: 0.85rem;
-    color: var(--texto-oscuro);
-    opacity: 0.85;
-}
-
-.timeline-details-container {
-    margin-top: 35px;
-}
-
-.timeline-info-card {
-    display: none;
-    background-color: var(--blanco-tarjetas);
-    padding: 25px;
-    border-radius: 16px;
-    border: 1.5px solid var(--lila-suave);
-    box-shadow: 0 4px 15px var(--sombra-suave);
-    animation: fadeIn 0.4s ease-in-out;
-    text-align: left;
-}
-
-.timeline-info-card.active {
-    display: block;
-}
-
-.badge-date {
-    display: inline-block;
-    background-color: var(--lila-pastel);
-    color: var(--texto-oscuro);
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 3px 10px;
-    border-radius: 10px;
-    margin: 8px 0 12px 0;
-}
-
-/* =========================================
-   8. IDIOMAS (WIDGET DASHBOARD)
-   ========================================= */
-.languages-widget {
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 20px;
-    max-width: 650px;
-    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
-.language-card {
-    background-color: var(--blanco-tarjetas);
-    border-radius: 20px;
-    padding: 22px 28px;
-    box-shadow: 0 6px 18px var(--sombra-suave);
-    border: 1.5px solid var(--borde-suave);
-    text-align: left;
-}
-
-.language-info {
+.language-pill-box {
+    background-color: var(--blanco-puro);
+    border: 2px solid var(--texto-oscuro);
+    box-shadow: 4px 4px 0px var(--texto-oscuro);
+    padding: 16px 35px;
+    border-radius: 50px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 12px;
+    min-width: 220px;
 }
 
-.language-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--texto-oscuro);
+.lang-title {
+    font-size: 1.15rem;
+    font-weight: bold;
 }
 
-.language-badge {
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 4px 12px;
-    border-radius: 12px;
-}
-
-.badge-native {
-    background-color: var(--azul-pastel);
-    color: var(--texto-oscuro);
-}
-
-.badge-learning {
-    background-color: var(--lila-pastel);
-    color: var(--texto-oscuro);
-}
-
-.progress-bar-bg {
-    background-color: var(--fondo-principal);
-    border-radius: 10px;
-    height: 10px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.progress-bar-fill {
-    height: 100%;
-    border-radius: 10px;
-}
-
-.fill-100 {
-    width: 100%;
-    background-color: var(--azul-pastel);
-}
-
-.fill-a2 {
-    width: 45%;
-    background-color: var(--lila-suave);
+.lang-level {
+    font-size: 0.85rem;
+    color: #666;
 }
 
 /* =========================================
-   9. MODALES (VENTANAS FLOTANTES)
+   10. MODALES GENERALES
    ========================================= */
 .modal {
     display: none;
@@ -467,20 +590,29 @@ h2::after {
     display: flex;
 }
 
-.modal-content {
-    background-color: var(--blanco-tarjetas);
+.modal-box {
+    background-color: var(--blanco-puro);
+    border: 3px solid var(--texto-oscuro);
+    box-shadow: 6px 6px 0px var(--texto-oscuro);
     padding: 30px;
-    border-radius: 16px;
-    max-width: 500px;
+    border-radius: 20px;
+    max-width: 520px;
     width: 100%;
     position: relative;
-    border: 2px solid var(--texto-oscuro);
-    box-shadow: 5px 5px 0px var(--texto-oscuro);
-    animation: popIn 0.3s ease;
     text-align: left;
+    animation: modalPop 0.3s ease;
 }
 
-.close-btn {
+.modal-preview-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1.5px solid var(--texto-oscuro);
+    margin-bottom: 15px;
+}
+
+.close-x {
     position: absolute;
     top: 12px;
     right: 18px;
@@ -488,93 +620,69 @@ h2::after {
     font-weight: bold;
     cursor: pointer;
     color: var(--texto-oscuro);
-    transition: color 0.2s ease;
 }
 
-.close-btn:hover {
-    color: var(--lila-suave);
+.close-x:hover {
+    color: var(--rosa-pastel);
+}
+
+.modal-body-content p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.modal-body-content .btn-pill {
+    margin-top: 15px;
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 /* =========================================
-   10. FOOTER
+   11. FOOTER Y RESPONSIVE
    ========================================= */
 footer {
     background-color: var(--texto-oscuro);
-    color: var(--fondo-principal);
+    color: var(--blanco-puro);
     text-align: center;
     padding: 40px 20px;
-    margin-top: 50px;
+    margin-top: 60px;
+    font-size: 0.9rem;
 }
 
-.social-links {
-    margin: 15px 0;
-}
-
-.social-links a {
-    color: var(--lila-pastel);
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--azul-pastel);
-}
-
-/* =========================================
-   11. ANIMACIONES
-   ========================================= */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes popIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* =========================================
-   12. DISEÑO RESPONSIVO (CELULARES)
-   ========================================= */
 @media (max-width: 768px) {
-    body, html {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    header {
-        flex-direction: column;
-        padding: 15px;
-        gap: 15px;
-    }
-
     .menu {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
     }
 
-    .menu a {
-        font-size: 0.85rem;
-    }
-
-    section {
-        padding: 50px 20px;
-    }
-
-    .skills-grid {
+    .projects-grid {
         grid-template-columns: 1fr;
     }
 
-    .project-card, .cert-card {
+    .cert-item {
         flex: 0 0 100%;
     }
 
-    .timeline-line {
-        left: 5%;
-        width: 90%;
+    .timeline-events {
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .timeline-main-bar {
+        width: 6px;
+        height: 80%;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+    }
+
+    .point-top .point-meta,
+    .point-bottom .point-meta {
+        position: static;
+        margin-top: 10px;
     }
 }

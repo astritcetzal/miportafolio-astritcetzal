@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio Profesional</title>
+  <title>Portafolio de Astrit Cetzal</title>
   
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/avatar.css">
   <link rel="stylesheet" href="css/animacion.css">
-  <link rel="stylesheet" href="css/estilos-terminal.css">
 </head>
 <body>
 
-  <!-- NAVEGACIÓN -->
+  <!-- NAVEGACION -->
   <header>
     <div class="nav-principal">
-      <div class="logo">Mi Portafolio</div>
+      <div class="logo">Astrit Cetzal</div>
       <ul class="menu">
-        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#sobre-mi">Sobre mi</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#participaciones">Participaciones</a></li>
@@ -28,237 +27,333 @@
   </header>
 
   <main>
-    <!-- 1. SOBRE MÍ -->
+    <!-- PAGINA 1: HERO / SOBRE MI CON STICKERS Y AVATAR -->
     <section id="sobre-mi" class="hero-section">
-      <div class="hero-content">
-        <div class="avatar-container">
-          <img src="imagenes/avatar.svg" alt="Avatar de Astrit" class="astrit-avatar">
-        </div>
-        <div class="intro-text">
-          <h1>¡Hola! Soy Astrit</h1>
-          <p class="bio">
-            Estudiante de TSU en Desarrollo e Innovación de Software enfocada en Backend y Cloud, apasionada por la tecnología, el trabajo en equipo y la creación de soluciones creativas.
-          </p>
-          <div class="personal-links">
-            <a href="" target="_blank" rel="noopener noreferrer" class="btn-link">Mis libros favoritos</a>
-            <a href="https://open.spotify.com/intl-es/artist/3Nrfpe0tUJi4K4DXYWgMUX" target="_blank" rel="noopener noreferrer" class="btn-link">Mi artista favorito</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. HABILIDADES BLANDAS -->
-    <section id="habilidades-blandas" class="section">
-      <h2>Habilidades Blandas</h2>
-      <div class="soft-skills-container">
-        <span class="soft-pill pill-pink">Trabajo en equipo</span>
-        <span class="soft-pill pill-yellow">Resolución de problemas</span>
-        <span class="soft-pill pill-blue">Pensamiento crítico</span>
-        <span class="soft-pill pill-purple">Adaptabilidad</span>
-        <span class="soft-pill pill-green">Comunicación efectiva</span>
-      </div>
-    </section>
-
-    <!-- 3. HABILIDADES Y CONOCIMIENTOS -->
-    <section id="habilidades" class="section">
-      <h2>Habilidades y Conocimientos</h2>
-      <div class="skills-grid">
+      <div class="hero-container">
         
-        <div class="skill-card card-yellow">
-          <h3>Backend & Lenguajes</h3>
-          <div class="tech-tags">
-            <span class="tech-pill">C#</span>
-            <span class="tech-pill">Java</span>
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">SQL</span>
-            <span class="tech-pill">JavaScript</span>
+        <h1 class="hero-title">Hola, soy Astrit Airan Cetzal Cetzal</h1>
+
+        <!-- Escena interactiva del Avatar con elementos flotantes -->
+        <div class="avatar-stage">
+          
+          <!-- Elemento 1: Perrito -->
+          <div class="floating-badge badge-dog" title="Mi perrito">
+            <span class="badge-text">Perrito</span>
           </div>
+
+          <!-- Elemento 2: Disco de vinilo giratorio -->
+          <div class="floating-badge badge-vinyl" title="Musica">
+            <div class="vinyl-disc"></div>
+          </div>
+
+          <!-- Avatar Central -->
+          <div class="avatar-center">
+            <img src="imagenes/avatar.svg" alt="Avatar de Astrit" class="astrit-avatar">
+          </div>
+
+          <!-- Elemento 3: Libros -->
+          <div class="floating-badge badge-books" title="Lectura">
+            <span class="book-spine">El mundo de Sofia</span>
+          </div>
+
+          <!-- Elemento 4: Helado -->
+          <div class="floating-badge badge-icecream" title="Helado">
+            <span class="badge-text">Helado</span>
+          </div>
+
         </div>
 
-        <div class="skill-card card-blue">
-          <h3>Frameworks & BD</h3>
-          <div class="tech-tags">
-            <span class="tech-pill">ASP.NET Core</span>
-            <span class="tech-pill">Spring Boot</span>
-            <span class="tech-pill">PostgreSQL</span>
-            <span class="tech-pill">MySQL</span>
-            <span class="tech-pill">SQLite</span>
-          </div>
-        </div>
-
-        <div class="skill-card card-pink">
-          <h3>Cloud & Herramientas</h3>
-          <div class="tech-tags">
-            <span class="tech-pill">AWS (EC2, S3, Lambda)</span>
-            <span class="tech-pill">Docker</span>
-            <span class="tech-pill">Git</span>
-            <span class="tech-pill">Linux (Fedora/Kali)</span>
+        <!-- Descripcion -->
+        <div class="hero-bio">
+          <p>
+            Estudiante de TSU en Desarrollo e Innovacion de Software. Mis intereses principales son <strong>Backend</strong> y <strong>Cloud</strong>.
+          </p>
+          <p class="sub-bio">
+            Apasionada por la tecnologia, el trabajo en equipo y la creacion de soluciones creativas. Constantemente aprendiendo y buscando nuevos retos para crecer profesionalmente.
+          </p>
+          <div class="hero-links">
+            <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="btn-pill">Mi artista favorito</a>
+            <a href="https://goodreads.com" target="_blank" rel="noopener noreferrer" class="btn-pill">Mis libros favoritos</a>
           </div>
         </div>
 
       </div>
     </section>
-    <!-- 4. PROYECTOS (CARRUSEL) -->
+
+    <!-- PAGINA 2: HABILIDADES CON DESPLAZAMIENTO INFINITO -->
+    <section id="habilidades" class="section">
+      <h2>Habilidades y Herramientas</h2>
+
+      <!-- Fila 1: Habilidades Blandas -->
+      <div class="marquee-group">
+        <h3 class="marquee-label">Habilidades Blandas</h3>
+        <div class="marquee-wrapper">
+          <div class="marquee-track scroll-left">
+            <span class="skill-pill color-lila">Trabajo en equipo</span>
+            <span class="skill-pill color-rosa">Resolucion de problemas</span>
+            <span class="skill-pill color-azul">Pensamiento critico</span>
+            <span class="skill-pill color-morado">Adaptabilidad</span>
+            <span class="skill-pill color-lila">Comunicacion efectiva</span>
+            <!-- Duplicados para ciclo infinito continuo -->
+            <span class="skill-pill color-lila">Trabajo en equipo</span>
+            <span class="skill-pill color-rosa">Resolucion de problemas</span>
+            <span class="skill-pill color-azul">Pensamiento critico</span>
+            <span class="skill-pill color-morado">Adaptabilidad</span>
+            <span class="skill-pill color-lila">Comunicacion efectiva</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 2: Habilidades Tecnicas -->
+      <div class="marquee-group">
+        <h3 class="marquee-label">Habilidades Tecnicas</h3>
+        <div class="marquee-wrapper">
+          <div class="marquee-track scroll-right">
+            <span class="skill-pill color-azul">C#</span>
+            <span class="skill-pill color-morado">Java</span>
+            <span class="skill-pill color-lila">Python</span>
+            <span class="skill-pill color-rosa">SQL</span>
+            <span class="skill-pill color-azul">Cloud</span>
+            <span class="skill-pill color-morado">GitHub</span>
+            <span class="skill-pill color-lila">ASP.NET Core</span>
+            <span class="skill-pill color-rosa">Linux</span>
+            <!-- Duplicados -->
+            <span class="skill-pill color-azul">C#</span>
+            <span class="skill-pill color-morado">Java</span>
+            <span class="skill-pill color-lila">Python</span>
+            <span class="skill-pill color-rosa">SQL</span>
+            <span class="skill-pill color-azul">Cloud</span>
+            <span class="skill-pill color-morado">GitHub</span>
+            <span class="skill-pill color-lila">ASP.NET Core</span>
+            <span class="skill-pill color-rosa">Linux</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 3: Herramientas Utilizadas -->
+      <div class="marquee-group">
+        <h3 class="marquee-label">Herramientas</h3>
+        <div class="marquee-wrapper">
+          <div class="marquee-track scroll-left">
+            <span class="skill-pill color-rosa">AWS</span>
+            <span class="skill-pill color-lila">Visual Studio</span>
+            <span class="skill-pill color-azul">PostgreSQL</span>
+            <span class="skill-pill color-morado">MySQL</span>
+            <span class="skill-pill color-rosa">Git</span>
+            <span class="skill-pill color-lila">Docker</span>
+            <!-- Duplicados -->
+            <span class="skill-pill color-rosa">AWS</span>
+            <span class="skill-pill color-lila">Visual Studio</span>
+            <span class="skill-pill color-azul">PostgreSQL</span>
+            <span class="skill-pill color-morado">MySQL</span>
+            <span class="skill-pill color-rosa">Git</span>
+            <span class="skill-pill color-lila">Docker</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGINA 3: PROYECTOS -->
     <section id="proyectos" class="section">
       <h2>Proyectos</h2>
-      <div class="carousel-wrapper">
-        <button class="carousel-btn prev-btn" id="proj-prev" aria-label="Anterior">&#10094;</button>
+      <div class="projects-grid">
         
-        <div class="carousel-track-container">
-          <div class="carousel-track" id="proj-track">
-            
-            <article class="project-card">
-              <h3>Mi Catálogo Web</h3>
-              <p>Aplicación web para gestión de catálogos musicales.</p>
-              <button class="btn-details" onclick="openModal('modal-p1')">Ver detalles</button>
-            </article>
-
-            <article class="project-card">
-              <h3>Sistema de Citas</h3>
-              <p>Backend REST API con arquitectura hexagonal y persistencia.</p>
-              <button class="btn-details" onclick="openModal('modal-p2')">Ver detalles</button>
-            </article>
-
-            <article class="project-card">
-              <h3>Visualizador de Dijkstra</h3>
-              <p>Aplicación en Java Swing para grafos y algoritmos de rutas de menor costo.</p>
-              <button class="btn-details" onclick="openModal('modal-p3')">Ver detalles</button>
-            </article>
-
+        <!-- Proyecto 1 -->
+        <article class="project-card" onclick="openModal('modal-p1')">
+          <div class="project-thumb">
+            <img src="imagenes/tech.jpg" alt="Magic Library">
+            <div class="overlay-hint">Clic para ver detalles</div>
           </div>
-        </div>
+          <h4>Magic Library</h4>
+        </article>
 
-        <button class="carousel-btn next-btn" id="proj-next" aria-label="Siguiente">&#10095;</button>
+        <!-- Proyecto 2 -->
+        <article class="project-card" onclick="openModal('modal-p2')">
+          <div class="project-thumb">
+            <img src="imagenes/tech.jpg" alt="Sistema de Citas">
+            <div class="overlay-hint">Clic para ver detalles</div>
+          </div>
+          <h4>Sistema de Citas</h4>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article class="project-card" onclick="openModal('modal-p3')">
+          <div class="project-thumb">
+            <img src="imagenes/tech.jpg" alt="Visualizador de Dijkstra">
+            <div class="overlay-hint">Clic para ver detalles</div>
+          </div>
+          <h4>Visualizador Dijkstra</h4>
+        </article>
+
       </div>
     </section>
 
-    <!-- 5. PARTICIPACIONES (LÍNEA DEL TIEMPO HORIZONTAL) -->
+    <!-- PAGINA 4: PARTICIPACIONES (LINEA DE TIEMPO INTERACTIVA) -->
     <section id="participaciones" class="section">
-      <h2>Participaciones y Experiencias</h2>
+      <h2>Participaciones</h2>
       
-      <div class="horizontal-timeline">
-        <div class="timeline-line"></div>
-        
-        <div class="timeline-nodes">
-          <div class="timeline-node active" onclick="selectTimelineNode(this, 'info-node-1')">
-            <div class="node-dot"></div>
-            <span class="node-date">Marzo 2026</span>
-            <span class="node-label">Starknet Bootcamp</span>
+      <div class="timeline-container">
+        <div class="timeline-main-bar"></div>
+
+        <div class="timeline-events">
+          
+          <!-- Evento 1 (Arriba) -->
+          <div class="timeline-point point-top" onclick="openModal('modal-part-1')">
+            <div class="point-circle"></div>
+            <div class="point-meta">
+              <span class="point-date">Marzo 2026</span>
+              <span class="point-name">Starknet Bootcamp</span>
+            </div>
           </div>
 
-          <div class="timeline-node" onclick="selectTimelineNode(this, 'info-node-2')">
-            <div class="node-dot"></div>
-            <span class="node-date">Mayo 2026</span>
-            <span class="node-label">Invent for the Planet</span>
-          </div>
-        </div>
-
-        <div class="timeline-details-container">
-          <div id="info-node-1" class="timeline-info-card active">
-            <h3>Bootcamp Starknet Developer</h3>
-            <span class="badge-date">Marzo 2026</span>
-            <p>Entrenamiento técnico intensivo sobre desarrollo en Starknet, ejecución de comandos y despliegue de contratos utilizando herramientas como Scarb, Starkli y Katana.</p>
+          <!-- Evento 2 (Abajo) -->
+          <div class="timeline-point point-bottom" onclick="openModal('modal-part-2')">
+            <div class="point-circle"></div>
+            <div class="point-meta">
+              <span class="point-date">Mayo 2026</span>
+              <span class="point-name">Invent for the Planet</span>
+            </div>
           </div>
 
-          <div id="info-node-2" class="timeline-info-card">
-            <h3>Hackathon "Invent for the Planet" — 1er Lugar 🏆</h3>
-            <span class="badge-date">Mayo 2026</span>
-            <p>Desarrollo de una solución tecnológica innovadora y sostenible en equipo durante un entorno intensivo de 48 horas, obteniendo el primer lugar en la competencia.</p>
+          <!-- Evento 3 (Arriba) -->
+          <div class="timeline-point point-top" onclick="openModal('modal-part-3')">
+            <div class="point-circle"></div>
+            <div class="point-meta">
+              <span class="point-date">2026</span>
+              <span class="point-name">Membresia IEEE</span>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- 6. CERTIFICACIONES (CARRUSEL) -->
+    <!-- PAGINA 5: CERTIFICACIONES (CARRUSEL DE IMAGENES) -->
     <section id="certificaciones" class="section">
       <h2>Certificaciones</h2>
       <div class="carousel-wrapper">
-        <button class="carousel-btn prev-btn" id="cert-prev" aria-label="Anterior">&#10094;</button>
-
+        <button class="carousel-nav prev" id="cert-prev" aria-label="Anterior">&lt;</button>
+        
         <div class="carousel-track-container">
           <div class="carousel-track" id="cert-track">
+            
+            <div class="cert-item">
+              <img src="imagenes/bootcamp.jpeg" alt="Certificado AWS Academy">
+              <p>AWS Academy Cloud Foundations</p>
+            </div>
 
-            <article class="cert-card">
-              <h3>AWS Academy Cloud Foundations</h3>
-              <p>AWS Academy</p>
-            </article>
+            <div class="cert-item">
+              <img src="imagenes/cuantrix.jpeg" alt="Certificado Coursera">
+              <p>English for Career Development</p>
+            </div>
 
-            <article class="cert-card">
-              <h3>AWS Academy Cloud Operations</h3>
-              <p>AWS Academy</p>
-            </article>
-
-            <article class="cert-card">
-              <h3>English for Career Development</h3>
-              <p>Coursera / MOOC</p>
-            </article>
+            <div class="cert-item">
+              <img src="imagenes/iftp.jpg" alt="Certificado IFTP">
+              <p>Invent for the Planet</p>
+            </div>
 
           </div>
         </div>
 
-        <button class="carousel-btn next-btn" id="cert-next" aria-label="Siguiente">&#10095;</button>
+        <button class="carousel-nav next" id="cert-next" aria-label="Siguiente">&gt;</button>
       </div>
     </section>
 
-    
+    <!-- PAGINA 6: IDIOMAS -->
+    <section id="idiomas" class="section">
+      <h2>Idiomas</h2>
+      <div class="languages-row">
+        <div class="language-pill-box">
+          <span class="lang-title">Espanol</span>
+          <span class="lang-level">Lengua materna</span>
+        </div>
+        <div class="language-pill-box">
+          <span class="lang-title">Ingles</span>
+          <span class="lang-level">Nivel A2</span>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- MODALES DE PROYECTOS -->
+  <!-- MODALES DE PROYECTOS (PAGINA 3 DEL BOCETO) -->
   <div id="modal-p1" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('modal-p1')">&times;</span>
-      <h3>Mi Catálogo Web</h3>
-      <p>Detalle completo: Desarrollado en ASP.NET Core MVC con C#, manejo de carga de imágenes y estructura orientada a objetos.</p>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-link">Ver repositorio en GitHub</a>
+    <div class="modal-box">
+      <span class="close-x" onclick="closeModal('modal-p1')">&times;</span>
+      <h3>Magic Library</h3>
+      <div class="modal-body-content">
+        <p><strong>De que trata:</strong> Sistema web y API para gestion integral de catalogo y prestamos de libros.</p>
+        <p><strong>Como funciona:</strong> Implementa arquitectura limpia, controladores RESTful y autenticacion para control de inventario.</p>
+        <p><strong>Stack:</strong> ASP.NET Core, C#, Entity Framework Core, SQL.</p>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-pill">Ver repositorio</a>
+      </div>
     </div>
   </div>
 
   <div id="modal-p2" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('modal-p2')">&times;</span>
+    <div class="modal-box">
+      <span class="close-x" onclick="closeModal('modal-p2')">&times;</span>
       <h3>Sistema de Citas</h3>
-      <p>Detalle completo: Backend API RESTful aplicando arquitectura hexagonal, bases de datos PostgreSQL/SQLite y despliegue en la nube.</p>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-link">Ver repositorio en GitHub</a>
+      <div class="modal-body-content">
+        <p><strong>De que trata:</strong> Backend robusto para programacion y seguimiento de reservas en tiempo real.</p>
+        <p><strong>Como funciona:</strong> Administra persistencia relacional con endpoints optimizados y validacion de reglas de negocio.</p>
+        <p><strong>Stack:</strong> Java, Spring Boot, PostgreSQL, Docker.</p>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-pill">Ver repositorio</a>
+      </div>
     </div>
   </div>
 
   <div id="modal-p3" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('modal-p3')">&times;</span>
-      <h3>Visualizador de Dijkstra</h3>
-      <p>Detalle completo: Proyecto Java Swing para modelado de grafos, colas de prioridad y representación gráfica de rutas mínimas.</p>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-link">Ver repositorio en GitHub</a>
+    <div class="modal-box">
+      <span class="close-x" onclick="closeModal('modal-p3')">&times;</span>
+      <h3>Visualizador Dijkstra</h3>
+      <div class="modal-body-content">
+        <p><strong>De que trata:</strong> Herramienta visual e interactiva para calcular rutas de costo minimo en grafos.</p>
+        <p><strong>Como funciona:</strong> Renderizado dinamico con colas de prioridad y representacion de nodos paso a paso.</p>
+        <p><strong>Stack:</strong> Java, Java Swing, Estructuras de Datos.</p>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-pill">Ver repositorio</a>
+      </div>
     </div>
   </div>
-  <!-- 7. IDIOMAS -->
-    <section id="idiomas" class="section">
-      <h2>Idiomas</h2>
-      <div class="languages-widget">
-        
-        <div class="language-card">
-          <div class="language-info">
-            <span class="language-title">Español</span>
-            <span class="language-badge badge-native">Lengua materna</span>
-          </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill fill-100"></div>
-          </div>
-        </div>
 
-        <div class="language-card">
-          <div class="language-info">
-            <span class="language-title">Inglés</span>
-            <span class="language-badge badge-learning">Nivel A2 - Práctica activa</span>
-          </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill fill-a2"></div>
-          </div>
-        </div>
-
+  <!-- MODALES DE PARTICIPACIONES (PAGINA 4 DEL BOCETO) -->
+  <div id="modal-part-1" class="modal">
+    <div class="modal-box">
+      <span class="close-x" onclick="closeModal('modal-part-1')">&times;</span>
+      <h3>Starknet Bootcamp</h3>
+      <div class="modal-body-content">
+        <img src="imagenes/bootcamp.jpeg" alt="Bootcamp Starknet" class="modal-preview-img">
+        <p><strong>Fecha:</strong> Marzo 2026</p>
+        <p><strong>De que trato:</strong> Entrenamiento tecnico intensivo en desarrollo de contratos inteligentes y herramientas de Starknet (Scarb, Starkli, Katana).</p>
       </div>
-    </section>
+    </div>
+  </div>
+
+  <div id="modal-part-2" class="modal">
+    <div class="modal-box">
+      <span class="close-x" onclick="closeModal('modal-part-2')">&times;</span>
+      <h3>Invent for the Planet - 1er Lugar</h3>
+      <div class="modal-body-content">
+        <img src="imagenes/iftp.jpg" alt="Invent for the planet" class="modal-preview-img">
+        <p><strong>Fecha:</strong> Mayo 2026</p>
+        <p><strong>De que trato:</strong> Competencia de innovacion colaborativa de 48 horas resolviendo problematicas globales de sostenibilidad en equipo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-part-3" class="modal">
+    <div class="modal-box">
+      <span class="close-x" onclick="closeModal('modal-part-3')">&times;</span>
+      <h3>Membresia Estudiantil IEEE</h3>
+      <div class="modal-body-content">
+        <img src="imagenes/tech.jpg" alt="IEEE Membresia" class="modal-preview-img">
+        <p><strong>Periodo:</strong> Febrero 2026 - Presente</p>
+        <p><strong>De que trato:</strong> Participacion activa en actividades academicas, desarrollo tecnologico y comunidad estudiantil en ciencias e ingenieria.</p>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    <p>&copy; 2026 - Desarrollado por Astrit Cetzal</p>
+    <p>2026 Astrit Airan Cetzal Cetzal - Portafolio de Desarrollo de Software</p>
   </footer>
 
   <script src="script.js"></script>
