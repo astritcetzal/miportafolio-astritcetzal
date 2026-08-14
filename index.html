@@ -5,34 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio Profesional</title>
   <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/avatar.css">
+    <link rel="stylesheet" href="css/animacion.css">
+    <link rel="stylesheet" href="css/estilos-terminal.css">
+    <style>
+        .astrit-avatar {
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0px 10px 15px rgba(177, 156, 217, 0.4));
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .ojos {
+            transform-origin: 100px 102px;
+            animation: blinkCute 4s infinite;
+        }
+        @keyframes blinkCute {
+            0%, 90%, 100% { transform: scaleY(1); }
+            95% { transform: scaleY(0.1); }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- NAVEGACIÓN -->
+<!-- NAVEGACIÓN (Conectado con tu style.css) -->
   <header>
-    <nav class="navbar">
+    <div class="nav-principal">
       <div class="logo">Mi Portafolio</div>
-      <ul class="nav-links">
+      <ul class="menu">
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#participaciones">Participaciones</a></li>
         <li><a href="#certificaciones">Certificaciones</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
   <main>
-    <!-- 1. SOBRE MÍ -->
-    <section id="sobre-mi" class="section">
-      <h2>Sobre mí</h2>
-      <p class="bio">
-        Estudiante de TSU en desarrollo e innovación de software a fines de backend y cloud, apasionada por la tecnología, el trabajo en equipo y la creación de soluciones creativas. Constantemente aprendiendo y buscando nuevos retos para crecer profesionalmente.
-      </p>
-      <div class="personal-links">
-        <!-- Enlaces a tus gustos -->
-        <a href="https://www.goodreads.com/" target="_blank" rel="noopener noreferrer" class="btn-link">📚 Mis libros favoritos</a>
-        <a href="https://ibighit.com/bts" target="_blank" rel="noopener noreferrer" class="btn-link">🎵 Mi artista favorito</a>
+    <!-- 1. SOBRE MÍ (Conectado con tu avatar.css y animacion.css) -->
+    <section id="sobre-mi" class="hero-section">
+      <div class="hero-content">
+        <div class="intro-text">
+          <h1>¡Hola! Soy Astrit</h1>
+          <p class="bio">
+            Estudiante de TSU en Desarrollo e Innovación de Software enfocada en Backend y Cloud, apasionada por la tecnología, el trabajo en equipo y la creación de soluciones creativas.
+          </p>
+          <div class="personal-links">
+            <a href="https://www.goodreads.com/" target="_blank" rel="noopener noreferrer" class="btn-link">📚 Mis libros favoritos</a>
+            <a href="https://ibighit.com/bts" target="_blank" rel="noopener noreferrer" class="btn-link">🎵 Mi artista favorito</a>
+          </div>
+        </div>
+
+        <!-- Aquí va el Avatar SVG animado que ya tenías -->
+        <div class="avatar-container">
+          <!-- Si tienes el SVG de tu avatar, va aquí adentro -->
+        </div>
       </div>
     </section>
 
