@@ -1,17 +1,25 @@
-/* Paleta de Colores y Variables */
+/* =========================================
+   1. PALETA DE COLORES (LILA Y AZUL PASTEL)
+   ========================================= */
 :root {
-    --fondo-gradiente:linear-gradient(135deg, #81b2a9 0%, #a48ba7 45%, #768f9a 100%);
-    --fondo-principal: #f1dff8; /* Un lila/rosa ultra claro */
-    --texto-oscuro: #2C1A4D; /* Morado muy oscuro para leer bien */
+    /* Fondo con gradiente suave de azul pastel a lila */
+    --fondo-gradiente: linear-gradient(135deg, #a0c4ff 0%, #bdb2ff 50%, #e7c6ff 100%);
+    --fondo-principal: #f5efff;       /* Lila ultra claro */
+    --texto-oscuro: #2C1A4D;           /* Morado oscuro para contraste */
+    
+    /* Tonos Pastel Principales */
     --lila-pastel: #E2D1F9;
-    --rosa-pastel: #FFC4D9;
-    --azul-claro: #AEC6CF;
+    --lila-suave: #D0BDF4;
+    --morado-claro: #E7C6FF;
+    --azul-pastel: #B8C0FF;
+    --azul-suave: #CAE9FF;
+    
     --blanco-tarjetas: #ffffff;
-    --sombra-suave: rgba(177, 156, 217, 0.2);
-    --verde-menta: #8ee5cc;
+    --sombra-suave: rgba(180, 160, 230, 0.25);
+    --borde-suave: rgba(44, 26, 77, 0.12);
 }
 
-/* Reset básico para que se vea igual en todos los navegadores */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -21,14 +29,15 @@
 
 body {
     background: var(--fondo-gradiente);
-    
-    background-attachment: fixed; /* El fondo se queda fijo al hacer scroll */
+    background-attachment: fixed;
     min-height: 100vh;
     color: var(--texto-oscuro);
     line-height: 1.6;
 }
 
-/* --- Navegación --- */
+/* =========================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================= */
 header {
     background-color: var(--blanco-tarjetas);
     padding: 20px 50px;
@@ -39,6 +48,13 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.nav-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .logo {
@@ -61,15 +77,12 @@ header {
 }
 
 .menu a:hover {
-    color: var(--rosa-pastel);
+    color: var(--lila-suave);
 }
-.nav-principal {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-/* --- Secciones Generales --- */
+
+/* =========================================
+   3. SECCIONES Y BOTONES GENERALES
+   ========================================= */
 section {
     padding: 80px 50px;
     text-align: center;
@@ -93,396 +106,11 @@ h2::after {
     border-radius: 2px;
 }
 
-/* --- Habilidades --- */
-.skills-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.skill-tag {
-    background-color: var(--blanco-tarjetas);
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px var(--sombra-suave);
-    border: 2px solid var(--lila-pastel);
-    transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-    background-color: var(--lila-pastel);
-    transform: scale(1.1);
-}
-
-
-/* --- Footer --- */
-footer {
-    background-color: var(--texto-oscuro);
-    color: var(--fondo-principal);
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 50px;
-}
-
-footer h2 {
-    color: var(--fondo-principal);
-}
-
-footer h2::after {
-    background-color: var(--rosa-pastel);
-}
-
-.social-links {
-    margin: 20px 0;
-}
-
-.social-links a {
-    color: var(--lila-pastel);
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--azul-claro);
-}
-
-
-
-
-/* =========================================
-   NUEVOS ESTILOS PARA HABILIDADES Y EDUCACIÓN (COLORIDOS)
-   ========================================= */
-
-/* --- HABILIDADES --- */
-.skills-container-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    align-items: end;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-@media (max-width: 768px) {
-    .skills-container-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.skill-item-box {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.skill-name {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-}
-
-.percent {
-    position: absolute;
-    right: 0;
-    color: #777;
-    font-weight: normal;
-}
-
-.progress-bar-bg {
-    background-color: #e0e0e0;
-    border-radius: 20px;
-    height: 18px;
-    width: 100%;
-    overflow: hidden;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.progress-bar-fill {
-    height: 100%;
-    border-radius: 20px;
-    transition: width 1s ease-in-out;
-}
-
-/* COLORES DE HABILIDADES */
-.skill-js { background-color: #22B5D8; }    /* Cian */
-.skill-html { background-color: #8DC63F; }  /* Verde Lima */
-.skill-css { background-color: #F8B133; }   /* Amarillo Mango */
-.skill-java { background-color: #D36C2F; }  /* Naranja */
-.skill-python { background-color: #6A388F; } /* Morado */
-
-
-/* --- EDUCACIÓN Y LIDERAZGO --- */
-.education-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 30px;
-}
-
-@media (max-width: 992px) {
-    .education-container { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 576px) {
-    .education-container { grid-template-columns: 1fr; }
-}
-
-.item-educacion {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-    justify-content: space-between;
-    border: 1.5px solid var(--verde-menta);
-    box-shadow: 0 4px 15px rgba(142, 229, 204, 0.4); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.item-educacion:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(142, 229, 204, 0.8);
-}
-
-.card-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.fecha-badge {
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.item-educacion h3 {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.item-educacion p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0;
-}
-
-.btn-certificado {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #fff;
-}
-
-/* TEMAS DE COLOR PARA LAS TARJETAS */
-.color-cian .card-icon { color: #22B5D8; }
-.color-cian .fecha-badge { background-color: #22B5D8; }
-.color-cian .btn-certificado { background-color: #22B5D8; }
-.color-cian .btn-certificado:hover { background-color: #1a8a9a; }
-
-.color-verde .card-icon { color: #8DC63F; }
-.color-verde .fecha-badge { background-color: #8DC63F; }
-.color-verde .btn-certificado { background-color: #8DC63F; }
-.color-verde .btn-certificado:hover { background-color: #6a9c33; }
-
-.color-amarillo .card-icon { color: #F8B133; }
-.color-amarillo .fecha-badge { background-color: #F8B133; }
-.color-amarillo .btn-certificado { background-color: #F8B133; }
-.color-amarillo .btn-certificado:hover { background-color: #e2a02b; }
-
-.color-naranja .card-icon { color: #D36C2F; }
-.color-naranja .fecha-badge { background-color: #D36C2F; }
-.color-naranja .btn-certificado { background-color: #D36C2F; }
-.color-naranja .btn-certificado:hover { background-color: #bc592a; }
-
-.color-morado .card-icon { color: #6A388F; }
-.color-morado .fecha-badge { background-color: #6A388F; }
-.color-morado .btn-certificado { background-color: #6A388F; }
-.color-morado .btn-certificado:hover { background-color: #552d70; }
-
-/* --- habilidades blandas --- */
-.soft-container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-}
-
-@media (max-width: 992px) {
-    .soft-container { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 576px) {
-    .soft-container { grid-template-columns: 1fr; }
-}
-.item-soft {
-    background: #acf7f6;
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    justify-content: space-between;
-}
-
-.item-soft:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.soft-card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-.item-soft h3 {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.item-soft p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0;
-}
-
-
-/* --- ESTILOS PARA LOS LOGOS DE HABILIDADES --- */
-.skill-icon {
-    width: 22px;
-    height: 22px;
-    margin-right: 8px; /* Separación entre el logo y la palabra */
-    vertical-align: middle;
-}
-
-/* Ajuste para alinear perfectamente el icono con el texto */
-.skill-name {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Esto centra verticalmente el icono y el texto */
-}
-
-
-
-
-/* =========================================
-   AJUSTES PARA CELULARES (RESPONSIVE DESIGN)
-   ========================================= */
-@media (max-width: 768px) {
-    
-    /* 1. Evitamos que la pantalla se desborde hacia los lados */
-    body, html {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    /* 2. Arreglamos el encabezado y el menú */
-    header {
-        flex-direction: column; /* Pone el nombre arriba y los botones abajo */
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .menu {
-        flex-wrap: wrap; /* Permite que los enlaces bajen de línea si no caben */
-        justify-content: center; /* Centra los botones */
-        gap: 10px;
-    }
-
-    .menu a {
-        font-size: 0.85rem; /* Hace la letra un poquitín más pequeña */
-        text-align: center;
-    }
-
-    /* 3. Ajustamos los espacios de las secciones para celulares */
-    section {
-        padding: 50px 20px; /* Menos espacio a los lados para aprovechar la pantalla */
-    }
-
-    /* 4. Ajustamos el tamaño del subtítulo de la máquina de escribir */
-    .intro-text h2 {
-        font-size: 1.5rem; 
-    }
-}
-
-/* --- BOTÓN DE IDIOMA --- */
-.btn-idioma {
-    background-color: var(--lila-pastel);
-    color: var(--texto-oscuro);
-    padding: 6px 16px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    border: 2px solid var(--texto-oscuro); /* Borde estilo tech */
-    box-shadow: 2px 2px 0px var(--texto-oscuro); /* Sombrita sólida retro */
-    transition: all 0.2s ease;
-    display: inline-block;
-}
-
-.btn-idioma strong {
-    color: var(--rosa-pastel);
-    background-color: var(--texto-oscuro);
-    padding: 2px 6px;
-    border-radius: 10px;
-}
-
-.btn-idioma:hover {
-    transform: translateY(-2px);
-    box-shadow: 4px 4px 0px var(--texto-oscuro);
-    background-color: var(--azul-claro);
-}
-/* =========================================
-   ESTILOS PARA NUEVAS SECCIONES Y COMPONENTES
-   ========================================= */
-
-/* --- Botones Generales y Enlaces a Libros/Artista --- */
 .btn-link, .btn-details {
     display: inline-block;
     background-color: var(--lila-pastel);
     color: var(--texto-oscuro);
-    padding: 8px 18px;
+    padding: 10px 20px;
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
@@ -495,12 +123,100 @@ footer h2::after {
 }
 
 .btn-link:hover, .btn-details:hover {
-    background-color: var(--rosa-pastel);
+    background-color: var(--azul-pastel);
     transform: translateY(-2px);
     box-shadow: 4px 4px 0px var(--texto-oscuro);
 }
 
-/* --- CARRUSEL (Proyectos y Certificaciones) --- */
+/* =========================================
+   4. HABILIDADES BLANDAS (PÍLDORAS PASTEL)
+   ========================================= */
+.soft-skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.soft-pill {
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--texto-oscuro);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1.5px solid var(--borde-suave);
+}
+
+.soft-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(44, 26, 77, 0.15);
+}
+
+/* Paleta de Píldoras Lila/Azul */
+.pill-pink, .pill-purple { background-color: var(--lila-pastel); }
+.pill-yellow             { background-color: var(--morado-claro); }
+.pill-blue               { background-color: var(--azul-pastel); }
+.pill-green              { background-color: var(--azul-suave); }
+
+/* =========================================
+   5. HABILIDADES TÉCNICAS (TARJETAS BLOQUE)
+   ========================================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    border-radius: 24px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px var(--sombra-suave);
+    transition: transform 0.3s ease;
+    border: 1.5px solid var(--borde-suave);
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+}
+
+.skill-card h3 {
+    font-size: 1.25rem;
+    color: var(--texto-oscuro);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Fondos de las tarjetas de habilidades */
+.card-yellow, .card-pink { background-color: var(--lila-pastel); }
+.card-blue              { background-color: var(--azul-pastel); }
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.tech-pill {
+    background-color: var(--blanco-tarjetas);
+    color: var(--texto-oscuro);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   6. CARRUSEL (PROYECTOS Y CERTIFICACIONES)
+   ========================================= */
 .carousel-wrapper {
     position: relative;
     display: flex;
@@ -522,15 +238,14 @@ footer h2::after {
     transition: transform 0.4s ease-in-out;
 }
 
-/* Cards dentro del carrusel */
 .project-card, .cert-card {
     min-width: 280px;
-    flex: 0 0 calc(33.333% - 14px); /* Muestra 3 tarjetas a la vez en pantalla grande */
+    flex: 0 0 calc(33.333% - 14px);
     background-color: var(--blanco-tarjetas);
-    border: 1.5px solid var(--verde-menta);
-    border-radius: 12px;
+    border: 1.5px solid var(--lila-suave);
+    border-radius: 16px;
     padding: 25px;
-    box-shadow: 0 4px 15px rgba(142, 229, 204, 0.4);
+    box-shadow: 0 4px 15px var(--sombra-suave);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     display: flex;
@@ -540,10 +255,9 @@ footer h2::after {
 
 .project-card:hover, .cert-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(142, 229, 204, 0.8);
+    box-shadow: 0 12px 25px rgba(180, 160, 230, 0.5);
 }
 
-/* Botones de flecha para el carrusel */
 .carousel-btn {
     background-color: var(--blanco-tarjetas);
     border: 2px solid var(--texto-oscuro);
@@ -560,18 +274,19 @@ footer h2::after {
 }
 
 .carousel-btn:hover {
-    background-color: var(--rosa-pastel);
+    background-color: var(--lila-pastel);
     transform: scale(1.1);
 }
 
-/* --- LÍNEA DEL TIEMPO HORIZONTAL --- */
+/* =========================================
+   7. LÍNEA DEL TIEMPO HORIZONTAL
+   ========================================= */
 .horizontal-timeline {
     position: relative;
     max-width: 850px;
     margin: 40px auto 10px auto;
 }
 
-/* La línea divisoria horizontal */
 .timeline-line {
     position: absolute;
     top: 12px;
@@ -597,7 +312,6 @@ footer h2::after {
     transition: transform 0.3s ease;
 }
 
-/* Punto / Nodo en la línea */
 .node-dot {
     width: 24px;
     height: 24px;
@@ -607,13 +321,12 @@ footer h2::after {
     transition: all 0.3s ease;
 }
 
-/* Animación y estado activo del nodo */
 .timeline-node:hover .node-dot,
 .timeline-node.active .node-dot {
-    background-color: var(--rosa-pastel);
+    background-color: var(--azul-pastel);
     border-color: var(--texto-oscuro);
     transform: scale(1.3);
-    box-shadow: 0 0 12px var(--rosa-pastel);
+    box-shadow: 0 0 12px var(--azul-pastel);
 }
 
 .node-date {
@@ -629,24 +342,23 @@ footer h2::after {
     opacity: 0.85;
 }
 
-/* Contenedor de la información desplegada */
 .timeline-details-container {
     margin-top: 35px;
 }
 
 .timeline-info-card {
-    display: none; /* Se ocultan por defecto */
+    display: none;
     background-color: var(--blanco-tarjetas);
     padding: 25px;
-    border-radius: 12px;
-    border: 1.5px solid var(--verde-menta);
-    box-shadow: 0 4px 15px rgba(142, 229, 204, 0.4);
+    border-radius: 16px;
+    border: 1.5px solid var(--lila-suave);
+    box-shadow: 0 4px 15px var(--sombra-suave);
     animation: fadeIn 0.4s ease-in-out;
     text-align: left;
 }
 
 .timeline-info-card.active {
-    display: block; /* Solo se muestra la activa */
+    display: block;
 }
 
 .badge-date {
@@ -660,7 +372,82 @@ footer h2::after {
     margin: 8px 0 12px 0;
 }
 
-/* --- VENTANAS MODALES (Detalles de Proyectos) --- */
+/* =========================================
+   8. IDIOMAS (WIDGET DASHBOARD)
+   ========================================= */
+.languages-widget {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.language-card {
+    background-color: var(--blanco-tarjetas);
+    border-radius: 20px;
+    padding: 22px 28px;
+    box-shadow: 0 6px 18px var(--sombra-suave);
+    border: 1.5px solid var(--borde-suave);
+    text-align: left;
+}
+
+.language-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.language-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+}
+
+.language-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+}
+
+.badge-native {
+    background-color: var(--azul-pastel);
+    color: var(--texto-oscuro);
+}
+
+.badge-learning {
+    background-color: var(--lila-pastel);
+    color: var(--texto-oscuro);
+}
+
+.progress-bar-bg {
+    background-color: var(--fondo-principal);
+    border-radius: 10px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.fill-100 {
+    width: 100%;
+    background-color: var(--azul-pastel);
+}
+
+.fill-a2 {
+    width: 45%;
+    background-color: var(--lila-suave);
+}
+
+/* =========================================
+   9. MODALES (VENTANAS FLOTANTES)
+   ========================================= */
 .modal {
     display: none;
     position: fixed;
@@ -668,8 +455,8 @@ footer h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(44, 26, 77, 0.6); /* Sombra morada oscura semitransparente */
-    backdrop-filter: blur(4px); /* Efecto borroso elegante al fondo */
+    background-color: rgba(44, 26, 77, 0.6);
+    backdrop-filter: blur(4px);
     z-index: 200;
     justify-content: center;
     align-items: center;
@@ -683,7 +470,7 @@ footer h2::after {
 .modal-content {
     background-color: var(--blanco-tarjetas);
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 16px;
     max-width: 500px;
     width: 100%;
     position: relative;
@@ -705,10 +492,40 @@ footer h2::after {
 }
 
 .close-btn:hover {
-    color: var(--rosa-pastel);
+    color: var(--lila-suave);
 }
 
-/* --- ANIMACIONES --- */
+/* =========================================
+   10. FOOTER
+   ========================================= */
+footer {
+    background-color: var(--texto-oscuro);
+    color: var(--fondo-principal);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.social-links {
+    margin: 15px 0;
+}
+
+.social-links a {
+    color: var(--lila-pastel);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--azul-pastel);
+}
+
+/* =========================================
+   11. ANIMACIONES
+   ========================================= */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -719,12 +536,43 @@ footer h2::after {
     to { opacity: 1; transform: scale(1); }
 }
 
-/* --- RESPONSIVE EN CELULARES PARA CARRUSEL Y LÍNEA DE TIEMPO --- */
+/* =========================================
+   12. DISEÑO RESPONSIVO (CELULARES)
+   ========================================= */
 @media (max-width: 768px) {
-    .project-card, .cert-card {
-        flex: 0 0 100%; /* Muestra 1 tarjeta a la vez en celular */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
     }
-    
+
+    header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 0.85rem;
+    }
+
+    section {
+        padding: 50px 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card, .cert-card {
+        flex: 0 0 100%;
+    }
+
     .timeline-line {
         left: 5%;
         width: 90%;
