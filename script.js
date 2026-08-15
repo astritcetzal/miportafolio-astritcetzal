@@ -1,7 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================
-    // 1. EFECTO MÁQUINA DE ESCRIBIR (TYPEWRITER)
+    // 1. REGISTRO DE PLUGINS GSAP
+    // ==========================================
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+    }
+
+    // ==========================================
+    // 2. EFECTO MAQUINA DE ESCRIBIR (HERO)
     // ==========================================
     const nombreCompleto = "Astrit Cetzal";
     const contenedorTexto = document.getElementById('typewriter-text');
@@ -12,75 +19,36 @@ document.addEventListener('DOMContentLoaded', () => {
         if (indiceLetra < nombreCompleto.length) {
             contenedorTexto.textContent += nombreCompleto.charAt(indiceLetra);
             indiceLetra++;
-            setTimeout(escribirNombre, 110); // Velocidad de escritura en ms
+            setTimeout(escribirNombre, 110);
         }
     }
-    
-    // Inicia el efecto de tipeo
     escribirNombre();
 
     // ==========================================
-    // 2. GENERADOR DE BURBUJAS DE FONDO
-    // ==========================================
-    const heroSection = document.querySelector('.hero-section');
-    const bubbleColors = ['#E2D1F9', '#BDB2FF', '#FFC6FF', '#A0C4FF', '#FFFFFF'];
-
-    function createBubble() {
-        if (!heroSection) return;
-
-        const bubble = document.createElement('div');
-        bubble.classList.add('bubble');
-
-        const size = Math.random() * 50 + 20 + 'px';
-        bubble.style.width = size;
-        bubble.style.height = size;
-        bubble.style.left = Math.random() * 100 + '%';
-        bubble.style.backgroundColor = bubbleColors[Math.floor(Math.random() * bubbleColors.length)];
-        
-        const duration = Math.random() * 8 + 8 + 's';
-        bubble.style.animationDuration = duration;
-
-        heroSection.appendChild(bubble);
-
-        setTimeout(() => {
-            bubble.remove();
-        }, parseFloat(duration) * 1000);
-    }
-
-    if (heroSection) {
-        for (let i = 0; i < 14; i++) {
-            createBubble();
-        }
-        setInterval(createBubble, 1100);
-    }
-
-    // ==========================================
-    // 3. FLOTACIÓN FLUIDA CON GSAP
+    // 3. FLOTACION CONTINUA (AVATAR Y STICKERS)
     // ==========================================
     if (typeof gsap !== 'undefined') {
-        // Flotación suave del avatar
         gsap.to(".astrit-avatar", {
-            y: -8,
+            y: -10,
             duration: 3,
             repeat: -1,
             yoyo: true,
             ease: "sine.inOut"
         });
 
-        // Flotación orgánica de los stickers
         gsap.to(".sticker-dog", {
-            y: -10,
+            y: -14,
             rotation: 4,
-            duration: 2.4,
+            duration: 2.6,
             repeat: -1,
             yoyo: true,
             ease: "sine.inOut"
         });
 
         gsap.to(".sticker-books", {
-            y: -12,
-            rotation: -3,
-            duration: 2.8,
+            y: -15,
+            rotation: -4,
+            duration: 3,
             repeat: -1,
             yoyo: true,
             ease: "sine.inOut",
@@ -88,9 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         gsap.to(".sticker-icecream", {
-            y: -10,
+            y: -12,
             rotation: 5,
-            duration: 2.2,
+            duration: 2.4,
             repeat: -1,
             yoyo: true,
             ease: "sine.inOut",
@@ -98,29 +66,126 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         gsap.to(".sticker-vinyl", {
-            y: -8,
+            y: -10,
             rotation: 360,
-            duration: 7,
+            duration: 8,
             repeat: -1,
             ease: "linear"
         });
+    }
 
-        gsap.to(".deco-flower", {
-            y: -8,
-            duration: 2.5,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-            stagger: 0.4
+    // ==========================================
+    // 4. ANIMACIONES AL HACER SCROLL (SCROLLTRIGGER)
+    // ==========================================
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+
+        // A. Titulos de cada seccion (Aparecen elevandose suavemente)
+        gsap.utils.toArray("section h2").forEach(titulo => {
+            gsap.from(titulo, {
+                scrollTrigger: {
+                    trigger: titulo,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 35,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
+
+        // B. Seccion Habilidades (Aparece con ligera escala)
+        gsap.from(".marquee-group", {
+            scrollTrigger: {
+                trigger: "#habilidades",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            },
+            y: 40,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "power3.out"
+        });
+
+        // C. Tarjetas de Proyectos (Entrada en cascada tipo rebote)
+        gsap.from(".project-card", {
+            scrollTrigger: {
+                trigger: "#proyectos",
+                start: "top 75%",
+                toggleActions: "play none none reverse"
+            },
+            scale: 0.85,
+            y: 50,
+            opacity: 0,
+            stagger: 0.15,
+            duration: 0.7,
+            ease: "back.out(1.5)"
+        });
+
+        // D. Linea de Tiempo de Participaciones
+        // 1. La barra horizontal se dibuja de izquierda a derecha
+        gsap.from(".timeline-main-bar", {
+            scrollTrigger: {
+                trigger: "#participaciones",
+                start: "top 75%",
+                toggleActions: "play none none reverse"
+            },
+            scaleX: 0,
+            transformOrigin: "left center",
+            duration: 1,
+            ease: "power3.inOut"
+        });
+
+        // 2. Los nodos y tarjetas de eventos brotan en secuencia
+        gsap.from(".timeline-point", {
+            scrollTrigger: {
+                trigger: "#participaciones",
+                start: "top 70%",
+                toggleActions: "play none none reverse"
+            },
+            scale: 0,
+            opacity: 0,
+            stagger: 0.25,
+            duration: 0.6,
+            ease: "back.out(2)",
+            delay: 0.3
+        });
+
+        // E. Carrusel de Certificaciones
+        gsap.from(".carousel-wrapper", {
+            scrollTrigger: {
+                trigger: "#certificaciones",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            },
+            y: 45,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out"
+        });
+
+        // F. Bloques de Idiomas
+        gsap.from(".language-pill-box", {
+            scrollTrigger: {
+                trigger: "#idiomas",
+                start: "top 85%",
+                toggleActions: "play none none reverse"
+            },
+            scale: 0.8,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 0.6,
+            ease: "back.out(1.6)"
         });
     }
 
-    // Inicializar carrusel
+    // Inicializar carrusel de certificaciones
     initCarousel('cert-track', 'cert-prev', 'cert-next');
 });
 
 // ==========================================
-// 4. CARRUSEL DE CERTIFICACIONES
+// 5. CARRUSEL DE CERTIFICACIONES
 // ==========================================
 function initCarousel(trackId, prevBtnId, nextBtnId) {
     const track = document.getElementById(trackId);
@@ -181,7 +246,7 @@ function initCarousel(trackId, prevBtnId, nextBtnId) {
 }
 
 // ==========================================
-// 5. VENTANAS MODALES
+// 6. VENTANAS MODALES
 // ==========================================
 function openModal(modalId) {
     const modal = document.getElementById(modalId);

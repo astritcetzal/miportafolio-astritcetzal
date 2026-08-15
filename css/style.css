@@ -1,17 +1,18 @@
 /* =========================================
-   1. PALETA PASTEL Y VARIABLES GLOBALES
+   1. PALETA RETRO VINTAGE (INSPIRADA EN LA IMAGEN)
    ========================================= */
 :root {
-    --fondo-gradiente: linear-gradient(135deg, #a0c4ff 0%, #bdb2ff 35%, #ffc6ff 70%, #ffd6a5 100%);
-    --lila-pastel: #E2D1F9;
-    --morado-pastel: #BDB2FF;
-    --rosa-pastel: #FFC6FF;
-    --azul-pastel: #A0C4FF;
-    --blanco-puro: #ffffff;
-    --texto-oscuro: #2D1B4E;
-    --texto-suave: #5C477D;
-    --borde-tarjeta: rgba(45, 27, 78, 0.15);
-    --sombra-pastel: rgba(189, 178, 255, 0.35);
+    --fondo-retro: #719B9E;            /* Verde azulado vintage / Teal */
+    --fondo-header: #577F82;           /* Cabecera verde petroleo vintage */
+    --crema-principal: #FFF8EB;        /* Blanco marfil / Crema vintage */
+    --crema-oscura: #EADBBE;           /* Crema sombra */
+    --texto-oscuro: #213638;           /* Tono oscuro verde grisaceo */
+    --texto-suave: #4A6769;            /* Texto secundario */
+    --mostaza-retro: #E8BF70;          /* Mostaza calido */
+    --coral-retro: #D97E69;            /* Coral / Terracota suave */
+    --menta-retro: #9BC4BC;            /* Menta empolvado */
+    --borde-retro: #213638;            /* Borde definido */
+    --sombra-retro: rgba(33, 54, 56, 0.25);
 }
 
 * {
@@ -21,7 +22,8 @@
 }
 
 body {
-    background: var(--fondo-gradiente);
+    background-color: var(--fondo-retro);
+    background-image: radial-gradient(circle at 50% 30%, #7EA8AB 0%, var(--fondo-retro) 70%);
     background-attachment: fixed;
     min-height: 100vh;
     color: var(--texto-oscuro);
@@ -32,44 +34,17 @@ body {
 }
 
 /* =========================================
-   2. BURBUJAS FLOTANTES DE FONDO
-   ========================================= */
-.bubble {
-    position: absolute;
-    bottom: -80px;
-    border-radius: 50%;
-    opacity: 0.55;
-    pointer-events: none;
-    z-index: 1;
-    animation: subirBurbuja linear infinite;
-}
-
-@keyframes subirBurbuja {
-    0% {
-        transform: translateY(0) scale(0.8);
-        opacity: 0.55;
-    }
-    50% {
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateY(-1200px) scale(1.2);
-        opacity: 0;
-    }
-}
-
-/* =========================================
-   3. ENCABEZADO Y MENÚ DE NAVEGACIÓN
+   2. ENCABEZADO RETRO
    ========================================= */
 header {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    padding: 16px 40px;
+    background-color: var(--fondo-header);
+    border-bottom: 2px solid var(--borde-retro);
+    padding: 18px 40px;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 15px var(--sombra-pastel);
+    box-shadow: 0 4px 12px var(--sombra-retro);
 }
 
 .nav-principal {
@@ -82,38 +57,40 @@ header {
 
 .logo {
     font-family: 'Fredoka', sans-serif;
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--texto-oscuro);
+    color: var(--crema-principal);
+    letter-spacing: 1px;
+    text-shadow: 1.5px 1.5px 0px var(--borde-retro);
 }
 
 .menu {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 22px;
 }
 
 .menu a {
     text-decoration: none;
-    color: var(--texto-oscuro);
-    font-weight: 600;
+    color: var(--crema-principal);
+    font-weight: 700;
     font-size: 0.95rem;
+    letter-spacing: 0.5px;
     transition: color 0.2s ease;
 }
 
 .menu a:hover {
-    color: var(--morado-pastel);
+    color: var(--mostaza-retro);
 }
 
 /* =========================================
-   4. HERO / SOBRE MÍ
+   3. HERO / SOBRE MI CON ESTILO RETRO 3D
    ========================================= */
 .hero-section {
     width: 100%;
-    padding: 50px 20px 70px 20px;
+    padding: 60px 20px 80px 20px;
     position: relative;
     text-align: center;
-    overflow: hidden;
 }
 
 .hero-container {
@@ -124,26 +101,27 @@ header {
     z-index: 5;
 }
 
-/* Título con Efecto Máquina de Escribir */
+/* Titulo Grande con Relieve Retro 3D */
 .cloud-title {
     font-family: 'Fredoka', cursive, sans-serif;
-    font-size: clamp(3rem, 6.5vw, 4.5rem);
+    font-size: clamp(3.2rem, 7vw, 5rem);
     font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 25px;
+    color: var(--crema-principal);
+    margin-bottom: 15px;
     display: inline-block;
     min-height: 1.2em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     text-shadow: 
-        3px 3px 0px var(--texto-oscuro),
-        -2.5px -2.5px 0px var(--texto-oscuro),
-        2.5px -2.5px 0px var(--texto-oscuro),
-        -2.5px 2.5px 0px var(--texto-oscuro),
-        0 12px 28px rgba(189, 178, 255, 0.85);
+        2px 2px 0px var(--borde-retro),
+        4px 4px 0px var(--crema-oscura),
+        6px 6px 0px var(--borde-retro),
+        0 15px 25px rgba(33, 54, 56, 0.35);
 }
 
 .typewriter-cursor {
     display: inline-block;
-    color: var(--texto-oscuro);
+    color: var(--crema-principal);
     font-weight: 300;
     margin-left: 4px;
     animation: parpadearCursor 0.8s infinite;
@@ -154,12 +132,32 @@ header {
     50% { opacity: 0; }
 }
 
-/* Escenario del Avatar */
+/* Cinta / Liston Vintage */
+.retro-ribbon-banner {
+    display: inline-block;
+    background-color: var(--crema-principal);
+    border: 2px solid var(--borde-retro);
+    border-radius: 4px;
+    box-shadow: 3px 3px 0px var(--borde-retro);
+    padding: 6px 24px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.ribbon-text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    letter-spacing: 2px;
+}
+
+/* Escenario del Avatar Amplio */
 .avatar-stage {
     position: relative;
-    width: 480px;
-    height: 310px;
-    margin: 0 auto 25px auto;
+    width: 520px;
+    height: 330px;
+    margin: 0 auto 30px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,7 +165,7 @@ header {
 
 .avatar-center {
     width: auto;
-    height: 280px;
+    height: 290px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,77 +175,62 @@ header {
 .astrit-avatar {
     width: auto;
     height: 100%;
-    max-height: 280px;
+    max-height: 290px;
     object-fit: contain;
     display: block;
-    filter: drop-shadow(0 10px 20px rgba(45, 27, 78, 0.2));
+    filter: drop-shadow(0 12px 22px rgba(33, 54, 56, 0.3));
 }
 
-/* Stickers Flotantes */
+/* STICKERS FLOTANTES GRANDES (85px - 95px) */
 .floating-sticker {
     position: absolute;
     display: block !important;
     opacity: 1 !important;
-    filter: drop-shadow(0 6px 12px rgba(45, 27, 78, 0.15));
+    filter: drop-shadow(3px 6px 12px rgba(33, 54, 56, 0.25));
     transition: transform 0.2s ease;
     z-index: 10;
     cursor: pointer;
 }
 
 .floating-sticker:hover {
-    transform: scale(1.2) !important;
+    transform: scale(1.18) !important;
 }
 
 .sticker-dog {
-    width: 70px;
-    height: 70px;
+    width: 95px;
+    height: 95px;
     top: 5px;
-    left: 20px;
+    left: 10px;
 }
 
 .sticker-vinyl {
-    width: 62px;
-    height: 62px;
-    bottom: 25px;
-    left: 20px;
+    width: 85px;
+    height: 85px;
+    bottom: 20px;
+    left: 15px;
 }
 
 .sticker-books {
-    width: 70px;
-    height: 70px;
+    width: 95px;
+    height: 95px;
     top: 5px;
-    right: 20px;
+    right: 10px;
 }
 
 .sticker-icecream {
-    width: 58px;
-    height: 58px;
-    bottom: 20px;
-    right: 25px;
+    width: 80px;
+    height: 80px;
+    bottom: 15px;
+    right: 20px;
 }
 
-.deco-flower {
-    font-size: 1.6rem;
-}
-
-.flower-left {
-    top: 110px;
-    left: -10px;
-}
-
-.flower-right {
-    top: 105px;
-    right: -10px;
-}
-
-/* Tarjeta de Biografía */
+/* Tarjeta de Biografia en Crema Marfil */
 .hero-bio-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    border: 2px solid #FFFFFF;
-    border-radius: 28px;
+    background-color: var(--crema-principal);
+    border: 3px solid var(--borde-retro);
+    border-radius: 20px;
     padding: 35px 50px;
-    box-shadow: 0 12px 30px var(--sombra-pastel);
+    box-shadow: 6px 6px 0px var(--borde-retro);
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
@@ -256,7 +239,7 @@ header {
 .bio-main {
     font-size: 1.15rem;
     color: var(--texto-oscuro);
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
@@ -266,7 +249,7 @@ header {
 }
 
 /* =========================================
-   5. ESTRUCTURA Y CONTENEDORES GENERALES
+   4. SECCIONES Y TITULOS
    ========================================= */
 section {
     width: 100%;
@@ -286,25 +269,28 @@ section {
 
 h2 {
     font-family: 'Fredoka', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     margin-bottom: 35px;
-    color: var(--texto-oscuro);
+    color: var(--crema-principal);
     position: relative;
     display: inline-block;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0px var(--borde-retro);
 }
 
 h2::after {
     content: '';
-    width: 60%;
+    width: 65%;
     height: 4px;
-    background-color: var(--morado-pastel);
+    background-color: var(--mostaza-retro);
+    border: 1px solid var(--borde-retro);
     display: block;
     margin: 8px auto 0 auto;
     border-radius: 4px;
 }
 
 /* =========================================
-   6. HABILIDADES EN MOVIMIENTO
+   5. HABILIDADES EN MOVIMIENTO
    ========================================= */
 .marquee-group {
     margin-bottom: 25px;
@@ -314,9 +300,10 @@ h2::after {
 .marquee-label {
     font-size: 1.05rem;
     margin-bottom: 10px;
-    color: var(--texto-oscuro);
+    color: var(--crema-principal);
     font-weight: 700;
     padding-left: 5px;
+    text-shadow: 1px 1px 0px var(--borde-retro);
 }
 
 .marquee-wrapper {
@@ -346,22 +333,22 @@ h2::after {
 
 .skill-pill {
     display: inline-block;
-    padding: 10px 22px;
-    border-radius: 50px;
+    padding: 10px 24px;
+    border-radius: 30px;
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--texto-oscuro);
-    border: 1.5px solid var(--texto-oscuro);
-    box-shadow: 2px 3px 0px var(--texto-oscuro);
+    border: 2px solid var(--borde-retro);
+    box-shadow: 3px 3px 0px var(--borde-retro);
 }
 
-.color-lila   { background-color: var(--lila-pastel); }
-.color-rosa   { background-color: var(--rosa-pastel); }
-.color-azul   { background-color: var(--azul-pastel); }
-.color-morado { background-color: var(--morado-pastel); }
+.color-crema   { background-color: var(--crema-principal); }
+.color-mostaza { background-color: var(--mostaza-retro); }
+.color-coral   { background-color: var(--coral-retro); color: var(--crema-principal); }
+.color-menta   { background-color: var(--menta-retro); }
 
 /* =========================================
-   7. PROYECTOS
+   6. PROYECTOS
    ========================================= */
 .projects-grid {
     display: grid;
@@ -370,27 +357,28 @@ h2::after {
 }
 
 .project-card {
-    background-color: #FFFFFF;
-    border-radius: 22px;
+    background-color: var(--crema-principal);
+    border-radius: 18px;
     padding: 16px;
-    border: 2px solid var(--texto-oscuro);
-    box-shadow: 4px 5px 0px var(--texto-oscuro);
+    border: 2.5px solid var(--borde-retro);
+    box-shadow: 5px 5px 0px var(--borde-retro);
     cursor: pointer;
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project-card:hover {
     transform: translateY(-6px);
+    box-shadow: 7px 7px 0px var(--borde-retro);
 }
 
 .project-thumb {
     width: 100%;
     height: 190px;
-    border-radius: 14px;
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
-    border: 1.5px solid var(--borde-tarjeta);
-    background-color: var(--lila-pastel);
+    border: 1.5px solid var(--borde-retro);
+    background-color: var(--menta-retro);
 }
 
 .project-thumb img {
@@ -403,8 +391,8 @@ h2::after {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: rgba(45, 27, 78, 0.88);
-    color: #FFFFFF;
+    background-color: var(--texto-oscuro);
+    color: var(--crema-principal);
     font-size: 0.8rem;
     padding: 8px;
     font-weight: 700;
@@ -425,7 +413,7 @@ h2::after {
 }
 
 /* =========================================
-   8. PARTICIPACIONES (LÍNEA DE TIEMPO)
+   7. PARTICIPACIONES (LINEA DE TIEMPO)
    ========================================= */
 .timeline-container {
     position: relative;
@@ -441,8 +429,8 @@ h2::after {
     left: 2%;
     width: 96%;
     height: 6px;
-    background-color: #FFFFFF;
-    border: 2px solid var(--texto-oscuro);
+    background-color: var(--crema-principal);
+    border: 2px solid var(--borde-retro);
     border-radius: 4px;
     transform: translateY(-50%);
     z-index: 1;
@@ -465,44 +453,44 @@ h2::after {
 }
 
 .point-circle {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background-color: var(--rosa-pastel);
-    border: 3px solid var(--texto-oscuro);
-    box-shadow: 2px 3px 0px var(--texto-oscuro);
+    background-color: var(--coral-retro);
+    border: 3px solid var(--borde-retro);
+    box-shadow: 2px 2px 0px var(--borde-retro);
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .timeline-point:hover .point-circle {
     transform: scale(1.25);
-    background-color: var(--azul-pastel);
+    background-color: var(--mostaza-retro);
 }
 
 .point-meta {
     position: absolute;
     width: 170px;
-    background-color: #FFFFFF;
-    border: 1.5px solid var(--texto-oscuro);
-    box-shadow: 3px 3px 0px var(--texto-oscuro);
+    background-color: var(--crema-principal);
+    border: 2px solid var(--borde-retro);
+    box-shadow: 3px 3px 0px var(--borde-retro);
     padding: 10px 14px;
-    border-radius: 14px;
+    border-radius: 12px;
     text-align: center;
 }
 
 .point-top .point-meta {
-    bottom: 44px;
+    bottom: 46px;
 }
 
 .point-bottom .point-meta {
-    top: 44px;
+    top: 46px;
 }
 
 .point-date {
     display: block;
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--texto-suave);
+    color: var(--coral-retro);
 }
 
 .point-name {
@@ -512,7 +500,7 @@ h2::after {
 }
 
 /* =========================================
-   9. CERTIFICACIONES (CARRUSEL GRANDE)
+   8. CERTIFICACIONES (CARRUSEL GRANDE)
    ========================================= */
 .carousel-wrapper {
     position: relative;
@@ -544,7 +532,10 @@ h2::after {
     width: 100%;
     height: 350px;
     object-fit: contain;
-    filter: drop-shadow(0 8px 20px rgba(45, 27, 78, 0.15));
+    border-radius: 12px;
+    border: 2px solid var(--borde-retro);
+    background-color: var(--crema-principal);
+    box-shadow: 5px 5px 0px var(--borde-retro);
     display: block;
 }
 
@@ -552,11 +543,12 @@ h2::after {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: #FFFFFF;
-    border: 2px solid var(--texto-oscuro);
-    box-shadow: 3px 3px 0px var(--texto-oscuro);
+    background-color: var(--crema-principal);
+    border: 2.5px solid var(--borde-retro);
+    box-shadow: 3px 3px 0px var(--borde-retro);
     font-size: 1.3rem;
     font-weight: bold;
+    color: var(--texto-oscuro);
     cursor: pointer;
     flex-shrink: 0;
     transition: transform 0.2s ease, background-color 0.2s ease;
@@ -564,12 +556,12 @@ h2::after {
 }
 
 .carousel-nav:hover {
-    background-color: var(--azul-pastel);
+    background-color: var(--mostaza-retro);
     transform: scale(1.1);
 }
 
 /* =========================================
-   10. IDIOMAS
+   9. IDIOMAS
    ========================================= */
 .languages-row {
     display: flex;
@@ -579,11 +571,11 @@ h2::after {
 }
 
 .language-pill-box {
-    background-color: #FFFFFF;
-    border: 2px solid var(--texto-oscuro);
-    box-shadow: 4px 4px 0px var(--texto-oscuro);
+    background-color: var(--crema-principal);
+    border: 2.5px solid var(--borde-retro);
+    box-shadow: 4px 4px 0px var(--borde-retro);
     padding: 16px 35px;
-    border-radius: 50px;
+    border-radius: 35px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -601,7 +593,7 @@ h2::after {
 }
 
 /* =========================================
-   11. VENTANAS MODALES
+   10. VENTANAS MODALES
    ========================================= */
 .modal {
     display: none;
@@ -610,8 +602,8 @@ h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(45, 27, 78, 0.6);
-    backdrop-filter: blur(6px);
+    background-color: rgba(33, 54, 56, 0.7);
+    backdrop-filter: blur(5px);
     z-index: 200;
     justify-content: center;
     align-items: center;
@@ -623,11 +615,11 @@ h2::after {
 }
 
 .modal-box {
-    background-color: #FFFFFF;
-    border: 3px solid var(--texto-oscuro);
-    box-shadow: 8px 10px 0px var(--texto-oscuro);
+    background-color: var(--crema-principal);
+    border: 3px solid var(--borde-retro);
+    box-shadow: 8px 8px 0px var(--borde-retro);
     padding: 30px;
-    border-radius: 24px;
+    border-radius: 18px;
     max-width: 560px;
     width: 100%;
     position: relative;
@@ -645,8 +637,8 @@ h2::after {
     width: 100%;
     height: 170px;
     object-fit: cover;
-    border-radius: 12px;
-    border: 1.5px solid var(--texto-oscuro);
+    border-radius: 10px;
+    border: 2px solid var(--borde-retro);
     margin-bottom: 15px;
 }
 
@@ -661,7 +653,7 @@ h2::after {
 }
 
 .close-x:hover {
-    color: var(--rosa-pastel);
+    color: var(--coral-retro);
 }
 
 .modal-body-content p {
@@ -674,28 +666,24 @@ h2::after {
     font-weight: 700;
     font-size: 0.95rem;
     padding: 12px 26px;
-    border-radius: 50px;
-    border: 2px solid var(--texto-oscuro);
-    box-shadow: 3px 4px 0px var(--texto-oscuro);
+    border-radius: 30px;
+    border: 2px solid var(--borde-retro);
+    box-shadow: 3px 3px 0px var(--borde-retro);
     transition: all 0.25s ease;
     display: inline-block;
     cursor: pointer;
 }
 
-.btn-purple {
-    background-color: var(--morado-pastel);
-    color: var(--texto-oscuro);
+.btn-retro {
+    background-color: var(--coral-retro);
+    color: var(--crema-principal);
 }
 
-.btn-pink {
-    background-color: var(--rosa-pastel);
-    color: var(--texto-oscuro);
-}
-
-.btn-pill:hover {
+.btn-retro:hover {
     transform: translateY(-3px);
-    box-shadow: 5px 6px 0px var(--texto-oscuro);
-    background-color: #FFFFFF;
+    box-shadow: 5px 5px 0px var(--borde-retro);
+    background-color: var(--mostaza-retro);
+    color: var(--texto-oscuro);
 }
 
 .modal-body-content .btn-pill {
@@ -703,7 +691,7 @@ h2::after {
 }
 
 /* =========================================
-   12. ANIMACIONES KEYFRAMES
+   11. KEYFRAMES
    ========================================= */
 @keyframes marqueeLeft {
     0% { transform: translateX(0); }
@@ -716,11 +704,12 @@ h2::after {
 }
 
 /* =========================================
-   13. FOOTER Y RESPONSIVE
+   12. FOOTER Y RESPONSIVE
    ========================================= */
 footer {
-    background-color: var(--texto-oscuro);
-    color: #FFFFFF;
+    background-color: var(--fondo-header);
+    border-top: 2px solid var(--borde-retro);
+    color: var(--crema-principal);
     text-align: center;
     padding: 35px 20px;
     margin-top: 60px;
