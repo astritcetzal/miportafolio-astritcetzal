@@ -859,3 +859,237 @@ body {
     text-align: center;
   }
 }
+/* --------------------------------------------------------------------------
+   HARD SKILLS (LENGUAJES, BACKEND Y CLOUD)
+   -------------------------------------------------------------------------- */
+.skills-domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.domain-card {
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-border);
+  border-radius: 14px;
+  padding: 2rem 1.6rem;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+}
+
+.domain-card:hover {
+  border-color: var(--surface-border-hover);
+  transform: translateY(-3px);
+  background: var(--surface);
+}
+
+.domain-title {
+  font-family: var(--font-editorial);
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 1.2rem;
+}
+
+.tech-badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tech-badge {
+  background: var(--bg-deep);
+  border: 1px solid var(--surface-border);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: var(--transition-smooth);
+}
+
+.tech-badge:hover {
+  border-color: var(--accent-lavender);
+  color: var(--accent-lavender);
+}
+
+/* --------------------------------------------------------------------------
+   SOFT SKILLS (HABILIDADES BLANDAS CON EVIDENCIA)
+   -------------------------------------------------------------------------- */
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+}
+
+.soft-skill-card {
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-border);
+  border-left: 3px solid var(--accent-lavender);
+  border-radius: 12px;
+  padding: 1.8rem 1.6rem;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+}
+
+.soft-skill-card:hover {
+  border-color: var(--surface-border-hover);
+  border-left-color: var(--accent-lavender);
+  transform: translateY(-3px);
+  background: var(--surface);
+}
+
+.soft-skill-name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-ice);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.soft-skill-motto {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.soft-skill-detail {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+/* ==========================================================================
+   RIELES LATERALES & MICRO-ELEMENTOS DEL HERO
+   ========================================================================== */
+
+/* Contenedor relativo para posicionar elementos laterales */
+.hero-universe {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Riel Lateral Izquierdo (Socials) */
+.hero-rail-left {
+  position: absolute;
+  left: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.rail-link {
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  transition: var(--transition-smooth);
+}
+
+.rail-link:hover {
+  color: var(--accent-lavender);
+  transform: rotate(180deg) translateY(3px);
+}
+
+.rail-line {
+  width: 1px;
+  height: 60px;
+  background: var(--surface-border);
+}
+
+/* Riel Lateral Derecho (Status & Coordenadas) */
+.hero-rail-right {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.rail-status {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+}
+
+.rail-status span {
+  color: var(--accent-ice);
+}
+
+/* Micro-Badges Flotantes (Izquierda y Derecha) */
+.hero-floating-badge {
+  position: absolute;
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 1rem 1.4rem;
+  max-width: 210px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.hero-floating-badge:hover {
+  border-color: var(--surface-border-hover);
+  transform: translateY(-3px);
+}
+
+.badge-left {
+  left: 8%;
+  top: 60%;
+}
+
+.badge-right {
+  right: 8%;
+  top: 38%;
+}
+
+.badge-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-lavender);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.badge-text {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Ocultar en pantallas medianas/pequeñas para no invadir el centro */
+@media (max-width: 1100px) {
+  .hero-floating-badge {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero-rail-left,
+  .hero-rail-right {
+    display: none;
+  }
+}
