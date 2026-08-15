@@ -1127,3 +1127,9 @@ body {
     gap: 1rem;
   }
 }
+.skill-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px; /* Separación entre el logo y la palabra */
+    vertical-align: middle;
+}
