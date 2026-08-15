@@ -233,3 +233,174 @@ body {
   color: var(--text-dim);
   line-height: 1.7;
 }
+/* ==========================================================================
+   FASE 2: SECCIONES EDITORIALES, THINGS I LOVE & HOW I WORK
+   ========================================================================== */
+
+/* Contenedor y cabeceras de sección */
+.section-universe {
+  max-width: 980px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 6rem 0;
+  border-top: 1px solid var(--surface-border);
+  text-align: left;
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-lavender);
+  margin-bottom: 0.5rem;
+}
+
+.section-headline {
+  font-family: var(--font-editorial);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--text-main);
+  margin-bottom: 2rem;
+}
+
+/* 01 / ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.about-prose p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.4rem;
+}
+
+.about-prose strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.about-manifesto {
+  background: rgba(17, 19, 33, 0.5);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+}
+
+.about-manifesto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent-lavender);
+  border-radius: 3px 0 0 3px;
+}
+
+.manifesto-quote {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* 02 / THINGS I LOVE (Micro-objetos interactivos) */
+.curiosity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.curiosity-item {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 14px;
+  padding: 1.8rem 1.4rem;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.curiosity-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(184, 164, 255, 0.35);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.curiosity-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-pink);
+  margin-bottom: 1rem;
+}
+
+.curiosity-title {
+  font-family: var(--font-editorial);
+  font-size: 1.3rem;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+
+.curiosity-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* 06 / HOW I WORK (Soft Skills demostradas con hechos) */
+.work-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.principle-card {
+  border-left: 1px solid var(--surface-border);
+  padding-left: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.principle-card:hover {
+  border-left-color: var(--accent-lavender);
+}
+
+.principle-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-ice);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.principle-core {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.principle-evidence {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
