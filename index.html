@@ -3,496 +3,479 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Astrit Cetzal — A Personal Universe</title>
+  <title>Astrit Cetzal — Portafolio</title>
   
-  <!-- Tipografía Editorial + Moderna -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animacion.css">
 </head>
 
 <body>
 
-  <!-- Navbar Flotante -->
+  <div class="ambient-glow glow-hero"></div>
+
+  <!-- Navbar -->
   <header class="header-universe">
     <nav class="nav-universe">
       <a href="#" class="nav-brand">ASTRIT <span>/ 2026</span></a>
       <ul class="nav-links">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Work</a></li>
-        <li><a href="#beyond" class="nav-link">Beyond</a></li>
-        <li><a href="#how-i-work" class="nav-link">How I Work</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#about" class="nav-link">Sobre mí</a></li>
+        <li><a href="#what-i-build" class="nav-link">Capacidades</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#beyond" class="nav-link">Comunidad</a></li>
+        <li><a href="#how-i-work" class="nav-link">Principios</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
       </ul>
-      <button class="nav-lang-btn" id="lang-toggle">ES / EN</button>
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <main>
+    <!-- Hero Section -->
     <section class="hero-universe" id="hero">
       <div class="hero-avatar-wrapper">
+        <div class="hero-avatar-orbit"></div>
         <div class="hero-avatar-glow"></div>
-        <img src="imagenes/avatar.svg" alt="Astrit Cetzal Avatar" class="hero-avatar">
+        <img src="imagenes/avatar.svg" alt="Avatar de Astrit Cetzal" class="hero-avatar">
       </div>
 
       <h1 class="hero-title">Astrit Cetzal</h1>
-      <p class="hero-subtitle">Software Development Student</p>
+      <p class="hero-subtitle">Estudiante de Desarrollo de Software</p>
 
       <div class="hero-tags">
         <span>Backend</span>
         <span class="dot">·</span>
         <span>Cloud</span>
         <span class="dot">·</span>
-        <span>Curious by nature</span>
+        <span>Curiosa por naturaleza</span>
       </div>
 
-      <a href="#about" class="hero-cta">Explore Universe</a>
+      <a href="#about" class="hero-cta">Explorar portafolio</a>
 
       <p class="hero-footer-text">
-        Currently somewhere between<br>
-        building things and figuring out how they work.
+        Actualmente en algún punto entre<br>construir cosas y entender cómo funcionan.
       </p>
     </section>
-    <!-- 01 / ABOUT -->
-<section class="section-universe" id="about">
-  <div class="section-num">01 / ABOUT</div>
-  <h2 class="section-headline">
-    I build software because I'm curious about what happens behind the screen.
-  </h2>
 
-  <div class="about-grid">
-    <div class="about-prose">
-      <p>
-        Estudiante de Desarrollo e Innovación de Software. Mi enfoque está orientado al 
-        <strong>diseño de backend</strong>, la arquitectura de sistemas y el despliegue en la <strong>nube</strong>.
-      </p>
-      <p>
-        Me apasiona resolver la lógica central de las aplicaciones: estructurar APIs confiables, modelar bases de datos y entender el ciclo de vida de los datos desde que viajan por la red hasta su almacenamiento[cite: 3].
-      </p>
-    </div>
+    <!-- 01 / SOBRE MÍ -->
+    <section class="section-universe" id="about">
+      <div class="section-num">01 / SOBRE MÍ</div>
+      <h2 class="section-headline">
+        Construyo software porque tengo curiosidad por lo que sucede detrás de la pantalla.
+      </h2>
 
-    <div class="about-manifesto">
-      <p class="manifesto-quote">
-        "Comprender cómo se conectan las piezas de un sistema es el primer paso para construir software escalable y con propósito."
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- 02 / THINGS I LOVE -->
-<section class="section-universe" id="curiosities">
-  <div class="section-num">02 / CURIOSITIES</div>
-  <h2 class="section-headline">A few things that keep me curious.</h2>
-
-  <div class="curiosity-grid">
-    <div class="curiosity-item">
-      <div class="curiosity-tag">SOUNDS</div>
-      <h3 class="curiosity-title">Music</h3>
-      <p class="curiosity-desc">Ritmo y concentración constante mientras resuelvo problemas complejos.</p>
-    </div>
-
-    <div class="curiosity-item">
-      <div class="curiosity-tag">SHELVES</div>
-      <h3 class="curiosity-title">Books</h3>
-      <p class="curiosity-desc">Exploración de historias y hábitos que inspiraron proyectos como Magic Library[cite: 3].</p>
-    </div>
-
-    <div class="curiosity-item">
-      <div class="curiosity-tag">ATMOSPHERE</div>
-      <h3 class="curiosity-title">Space & Cosmos</h3>
-      <p class="curiosity-desc">Fascinación por la inmensidad, la escala y la estética nocturna.</p>
-    </div>
-
-    <div class="curiosity-item">
-      <div class="curiosity-tag">COMPANIONS</div>
-      <h3 class="curiosity-title">Nature & Dogs</h3>
-      <p class="curiosity-desc">El recordatorio perfecto para desconectar y mantener la perspectiva.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 06 / HOW I WORK (Soft Skills Integradas) -->
-<section class="section-universe" id="how-i-work">
-  <div class="section-num">06 / PRINCIPLES</div>
-  <h2 class="section-headline">How I Work & Collaborate</h2>
-
-  <div class="work-principles-grid">
-    <div class="principle-card">
-      <div class="principle-title">Collaboration & Teamwork</div>
-      <div class="principle-core">El software sólido rara vez se construye en solitario.</div>
-      <div class="principle-evidence">
-        Experiencia resolviendo retos multidisciplinarios bajo presión en eventos como <em>Invent for the Planet</em>[cite: 3].
-      </div>
-    </div>
-
-    <div class="principle-card">
-      <div class="principle-title">Community & Leadership</div>
-      <div class="principle-core">Impulsar comunidades también es construir tecnología.</div>
-      <div class="principle-evidence">
-        Participación y liderazgo estudiantil activo dentro de ramas de ingeniería y grupos como <em>Women in Engineering (WIE)</em> e <em>IEEE</em>[cite: 3].
-      </div>
-    </div>
-
-    <div class="principle-card">
-      <div class="principle-title">Adaptability & Growth</div>
-      <div class="principle-core">Aprender rápido y evolucionar con el ecosistema.</div>
-      <div class="principle-evidence">
-        Transición continua desde desarrollo en consola y MVC hacia arquitecturas limpias, APIs desacopladas y servicios Cloud[cite: 3].
-      </div>
-    </div>
-
-    <div class="principle-card">
-      <div class="principle-title">Communication & Empathy</div>
-      <div class="principle-core">Entender a las personas para diseñar para las personas.</div>
-      <div class="principle-evidence">
-        Capacidad para recibir retroalimentación técnica, articular decisiones de diseño y trabajar de forma asertiva.
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 03 / WHAT I BUILD -->
-<section class="section-universe" id="what-i-build">
-  <div class="section-num">03 / CAPABILITIES</div>
-  <h2 class="section-headline">Architecting backend systems & cloud workflows.</h2>
-
-  <div class="build-pillars-grid">
-    <div class="build-pillar">
-      <div class="pillar-index">01 // BACKEND SYSTEMS</div>
-      <h3 class="pillar-title">APIs & Business Logic</h3>
-      <p class="pillar-desc">
-        Diseño de servicios RESTful estructurados, manejo de persistencia relacional con PostgreSQL/SQL y procesamiento asíncrono en segundo plano.
-      </p>
-    </div>
-
-    <div class="build-pillar">
-      <div class="pillar-index">02 // CLOUD SOLUTIONS</div>
-      <h3 class="pillar-title">Cloud Deployments</h3>
-      <p class="pillar-desc">
-        Integración de servicios serverless y computación en la nube mediante AWS Lambda, API Gateway, DynamoDB y despliegues con Elastic Beanstalk[cite: 3].
-      </p>
-    </div>
-
-    <div class="build-pillar">
-      <div class="pillar-index">03 // ARCHITECTURE</div>
-      <h3 class="pillar-title">Clean System Design</h3>
-      <p class="pillar-desc">
-        Estructuración en capas limpias y desacopladas (Domain-Driven Design / Hexagonal) orientadas a la mantenibilidad y evolución del código[cite: 3].
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- 04 / PROJECTS (CASE STUDIES) -->
-<section class="section-universe" id="projects">
-  <div class="section-num">04 / SELECTED WORKS</div>
-  <h2 class="section-headline">Case Studies & Production Logic</h2>
-
-  <div class="projects-case-stack">
-
-    <!-- Case 01: Magic Library -->
-    <article class="case-card">
-      <div class="case-visual">
-        <img src="imagenes/magic.jpeg" alt="Magic Library Case Study">
-      </div>
-      <div class="case-info">
-        <div>
-          <div class="case-header-tag">01 / PLATFORM & HABIT TRACKING</div>
-          <h3 class="case-title">Magic Library</h3>
-          <p class="case-summary">
-            Plataforma diseñada para registrar y mantener el hábito de la lectura[cite: 3]. Implementa un motor de metas en tiempo real, catálogo por estados y tareas en segundo plano mediante Background Services[cite: 3].
+      <div class="about-grid">
+        <div class="about-prose">
+          <p>
+            Estudiante de Desarrollo e Innovación de Software[cite: 3]. Mi enfoque principal está orientado al 
+            <strong>diseño de backend</strong>, la estructura de arquitecturas limpias y los servicios en la <strong>nube</strong>[cite: 3].
+          </p>
+          <p>
+            Me apasiona resolver la lógica central de las aplicaciones: estructurar APIs confiables, modelar bases de datos y garantizar que los sistemas sean escalables y comprensibles[cite: 3].
           </p>
         </div>
 
-        <div>
-          <div class="case-meta-grid">
-            <div class="meta-col">
-              <span>Focus</span>
-              <p>Backend & Architecture</p>
-            </div>
-            <div class="meta-col">
-              <span>Stack</span>
-              <p>C# · .NET Core · SQL · AWS RDS[cite: 3]</p>
-            </div>
-          </div>
-          <div class="case-links">
-            <a href="https://github.com/astritcetzal/ArqSoft-Proyecto-Astrit.git" target="_blank" rel="noopener noreferrer" class="case-btn">
-              Explore Repository &rarr;
-            </a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Case 02: Menu Area Refrescante -->
-    <article class="case-card case-card-reverse">
-      <div class="case-info">
-        <div>
-          <div class="case-header-tag">02 / SERVERLESS CLOUD ARCHITECTURE</div>
-          <h3 class="case-title">Área Refrescante Menu</h3>
-          <p class="case-summary">
-            Servicio web serverless para la digitalización y consulta del menú[cite: 3]. Utiliza arquitectura sin servidores con políticas de acceso IAM estrictas y almacenamiento NoSQL de baja latencia[cite: 3].
-          </p>
-        </div>
-
-        <div>
-          <div class="case-meta-grid">
-            <div class="meta-col">
-              <span>Focus</span>
-              <p>Cloud & Serverless</p>
-            </div>
-            <div class="meta-col">
-              <span>Stack</span>
-              <p>Python · AWS Lambda · DynamoDB[cite: 3]</p>
-            </div>
-          </div>
-          <div class="case-links">
-            <a href="https://github.com/astritcetzal/AreaRefrescanteMenu.git" target="_blank" rel="noopener noreferrer" class="case-btn">
-              Explore Repository &rarr;
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="case-visual">
-        <img src="imagenes/logo.jpg" alt="Menu Area Refrescante Case Study">
-      </div>
-    </article>
-
-    <!-- Case 03: Restaurant Backend API -->
-    <article class="case-card">
-      <div class="case-visual">
-        <img src="imagenes/api-restaurante.svg" alt="Restaurant Backend API">
-      </div>
-      <div class="case-info">
-        <div>
-          <div class="case-header-tag">03 / ENTERPRISE REST API</div>
-          <h3 class="case-title">Restaurant Backend API</h3>
-          <p class="case-summary">
-            API RESTful para la administración de órdenes, catálogo gastronómico y mesas[cite: 3]. Diseñada bajo arquitectura en capas con persistencia transaccional y seguridad sin estado[cite: 3].
-          </p>
-        </div>
-
-        <div>
-          <div class="case-meta-grid">
-            <div class="meta-col">
-              <span>Focus</span>
-              <p>Domain-Driven Design</p>
-            </div>
-            <div class="meta-col">
-              <span>Stack</span>
-              <p>Java · Spring Boot · PostgreSQL · JWT[cite: 3]</p>
-            </div>
-          </div>
-          <div class="case-links">
-            <a href="https://github.com/astritcetzal" target="_blank" rel="noopener noreferrer" class="case-btn">
-              Explore Repository &rarr;
-            </a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-<!-- 05 / BEYOND THE CODE -->
-<section class="section-universe" id="beyond">
-  <div class="section-num">05 / RECOGNITION & LEADERSHIP</div>
-  <h2 class="section-headline">Beyond the code & community impact.</h2>
-
-  <div class="beyond-grid">
-    <!-- Evento 01: Invent for the Planet -->
-    <article class="beyond-card">
-      <div class="beyond-thumb">
-        <img src="imagenes/iftp.jpg" alt="Invent for the Planet Recognition">
-      </div>
-      <div class="beyond-body">
-        <div>
-          <div class="beyond-role">University Winner // 2026</div>
-          <h3 class="beyond-title">Invent for the Planet</h3>
-          <p class="beyond-desc">
-            Competencia internacional intensiva de 48 horas enfocada en diseñar soluciones viables ante problemáticas globales de sostenibilidad y tecnología colaborativa.
+        <div class="about-manifesto">
+          <p class="manifesto-quote">
+            "Comprender cómo se conectan las piezas de un sistema es el primer paso para construir tecnología con propósito."
           </p>
         </div>
       </div>
-    </article>
+    </section>
 
-    <!-- Evento 02: IEEE & WIE -->
-    <article class="beyond-card">
-      <div class="beyond-thumb">
-        <img src="imagenes/tech.jpg" alt="IEEE & WIE Community">
+    <!-- 02 / CURIOSIDADES -->
+    <section class="section-universe" id="curiosities">
+      <div class="section-num">02 / CURIOSIDADES</div>
+      <h2 class="section-headline">Lo que mantiene despierta mi curiosidad.</h2>
+
+      <div class="curiosity-grid">
+        <div class="curiosity-item">
+          <div class="curiosity-tag">SONIDOS</div>
+          <h3 class="curiosity-title">Música</h3>
+          <p class="curiosity-desc">Ritmo y concentración constante mientras resuelvo problemas de ingeniería.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <div class="curiosity-tag">BIBLIOTECAS</div>
+          <h3 class="curiosity-title">Libros</h3>
+          <p class="curiosity-desc">Hábito y lectura continua que inspiraron proyectos como Magic Library[cite: 3].</p>
+        </div>
+
+        <div class="curiosity-item">
+          <div class="curiosity-tag">ATMÓSFERA</div>
+          <h3 class="curiosity-title">Espacio</h3>
+          <p class="curiosity-desc">Fascinación por la escala cósmica, los sistemas complejos y los entornos nocturnos.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <div class="curiosity-tag">COMPAÑÍA</div>
+          <h3 class="curiosity-title">Naturaleza & Perros</h3>
+          <p class="curiosity-desc">El recordatorio perfecto para desconectar, mantener los pies en la tierra y recargar energía.</p>
+        </div>
       </div>
-      <div class="beyond-body">
-        <div>
-          <div class="beyond-role">Student Member & Leadership</div>
-          <h3 class="beyond-title">IEEE & Women in Engineering</h3>
-          <p class="beyond-desc">
-            Participación técnica activa, organización de iniciativas académicas y liderazgo orientado al crecimiento de comunidades en ciencias e ingeniería.
+    </section>
+
+    <!-- 03 / CAPACIDADES -->
+    <section class="section-universe" id="what-i-build">
+      <div class="section-num">03 / CAPACIDADES</div>
+      <h2 class="section-headline">Arquitectura backend y flujos en la nube.</h2>
+
+      <div class="build-pillars-grid">
+        <div class="build-pillar">
+          <div class="pillar-index">01 // SISTEMAS BACKEND</div>
+          <h3 class="pillar-title">APIs y Lógica de Negocio</h3>
+          <p class="pillar-desc">
+            Diseño de APIs RESTful estructuradas, manejo de persistencia relacional con PostgreSQL/SQL y procesamiento asíncrono en segundo plano[cite: 3].
+          </p>
+        </div>
+
+        <div class="build-pillar">
+          <div class="pillar-index">02 // SOLUCIONES CLOUD</div>
+          <h3 class="pillar-title">Despliegue Cloud</h3>
+          <p class="pillar-desc">
+            Integración de arquitecturas serverless en AWS mediante Lambda, DynamoDB, API Gateway y despliegues elásticos[cite: 3].
+          </p>
+        </div>
+
+        <div class="build-pillar">
+          <div class="pillar-index">03 // ARQUITECTURA</div>
+          <h3 class="pillar-title">Diseño Limpio</h3>
+          <p class="pillar-desc">
+            Estructuración desacoplada en capas orientada a la mantenibilidad, separación de responsabilidades y evolución del sistema[cite: 3].
           </p>
         </div>
       </div>
-    </article>
+    </section>
 
-    <!-- Evento 03: Starknet Bootcamp -->
-    <article class="beyond-card">
-      <div class="beyond-thumb">
-        <img src="imagenes/bootcamp.jpeg" alt="Starknet Developer Bootcamp">
+    <!-- 04 / PROYECTOS -->
+    <section class="section-universe" id="projects">
+      <div class="section-num">04 / PROYECTOS SELECCIONADOS</div>
+      <h2 class="section-headline">Casos de estudio y lógica en producción.</h2>
+
+      <div class="projects-case-stack">
+        <!-- Magic Library -->
+        <article class="case-card">
+          <div class="case-visual">
+            <img src="imagenes/magic.jpeg" alt="Caso de estudio Magic Library">
+          </div>
+          <div class="case-info">
+            <div>
+              <div class="case-header-tag">01 / PLATAFORMA & HÁBITOS</div>
+              <h3 class="case-title">Magic Library</h3>
+              <p class="case-summary">
+                Plataforma web diseñada para ayudar a registrar y mantener el hábito de la lectura[cite: 3]. Implementa motor de metas en tiempo real, catálogo por estados y tareas en segundo plano con Background Services[cite: 3].
+              </p>
+            </div>
+            <div>
+              <div class="case-meta-grid">
+                <div class="meta-col">
+                  <span>Enfoque</span>
+                  <p>Backend & Arquitectura</p>
+                </div>
+                <div class="meta-col">
+                  <span>Stack</span>
+                  <p>C# · .NET Core · SQL · AWS RDS[cite: 3]</p>
+                </div>
+              </div>
+              <a href="https://github.com/astritcetzal/ArqSoft-Proyecto-Astrit.git" target="_blank" rel="noopener noreferrer" class="case-btn">
+                Explorar Repositorio &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Área Refrescante -->
+        <article class="case-card case-card-reverse">
+          <div class="case-info">
+            <div>
+              <div class="case-header-tag">02 / ARQUITECTURA SERVERLESS</div>
+              <h3 class="case-title">Área Refrescante Menu</h3>
+              <p class="case-summary">
+                Servicio web serverless para la digitalización y consulta del menú de bebidas[cite: 3]. Utiliza arquitectura sin servidores con políticas IAM estrictas y almacenamiento NoSQL de baja latencia[cite: 3].
+              </p>
+            </div>
+            <div>
+              <div class="case-meta-grid">
+                <div class="meta-col">
+                  <span>Enfoque</span>
+                  <p>Cloud & Serverless</p>
+                </div>
+                <div class="meta-col">
+                  <span>Stack</span>
+                  <p>Python · AWS Lambda · DynamoDB[cite: 3]</p>
+                </div>
+              </div>
+              <a href="https://github.com/astritcetzal/AreaRefrescanteMenu.git" target="_blank" rel="noopener noreferrer" class="case-btn">
+                Explorar Repositorio &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="case-visual">
+            <img src="imagenes/logo.jpg" alt="Caso de estudio Área Refrescante">
+          </div>
+        </article>
+
+        <!-- Restaurant Backend API -->
+        <article class="case-card">
+          <div class="case-visual">
+            <img src="imagenes/api-restaurante.svg" alt="Restaurant Backend API">
+          </div>
+          <div class="case-info">
+            <div>
+              <div class="case-header-tag">03 / API EMPRESARIAL REST</div>
+              <h3 class="case-title">Restaurant Backend API</h3>
+              <p class="case-summary">
+                API RESTful para la administración de órdenes, catálogo gastronómico y mesas[cite: 3]. Diseñada bajo arquitectura en capas con persistencia transaccional y seguridad sin estado vía JWT[cite: 3].
+              </p>
+            </div>
+            <div>
+              <div class="case-meta-grid">
+                <div class="meta-col">
+                  <span>Enfoque</span>
+                  <p>Domain-Driven Design</p>
+                </div>
+                <div class="meta-col">
+                  <span>Stack</span>
+                  <p>Java · Spring Boot · PostgreSQL · JWT[cite: 3]</p>
+                </div>
+              </div>
+              <a href="https://github.com/astritcetzal" target="_blank" rel="noopener noreferrer" class="case-btn">
+                Explorar Repositorio &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="beyond-body">
-        <div>
-          <div class="beyond-role">Developer Track // 2026</div>
-          <h3 class="beyond-title">Starknet Bootcamp</h3>
-          <p class="beyond-desc">
-            Exploración de contratos inteligentes, ejecución y tooling de desarrollo mediante Starkli, Scarb y entornos Katana.
-          </p>
+    </section>
+
+    <!-- 05 / LIDERAZGO & COMUNIDAD -->
+    <section class="section-universe" id="beyond">
+      <div class="section-num">05 / LIDERAZGO & COMUNIDAD</div>
+      <h2 class="section-headline">Más allá del código e impacto profesional.</h2>
+
+      <div class="beyond-grid">
+        <article class="beyond-card">
+          <div class="beyond-thumb">
+            <img src="imagenes/iftp.jpg" alt="Reconocimiento Invent for the Planet">
+          </div>
+          <div class="beyond-body">
+            <div class="beyond-role">Primer Lugar Universitario // 2026[cite: 3]</div>
+            <h3 class="beyond-title">Invent for the Planet</h3>
+            <p class="beyond-desc">
+              Competencia global intensiva de 48 horas orientada a formular soluciones viables ante problemáticas complejas de sostenibilidad y tecnología[cite: 3].
+            </p>
+          </div>
+        </article>
+
+        <article class="beyond-card">
+          <div class="beyond-thumb">
+            <img src="imagenes/tech.jpg" alt="Comunidad IEEE & WIE">
+          </div>
+          <div class="beyond-body">
+            <div class="beyond-role">Miembro Estudiantil & Liderazgo</div>
+            <h3 class="beyond-title">IEEE & Women in Engineering</h3>
+            <p class="beyond-desc">
+              Participación técnica activa, organización de eventos y liderazgo estudiantil para fortalecer la presencia femenina en ingeniería y tecnología[cite: 3].
+            </p>
+          </div>
+        </article>
+
+        <article class="beyond-card">
+          <div class="beyond-thumb">
+            <img src="imagenes/bootcamp.jpeg" alt="Starknet Developer Bootcamp">
+          </div>
+          <div class="beyond-body">
+            <div class="beyond-role">Developer Track // 2026[cite: 3]</div>
+            <h3 class="beyond-title">Starknet Bootcamp</h3>
+            <p class="beyond-desc">
+              Entrenamiento intensivo en lógica de contratos inteligentes y herramientas del ecosistema blockchain con Scarb, Starkli y Katana[cite: 3].
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 06 / PRINCIPIOS -->
+    <section class="section-universe" id="how-i-work">
+      <div class="section-num">06 / PRINCIPIOS</div>
+      <h2 class="section-headline">Cómo trabajo y colaboro</h2>
+
+      <div class="work-principles-grid">
+        <div class="principle-card">
+          <div class="principle-title">Colaboración y Trabajo en Equipo</div>
+          <div class="principle-core">El software sólido rara vez se construye en solitario.</div>
+          <div class="principle-evidence">
+            Experiencia resolviendo retos multidisciplinarios bajo presión en hackathones y proyectos colaborativos.
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-title">Comunidad y Liderazgo</div>
+          <div class="principle-core">Impulsar comunidades también es construir tecnología.</div>
+          <div class="principle-evidence">
+            Iniciativa y compromiso en la organización de grupos estudiantiles como Women in Engineering (WIE).
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-title">Adaptabilidad y Crecimiento</div>
+          <div class="principle-core">Aprender rápido y evolucionar con el ecosistema.</div>
+          <div class="principle-evidence">
+            Transición constante hacia arquitecturas limpias, servicios desacoplados y soluciones en la nube[cite: 3].
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-title">Comunicación y Empatía</div>
+          <div class="principle-core">Entender a las personas para diseñar para personas.</div>
+          <div class="principle-evidence">
+            Capacidad para recibir retroalimentación técnica constructiva y articular soluciones con claridad.
+          </div>
         </div>
       </div>
-    </article>
-  </div>
-</section>
+    </section>
 
-<!-- 07 / CERTIFICATES & ACHIEVEMENTS -->
-<section class="section-universe" id="certificates">
-  <div class="section-num">07 / ARCHIVE</div>
-  <h2 class="section-headline">Certifications & Validations</h2>
+    <!-- 07 / CERTIFICACIONES -->
+    <section class="section-universe" id="certificates">
+      <div class="section-num">07 / ARCHIVO</div>
+      <h2 class="section-headline">Certificaciones y Validaciones</h2>
 
-  <div class="archive-container">
-    <div class="archive-year-group">
-      <div class="archive-year-label">// 2026</div>
-      <ul class="archive-list">
-        <li>
-          <a href="certificados/cloud-operations.pdf" target="_blank" rel="noopener noreferrer" class="archive-row">
-            <div class="archive-info">
-              <span class="archive-name">AWS Academy Graduate — Cloud Operations</span>
-              <span class="archive-issuer">AWS Academy</span>
-            </div>
-            <span class="archive-action">VIEW PDF &rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="certificados/cloud-foundations.pdf" target="_blank" rel="noopener noreferrer" class="archive-row">
-            <div class="archive-info">
-              <span class="archive-name">AWS Academy Graduate — Cloud Foundations</span>
-              <span class="archive-issuer">AWS Academy</span>
-            </div>
-            <span class="archive-action">VIEW PDF &rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="certificados/sql-fundamentals.png" target="_blank" rel="noopener noreferrer" class="archive-row">
-            <div class="archive-info">
-              <span class="archive-name">SQL Fundamentals</span>
-              <span class="archive-issuer">DataCamp</span>
-            </div>
-            <span class="archive-action">VIEW &rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="certificados/network-technician.pdf" target="_blank" rel="noopener noreferrer" class="archive-row">
-            <div class="archive-info">
-              <span class="archive-name">Fundamentos de Redes</span>
-              <span class="archive-issuer">Cisco Networking Academy</span>
-            </div>
-            <span class="archive-action">VIEW PDF &rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="certificados/python-essentials.pdf" target="_blank" rel="noopener noreferrer" class="archive-row">
-            <div class="archive-info">
-              <span class="archive-name">Fundamentos de Python 1</span>
-              <span class="archive-issuer">Cisco Networking Academy / Python Institute</span>
-            </div>
-            <span class="archive-action">VIEW PDF &rarr;</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+      <div class="archive-container">
+        <div class="archive-year-group">
+          <div class="archive-year-label">// 2026</div>
+          <ul class="archive-list">
+            <li>
+              <a href="certificados/cloud-operations.pdf" target="_blank" rel="noopener noreferrer" class="archive-row">
+                <div>
+                  <span class="archive-name">AWS Academy Graduate — Cloud Operations</span>
+                  <span class="archive-issuer">AWS Academy[cite: 13]</span>
+                </div>
+                <span class="archive-action">VER PDF &rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="certificados/cloud-foundations.pdf" target="_blank" rel="noopener noreferrer" class="archive-row">
+                <div>
+                  <span class="archive-name">AWS Academy Graduate — Cloud Foundations</span>
+                  <span class="archive-issuer">AWS Academy[cite: 14]</span>
+                </div>
+                <span class="archive-action">VER PDF &rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="certificados/sql-fundamentals.png" target="_blank" rel="noopener noreferrer" class="archive-row">
+                <div>
+                  <span class="archive-name">SQL Fundamentals</span>
+                  <span class="archive-issuer">DataCamp[cite: 1]</span>
+                </div>
+                <span class="archive-action">VER CERTIFICADO &rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="certificados/network-technician.pdf" target="_blank" rel="noopener noreferrer" class="archive-row">
+                <div>
+                  <span class="archive-name">Fundamentos de Redes</span>
+                  <span class="archive-issuer">Cisco Networking Academy[cite: 10]</span>
+                </div>
+                <span class="archive-action">VER PDF &rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="certificados/python-essentials.pdf" target="_blank" rel="noopener noreferrer" class="archive-row">
+                <div>
+                  <span class="archive-name">Fundamentos de Python 1</span>
+                  <span class="archive-issuer">Cisco Networking Academy / Python Institute[cite: 9]</span>
+                </div>
+                <span class="archive-action">VER PDF &rarr;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-    <div class="archive-year-group">
-      <div class="archive-year-label">// PREVIOUS VALIDATIONS</div>
-      <ul class="archive-list">
-        <li>
-          <a href="certificados/it.pdf" target="_blank" rel="noopener noreferrer" class="archive-row">
-            <div class="archive-info">
-              <span class="archive-name">Soporte de Tecnologías de la Información de Google</span>
-              <span class="archive-issuer">Google Career Certificates</span>
-            </div>
-            <span class="archive-action">VIEW PDF &rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a href="certificados/academica.png" target="_blank" rel="noopener noreferrer" class="archive-row">
-            <div class="archive-info">
-              <span class="archive-name">Arquitectura de Computadoras</span>
-              <span class="archive-issuer">Fundación Carlos Slim / Académica</span>
-            </div>
-            <span class="archive-action">VIEW &rarr;</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-<!-- 08 / A LITTLE SOMETHING EXTRA -->
-<section class="section-universe" id="extra">
-  <div class="section-num">08 / MASCOT & EASTER EGG</div>
-  <div class="extra-box">
-    <div class="extra-text">
-      <h3 class="extra-lead">I take backend logic and systems seriously.</h3>
-      <p class="extra-sub">
-        My choice of mascot? Not so much. Keeping things grounded is always part of the process.
-      </p>
-    </div>
-    <div class="penguin-container">
-      <!-- SVG Minimalista del Pingüino -->
-      <svg class="penguin-mascot" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="50" cy="55" rx="32" ry="38" fill="#111321" stroke="#B8A4FF" stroke-width="2"/>
-        <ellipse cx="50" cy="58" rx="22" ry="28" fill="#F1EFF7"/>
-        <circle cx="42" cy="40" r="3" fill="#090A12"/>
-        <circle cx="58" cy="40" r="3" fill="#090A12"/>
-        <polygon points="50,44 45,50 55,50" fill="#E8B7D4"/>
-        <ellipse cx="36" cy="90" rx="8" ry="4" fill="#B8A4FF"/>
-        <ellipse cx="64" cy="90" rx="8" ry="4" fill="#B8A4FF"/>
-      </svg>
-    </div>
-  </div>
-</section>
+        <div class="archive-year-group">
+          <div class="archive-year-label">// VALIDACIONES ANTERIORES</div>
+          <ul class="archive-list">
+            <li>
+              <a href="certificados/it.pdf" target="_blank" rel="noopener noreferrer" class="archive-row">
+                <div>
+                  <span class="archive-name">Soporte de Tecnologías de la Información de Google</span>
+                  <span class="archive-issuer">Google Career Certificates[cite: 11]</span>
+                </div>
+                <span class="archive-action">VER PDF &rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="certificados/academica.png" target="_blank" rel="noopener noreferrer" class="archive-row">
+                <div>
+                  <span class="archive-name">Arquitectura de Computadoras</span>
+                  <span class="archive-issuer">Fundación Carlos Slim / Académica[cite: 1]</span>
+                </div>
+                <span class="archive-action">VER CERTIFICADO &rarr;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<!-- LET'S CONNECT & FINAL FOOTER -->
-<footer class="connect-section" id="contact">
-  <div class="section-num">LET'S CONNECT</div>
-  <h2 class="connect-lead">If you found something interesting here, I'd love to hear from you.</h2>
-  <p class="connect-subtext">
-    Open to backend discussions, cloud architecture challenges, and collaborative initiatives.
-  </p>
-
-  <div class="connect-links-grid">
-    <a href="https://github.com/astritcetzal" target="_blank" rel="noopener noreferrer" class="connect-link-item">
-      <span class="connect-link-label">Platform</span>
-      <span class="connect-link-value">GitHub &rarr;</span>
-    </a>
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="connect-link-item">
-      <span class="connect-link-label">Professional</span>
-      <span class="connect-link-value">LinkedIn &rarr;</span>
-    </a>
-    <a href="mailto:astritcetzal@gmail.com" class="connect-link-item">
-      <span class="connect-link-label">Direct</span>
-      <span class="connect-link-value">Email &rarr;</span>
-    </a>
-  </div>
-
-  <div class="universe-closing">
-    <div class="closing-meta">
-      <strong>Astrit Cetzal</strong> · Software Development · Backend & Cloud
-    </div>
-    <div class="closing-quote">
-      THE UNIVERSE IS STILL EXPANDING.
-    </div>
-  </div>
-</footer>
+    <!-- 08 / MASCOTA -->
+    <section class="section-universe" id="extra">
+      <div class="section-num">08 / MASCOTA</div>
+      <div class="extra-box">
+        <div>
+          <h3 class="extra-lead">Tomo la lógica backend y la arquitectura muy en serio.</h3>
+          <p class="extra-sub">
+            ¿Mi elección de mascota? No tanto. Mantener la cercanía siempre es parte del proceso.
+          </p>
+        </div>
+        <div class="penguin-container">
+          <svg class="penguin-mascot" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="50" cy="55" rx="32" ry="38" fill="#1E2138" stroke="#C2B0F2" stroke-width="2"/>
+            <ellipse cx="50" cy="58" rx="22" ry="28" fill="#F7F5FA"/>
+            <circle cx="42" cy="40" r="3" fill="#161828"/>
+            <circle cx="58" cy="40" r="3" fill="#161828"/>
+            <polygon points="50,44 45,50 55,50" fill="#E2BBD2"/>
+            <ellipse cx="36" cy="90" rx="8" ry="4" fill="#C2B0F2"/>
+            <ellipse cx="64" cy="90" rx="8" ry="4" fill="#C2B0F2"/>
+          </svg>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="connect-section" id="contact">
+    <div class="section-num">CONTACTO</div>
+    <h2 class="connect-lead">Si encontraste algo de interés, me encantará escucharte.</h2>
+    <p class="connect-subtext">
+      Abierta a conversaciones de backend, arquitectura en la nube e iniciativas colaborativas.
+    </p>
+
+    <div class="connect-links-grid">
+      <a href="https://github.com/astritcetzal" target="_blank" rel="noopener noreferrer" class="connect-link-item">
+        <span class="connect-link-label">Plataforma</span>
+        <span class="connect-link-value">GitHub &rarr;</span>
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="connect-link-item">
+        <span class="connect-link-label">Profesional</span>
+        <span class="connect-link-value">LinkedIn &rarr;</span>
+      </a>
+      <a href="mailto:astritcetzal@gmail.com" class="connect-link-item">
+        <span class="connect-link-label">Directo</span>
+        <span class="connect-link-value">Email &rarr;</span>
+      </a>
+    </div>
+
+    <div class="universe-closing">
+      <div class="closing-meta">
+        <strong>Astrit Cetzal</strong> · Desarrollo de Software · Backend & Cloud
+      </div>
+      <div class="closing-quote">
+        EL UNIVERSO SIGUE EN EXPANSIÓN.
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

@@ -1,24 +1,25 @@
 /* ==========================================================================
-   ASTRIT CETZAL — A PERSONAL UNIVERSE
-   Fase 1: Variables de Color, Tipografía y Atmósfera
+   ASTRIT CETZAL — A PERSONAL UNIVERSE (Atmósfera Nocturna Luminosa)
    ========================================================================== */
 
 :root {
-  /* Paleta Base */
-  --bg-deep: #090A12;
-  --surface: #111321;
-  --surface-light: #181B2D;
-  --surface-border: rgba(184, 164, 255, 0.12);
+  /* Fondos Cósmicos / Índigo Suave */
+  --bg-deep: #161828;
+  --bg-secondary: #1E2138;
+  --surface: #242742;
+  --surface-glass: rgba(36, 39, 66, 0.55);
+  --surface-border: rgba(185, 167, 232, 0.22);
+  --surface-border-hover: rgba(185, 167, 232, 0.45);
 
-  /* Acentos Pastel */
-  --accent-lavender: #B8A4FF;
-  --accent-pink: #E8B7D4;
-  --accent-ice: #B9D7E8;
+  /* Acentos y Luces */
+  --accent-lavender: #C2B0F2;
+  --accent-pink: #E2BBD2;
+  --accent-ice: #B8D6EB;
 
   /* Tipografía */
-  --text-main: #F1EFF7;
-  --text-muted: #9291A3;
-  --text-dim: #605F70;
+  --text-main: #F7F5FA;
+  --text-muted: #B4B0C4;
+  --text-dim: #848099;
 
   /* Fuentes */
   --font-editorial: 'Playfair Display', Georgia, serif;
@@ -34,6 +35,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-deep);
   color: var(--text-main);
@@ -41,22 +46,43 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  /* Degradados multicapa para evitar el fondo plano */
   background-image: 
-    radial-gradient(circle at 50% 15%, rgba(184, 164, 255, 0.04) 0%, transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(185, 215, 232, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 50% 18%, rgba(194, 176, 242, 0.14) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(184, 214, 235, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 15% 65%, rgba(226, 187, 210, 0.08) 0%, transparent 45%);
   background-attachment: fixed;
 }
 
+/* Partículas y Estrellas Sutiles */
+.ambient-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.glow-hero {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(194, 176, 242, 0.25) 0%, transparent 70%);
+}
+
 /* --------------------------------------------------------------------------
-   Navbar Flotante Minimalista
+   NAVBAR FLOTANTE
    -------------------------------------------------------------------------- */
 .header-universe {
   position: fixed;
-  top: 1.5rem;
+  top: 1.2rem;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 1000px;
+  max-width: 950px;
   z-index: 100;
 }
 
@@ -64,17 +90,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1.6rem;
-  background: rgba(17, 19, 33, 0.65);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  padding: 0.8rem 1.8rem;
+  background: rgba(30, 33, 56, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--surface-border);
   border-radius: 999px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   transition: var(--transition-smooth);
-}
-
-.nav-universe:hover {
-  border-color: rgba(184, 164, 255, 0.25);
 }
 
 .nav-brand {
@@ -110,13 +133,13 @@ body {
 }
 
 .nav-lang-btn {
-  background: transparent;
+  background: var(--surface-glass);
   border: 1px solid var(--surface-border);
-  color: var(--text-muted);
-  padding: 0.3rem 0.7rem;
+  color: var(--text-main);
+  padding: 0.35rem 0.8rem;
   border-radius: 999px;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   cursor: pointer;
   transition: var(--transition-smooth);
 }
@@ -124,10 +147,11 @@ body {
 .nav-lang-btn:hover {
   color: var(--accent-lavender);
   border-color: var(--accent-lavender);
+  box-shadow: 0 0 12px rgba(194, 176, 242, 0.25);
 }
 
 /* --------------------------------------------------------------------------
-   Hero: Cosmic Atmosphere & Identity
+   HERO: CONEXIÓN Y ATMÓSFERA
    -------------------------------------------------------------------------- */
 .hero-universe {
   min-height: 100vh;
@@ -136,24 +160,37 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 8rem 1.5rem 4rem;
+  padding: 7.5rem 1.5rem 4rem;
   position: relative;
+  z-index: 1;
 }
 
 .hero-avatar-wrapper {
   position: relative;
-  width: 140px;
-  height: 140px;
-  margin-bottom: 2.5rem;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 2rem;
+}
+
+.hero-avatar-orbit {
+  position: absolute;
+  inset: -8px;
+  border: 1px dashed rgba(194, 176, 242, 0.4);
+  border-radius: 50%;
+  animation: orbitRotate 20s linear infinite;
+}
+
+@keyframes orbitRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .hero-avatar-glow {
   position: absolute;
-  inset: -15px;
-  background: radial-gradient(circle, rgba(184, 164, 255, 0.15) 0%, transparent 70%);
+  inset: -10px;
+  background: radial-gradient(circle, rgba(194, 176, 242, 0.3) 0%, transparent 70%);
   border-radius: 50%;
-  filter: blur(8px);
-  pointer-events: none;
+  filter: blur(10px);
 }
 
 .hero-avatar {
@@ -161,18 +198,20 @@ body {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid rgba(184, 164, 255, 0.2);
+  border: 2px solid rgba(194, 176, 242, 0.35);
+  box-shadow: 0 0 25px rgba(194, 176, 242, 0.2);
   position: relative;
   z-index: 1;
 }
 
 .hero-title {
   font-family: var(--font-editorial);
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-size: clamp(2.6rem, 6.5vw, 4.4rem);
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--text-main);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .hero-subtitle {
@@ -181,7 +220,7 @@ body {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent-lavender);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.4rem;
 }
 
 .hero-tags {
@@ -192,11 +231,7 @@ body {
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 3rem;
-}
-
-.hero-tags span {
-  display: inline-block;
+  margin-bottom: 2.5rem;
 }
 
 .hero-tags .dot {
@@ -206,7 +241,7 @@ body {
 
 .hero-cta {
   display: inline-block;
-  padding: 0.9rem 2.2rem;
+  padding: 0.9rem 2.4rem;
   border: 1px solid var(--accent-lavender);
   border-radius: 999px;
   color: var(--text-main);
@@ -215,29 +250,30 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
-  background: rgba(184, 164, 255, 0.03);
-  backdrop-filter: blur(8px);
+  background: var(--surface-glass);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: var(--transition-smooth);
 }
 
 .hero-cta:hover {
   background: var(--accent-lavender);
   color: var(--bg-deep);
-  box-shadow: 0 0 25px rgba(184, 164, 255, 0.25);
+  box-shadow: 0 0 25px rgba(194, 176, 242, 0.45);
+  transform: translateY(-2px);
 }
 
 .hero-footer-text {
-  margin-top: 3.5rem;
+  margin-top: 3rem;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-dim);
   line-height: 1.7;
 }
-/* ==========================================================================
-   FASE 2: SECCIONES EDITORIALES, THINGS I LOVE & HOW I WORK
-   ========================================================================== */
 
-/* Contenedor y cabeceras de sección */
+/* --------------------------------------------------------------------------
+   SECCIONES EDITORIALES GLOBALES
+   -------------------------------------------------------------------------- */
 .section-universe {
   max-width: 980px;
   width: 90%;
@@ -285,11 +321,13 @@ body {
 }
 
 .about-manifesto {
-  background: rgba(17, 19, 33, 0.5);
+  background: var(--surface-glass);
   border: 1px solid var(--surface-border);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 2rem;
   position: relative;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .about-manifesto::before {
@@ -311,7 +349,7 @@ body {
   line-height: 1.6;
 }
 
-/* 02 / THINGS I LOVE (Micro-objetos interactivos) */
+/* 02 / CURIOSITIES */
 .curiosity-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -320,19 +358,19 @@ body {
 }
 
 .curiosity-item {
-  background: var(--surface);
+  background: var(--surface-glass);
   border: 1px solid var(--surface-border);
   border-radius: 14px;
   padding: 1.8rem 1.4rem;
+  backdrop-filter: blur(10px);
   transition: var(--transition-smooth);
-  position: relative;
-  overflow: hidden;
 }
 
 .curiosity-item:hover {
   transform: translateY(-4px);
-  border-color: rgba(184, 164, 255, 0.35);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--surface-border-hover);
+  background: var(--surface);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 .curiosity-tag {
@@ -340,14 +378,14 @@ body {
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   color: var(--accent-pink);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .curiosity-title {
   font-family: var(--font-editorial);
   font-size: 1.3rem;
   color: var(--text-main);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .curiosity-desc {
@@ -355,58 +393,6 @@ body {
   color: var(--text-muted);
   line-height: 1.5;
 }
-
-/* 06 / HOW I WORK (Soft Skills demostradas con hechos) */
-.work-principles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-
-.principle-card {
-  border-left: 1px solid var(--surface-border);
-  padding-left: 1.5rem;
-  transition: var(--transition-smooth);
-}
-
-.principle-card:hover {
-  border-left-color: var(--accent-lavender);
-}
-
-.principle-title {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  color: var(--accent-ice);
-  margin-bottom: 0.8rem;
-  text-transform: uppercase;
-}
-
-.principle-core {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-main);
-  margin-bottom: 0.6rem;
-  line-height: 1.5;
-}
-
-.principle-evidence {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-/* ==========================================================================
-   FASE 3: WHAT I BUILD & CASE STUDIES (PROJECTS)
-   ========================================================================== */
 
 /* 03 / WHAT I BUILD */
 .build-pillars-grid {
@@ -417,17 +403,18 @@ body {
 }
 
 .build-pillar {
-  background: rgba(17, 19, 33, 0.4);
+  background: var(--surface-glass);
   border: 1px solid var(--surface-border);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 2.2rem 1.8rem;
+  backdrop-filter: blur(10px);
   transition: var(--transition-smooth);
 }
 
 .build-pillar:hover {
-  border-color: rgba(184, 164, 255, 0.3);
+  border-color: var(--surface-border-hover);
   transform: translateY(-3px);
-  background: rgba(24, 27, 45, 0.5);
+  background: var(--surface);
 }
 
 .pillar-index {
@@ -450,7 +437,7 @@ body {
   line-height: 1.6;
 }
 
-/* 04 / CASE STUDIES (PROJECTS) */
+/* 04 / PROJECTS */
 .projects-case-stack {
   display: flex;
   flex-direction: column;
@@ -459,18 +446,19 @@ body {
 }
 
 .case-card {
-  background: var(--surface);
+  background: var(--surface-glass);
   border: 1px solid var(--surface-border);
   border-radius: 16px;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   overflow: hidden;
+  backdrop-filter: blur(12px);
   transition: var(--transition-smooth);
 }
 
 .case-card:hover {
-  border-color: rgba(184, 164, 255, 0.4);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border-color: var(--surface-border-hover);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 .case-card-reverse {
@@ -481,10 +469,9 @@ body {
   width: 100%;
   height: 100%;
   min-height: 320px;
-  position: relative;
-  overflow: hidden;
-  background: #0d0f1a;
+  background: var(--bg-secondary);
   border-right: 1px solid var(--surface-border);
+  overflow: hidden;
 }
 
 .case-card-reverse .case-visual {
@@ -496,8 +483,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.85;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.88;
+  transition: transform 0.5s ease;
 }
 
 .case-card:hover .case-visual img {
@@ -559,12 +546,6 @@ body {
   font-weight: 500;
 }
 
-.case-links {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
 .case-btn {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -582,26 +563,6 @@ body {
   transform: translateX(3px);
 }
 
-@media (max-width: 850px) {
-  .case-card,
-  .case-card-reverse {
-    grid-template-columns: 1fr;
-  }
-  
-  .case-visual {
-    border-right: none;
-    border-bottom: 1px solid var(--surface-border);
-    min-height: 240px;
-  }
-
-  .case-card-reverse .case-visual {
-    border-left: none;
-  }
-}
-/* ==========================================================================
-   FASE 4: BEYOND THE CODE & CERTIFICATES ARCHIVE
-   ========================================================================== */
-
 /* 05 / BEYOND THE CODE */
 .beyond-grid {
   display: grid;
@@ -611,47 +572,38 @@ body {
 }
 
 .beyond-card {
-  background: var(--surface);
+  background: var(--surface-glass);
   border: 1px solid var(--surface-border);
   border-radius: 14px;
   overflow: hidden;
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   transition: var(--transition-smooth);
 }
 
 .beyond-card:hover {
-  border-color: rgba(184, 164, 255, 0.35);
+  border-color: var(--surface-border-hover);
   transform: translateY(-3px);
 }
 
 .beyond-thumb {
   width: 100%;
   height: 180px;
-  background: #0d0f1a;
-  overflow: hidden;
+  background: var(--bg-secondary);
   border-bottom: 1px solid var(--surface-border);
+  overflow: hidden;
 }
 
 .beyond-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.85;
-  transition: transform 0.4s ease;
-}
-
-.beyond-card:hover .beyond-thumb img {
-  transform: scale(1.04);
-  opacity: 1;
+  opacity: 0.88;
 }
 
 .beyond-body {
   padding: 1.8rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-between;
 }
 
 .beyond-role {
@@ -668,7 +620,6 @@ body {
   font-size: 1.35rem;
   color: var(--text-main);
   margin-bottom: 0.8rem;
-  line-height: 1.3;
 }
 
 .beyond-desc {
@@ -677,7 +628,47 @@ body {
   line-height: 1.6;
 }
 
-/* 07 / CERTIFICATES ARCHIVE */
+/* 06 / HOW I WORK */
+.work-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.principle-card {
+  border-left: 2px solid var(--surface-border);
+  padding-left: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.principle-card:hover {
+  border-left-color: var(--accent-lavender);
+}
+
+.principle-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-ice);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.principle-core {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+
+.principle-evidence {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* 07 / CERTIFICATES */
 .archive-container {
   margin-top: 2.5rem;
 }
@@ -711,17 +702,10 @@ body {
 
 .archive-row:hover {
   padding-left: 0.8rem;
-  border-bottom-color: rgba(184, 164, 255, 0.4);
-}
-
-.archive-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  border-bottom-color: var(--surface-border-hover);
 }
 
 .archive-name {
-  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-main);
@@ -736,6 +720,7 @@ body {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-dim);
+  display: block;
 }
 
 .archive-action {
@@ -743,21 +728,12 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: var(--accent-ice);
-  opacity: 0.6;
-  transition: var(--transition-smooth);
+  opacity: 0.7;
 }
 
-.archive-row:hover .archive-action {
-  opacity: 1;
-  transform: translateX(4px);
-}
-/* ==========================================================================
-   FASE 5: A LITTLE SOMETHING EXTRA & LET'S CONNECT
-   ========================================================================== */
-
-/* 08 / A LITTLE SOMETHING EXTRA */
+/* 08 / EXTRA & FOOTER */
 .extra-box {
-  background: rgba(17, 19, 33, 0.4);
+  background: var(--surface-glass);
   border: 1px dashed var(--surface-border);
   border-radius: 16px;
   padding: 3rem 2rem;
@@ -765,11 +741,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: 2rem;
-}
-
-.extra-text {
-  max-width: 500px;
+  backdrop-filter: blur(10px);
 }
 
 .extra-lead {
@@ -782,36 +754,25 @@ body {
 .extra-sub {
   font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.6;
-}
-
-.penguin-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 120px;
 }
 
 .penguin-mascot {
   width: 90px;
   height: 90px;
-  filter: drop-shadow(0 8px 18px rgba(184, 164, 255, 0.12));
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .penguin-mascot:hover {
   transform: translateY(-5px) rotate(4deg);
 }
 
-/* LET'S CONNECT & FOOTER */
 .connect-section {
   max-width: 980px;
   width: 90%;
   margin: 0 auto;
   padding: 7rem 0 4rem;
   border-top: 1px solid var(--surface-border);
-  text-align: left;
 }
 
 .connect-lead {
@@ -820,14 +781,13 @@ body {
   font-weight: 400;
   color: var(--text-main);
   margin-bottom: 1.5rem;
-  line-height: 1.2;
 }
 
 .connect-subtext {
   font-size: 1rem;
   color: var(--text-muted);
   margin-bottom: 3rem;
-  max-width: 480px;
+  max-width: 500px;
 }
 
 .connect-links-grid {
@@ -842,11 +802,6 @@ body {
   flex-direction: column;
   gap: 0.3rem;
   text-decoration: none;
-  transition: var(--transition-smooth);
-}
-
-.connect-link-item:hover {
-  transform: translateY(-2px);
 }
 
 .connect-link-label {
@@ -858,9 +813,7 @@ body {
 }
 
 .connect-link-value {
-  font-family: var(--font-body);
   font-size: 1.05rem;
-  font-weight: 500;
   color: var(--text-main);
   transition: color 0.2s ease;
 }
@@ -885,11 +838,6 @@ body {
   color: var(--text-dim);
 }
 
-.closing-meta strong {
-  color: var(--text-main);
-  font-weight: 500;
-}
-
 .closing-quote {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -898,12 +846,16 @@ body {
 }
 
 @media (max-width: 768px) {
+  .about-grid,
+  .case-card,
+  .case-card-reverse {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    display: none;
+  }
   .extra-box {
     flex-direction: column;
     text-align: center;
-  }
-  .connect-links-grid {
-    gap: 1.5rem;
-    flex-direction: column;
   }
 }
