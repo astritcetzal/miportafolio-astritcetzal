@@ -5,18 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio de Astrit Cetzal</title>
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/avatar.css">
   <link rel="stylesheet" href="css/animacion.css">
 </head>
+
 <body>
 
-  <!-- NAVEGACION -->
+  <!-- NAVEGACIÓN -->
   <header>
     <div class="nav-principal">
       <div class="logo">Astrit Cetzal</div>
       <ul class="menu">
-        <li><a href="#sobre-mi">Sobre mi</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#participaciones">Participaciones</a></li>
@@ -27,51 +31,45 @@
   </header>
 
   <main>
-    <!-- PAGINA 1: HERO / SOBRE MI CON STICKERS Y AVATAR -->
+<!-- HERO / SOBRE MÍ -->
     <section id="sobre-mi" class="hero-section">
       <div class="hero-container">
         
-        <h1 class="hero-title">Hola, soy Astrit Airan Cetzal Cetzal</h1>
+        <!-- Título Grande con Efecto Máquina de Escribir -->
+        <h1 class="cloud-title">
+          <span id="typewriter-text"></span><span class="typewriter-cursor">|</span>
+        </h1>
 
-        <!-- Escena interactiva del Avatar con Stickers SVG -->
+        <!-- Escenario del Avatar con Stickers y Flores -->
         <div class="avatar-stage">
-          
-          <!-- Sticker 1: Perrito -->
           <img src="imagenes/perrito.svg" alt="Perrito" class="floating-sticker sticker-dog">
-
-          <!-- Sticker 2: Disco de vinilo giratorio -->
-          <img src="imagenes/vinilo.svg" alt="Musica" class="floating-sticker sticker-vinyl">
-
-          <!-- Avatar Central -->
-          <div class="avatar-center">
-            <img src="imagenes/avatar.svg" alt="Avatar de Astrit" class="astrit-avatar">
-          </div>
-
-          <!-- Sticker 3: Libros -->
+          <img src="imagenes/vinilo.svg" alt="Música" class="floating-sticker sticker-vinyl">
           <img src="imagenes/libros.svg" alt="Libros" class="floating-sticker sticker-books">
-
-          <!-- Sticker 4: Helado -->
           <img src="imagenes/helado.svg" alt="Helado" class="floating-sticker sticker-icecream">
 
-        </div>
-        <!-- Descripcion -->
-        <div class="hero-bio">
-          <p>
-            Estudiante de TSU en Desarrollo e Innovacion de Software. Mis intereses principales son <strong>Backend</strong> y <strong>Cloud</strong>.
-          </p>
-          <p class="sub-bio">
-            Apasionada por la tecnologia, el trabajo en equipo y la creacion de soluciones creativas. Constantemente aprendiendo y buscando nuevos retos para crecer profesionalmente.
-          </p>
-          <div class="hero-links">
-            <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="btn-pill">Mi artista favorito</a>
-            <a href="https://goodreads.com" target="_blank" rel="noopener noreferrer" class="btn-pill">Mis libros favoritos</a>
+          <div class="floating-sticker deco-flower flower-left">🌸</div>
+          <div class="floating-sticker deco-flower flower-right">✨</div>
+
+          <!-- Avatar Central Completo -->
+          <div class="avatar-center">
+            <img src="imagenes/avatar.png" alt="Avatar de Astrit" class="astrit-avatar">
           </div>
+        </div>
+
+        <!-- Biografía -->
+        <div class="hero-bio-card">
+          <p class="bio-main">
+            Estudiante de TSU en Desarrollo e Innovación de Software. Mis intereses principales son <strong>Backend</strong> y <strong>Cloud</strong>.
+          </p>
+          <p class="bio-sub">
+            Apasionada por la tecnología, el trabajo en equipo y la creación de soluciones creativas. Constantemente aprendiendo y buscando nuevos retos para crecer profesionalmente.
+          </p>
         </div>
 
       </div>
     </section>
 
-    <!-- PAGINA 2: HABILIDADES CON DESPLAZAMIENTO INFINITO -->
+    <!-- HABILIDADES EN MOVIMIENTO -->
     <section id="habilidades" class="section">
       <h2>Habilidades y Herramientas</h2>
 
@@ -81,30 +79,30 @@
         <div class="marquee-wrapper">
           <div class="marquee-track scroll-left">
             <span class="skill-pill color-lila">Trabajo en equipo</span>
-            <span class="skill-pill color-rosa">Resolucion de problemas</span>
-            <span class="skill-pill color-azul">Pensamiento critico</span>
+            <span class="skill-pill color-rosa">Resolución de problemas</span>
+            <span class="skill-pill color-azul">Pensamiento crítico</span>
             <span class="skill-pill color-morado">Adaptabilidad</span>
-            <span class="skill-pill color-lila">Comunicacion efectiva</span>
-            <!-- Duplicados para ciclo infinito continuo -->
+            <span class="skill-pill color-lila">Comunicación efectiva</span>
+            <!-- Duplicados para ciclo continuo -->
             <span class="skill-pill color-lila">Trabajo en equipo</span>
-            <span class="skill-pill color-rosa">Resolucion de problemas</span>
-            <span class="skill-pill color-azul">Pensamiento critico</span>
+            <span class="skill-pill color-rosa">Resolución de problemas</span>
+            <span class="skill-pill color-azul">Pensamiento crítico</span>
             <span class="skill-pill color-morado">Adaptabilidad</span>
-            <span class="skill-pill color-lila">Comunicacion efectiva</span>
+            <span class="skill-pill color-lila">Comunicación efectiva</span>
           </div>
         </div>
       </div>
 
-      <!-- Fila 2: Habilidades Tecnicas -->
+      <!-- Fila 2: Habilidades Técnicas -->
       <div class="marquee-group">
-        <h3 class="marquee-label">Habilidades Tecnicas</h3>
+        <h3 class="marquee-label">Habilidades Técnicas</h3>
         <div class="marquee-wrapper">
           <div class="marquee-track scroll-right">
             <span class="skill-pill color-azul">C#</span>
             <span class="skill-pill color-morado">Java</span>
             <span class="skill-pill color-lila">Python</span>
             <span class="skill-pill color-rosa">SQL</span>
-            <span class="skill-pill color-azul">Cloud</span>
+            <span class="skill-pill color-azul">AWS Cloud</span>
             <span class="skill-pill color-morado">GitHub</span>
             <span class="skill-pill color-lila">ASP.NET Core</span>
             <span class="skill-pill color-rosa">Linux</span>
@@ -113,7 +111,7 @@
             <span class="skill-pill color-morado">Java</span>
             <span class="skill-pill color-lila">Python</span>
             <span class="skill-pill color-rosa">SQL</span>
-            <span class="skill-pill color-azul">Cloud</span>
+            <span class="skill-pill color-azul">AWS Cloud</span>
             <span class="skill-pill color-morado">GitHub</span>
             <span class="skill-pill color-lila">ASP.NET Core</span>
             <span class="skill-pill color-rosa">Linux</span>
@@ -121,7 +119,7 @@
         </div>
       </div>
 
-      <!-- Fila 3: Herramientas Utilizadas -->
+      <!-- Fila 3: Herramientas -->
       <div class="marquee-group">
         <h3 class="marquee-label">Herramientas</h3>
         <div class="marquee-wrapper">
@@ -144,42 +142,39 @@
       </div>
     </section>
 
-    <!-- PAGINA 3: PROYECTOS -->
+    <!-- PROYECTOS -->
     <section id="proyectos" class="section">
       <h2>Proyectos</h2>
       <div class="projects-grid">
         
-        <!-- Proyecto 1 -->
         <article class="project-card" onclick="openModal('modal-p1')">
           <div class="project-thumb">
-            <img src="imagenes/tech.jpg" alt="Magic Library">
-            <div class="overlay-hint">Clic para ver detalles</div>
+            <img src="imagenes/magic.jpeg" alt="Magic Library">
+            <div class="overlay-hint">Ver detalles</div>
           </div>
           <h4>Magic Library</h4>
         </article>
 
-        <!-- Proyecto 2 -->
         <article class="project-card" onclick="openModal('modal-p2')">
           <div class="project-thumb">
-            <img src="imagenes/tech.jpg" alt="Sistema de Citas">
-            <div class="overlay-hint">Clic para ver detalles</div>
+            <img src="imagenes/logo.jpg" alt="Menú Área Refrescante">
+            <div class="overlay-hint">Ver detalles</div>
           </div>
-          <h4>Sistema de Citas</h4>
+          <h4>Menú Área Refrescante</h4>
         </article>
 
-        <!-- Proyecto 3 -->
         <article class="project-card" onclick="openModal('modal-p3')">
           <div class="project-thumb">
-            <img src="imagenes/tech.jpg" alt="Visualizador de Dijkstra">
-            <div class="overlay-hint">Clic para ver detalles</div>
+            <img src="imagenes/api-restaurante.svg" alt="Restaurant Backend API">
+            <div class="overlay-hint">Ver detalles</div>
           </div>
-          <h4>Visualizador Dijkstra</h4>
+          <h4>Restaurant Backend API</h4>
         </article>
 
       </div>
     </section>
 
-    <!-- PAGINA 4: PARTICIPACIONES (LINEA DE TIEMPO INTERACTIVA) -->
+    <!-- PARTICIPACIONES -->
     <section id="participaciones" class="section">
       <h2>Participaciones</h2>
       
@@ -187,8 +182,6 @@
         <div class="timeline-main-bar"></div>
 
         <div class="timeline-events">
-          
-          <!-- Evento 1 (Arriba) -->
           <div class="timeline-point point-top" onclick="openModal('modal-part-1')">
             <div class="point-circle"></div>
             <div class="point-meta">
@@ -197,7 +190,6 @@
             </div>
           </div>
 
-          <!-- Evento 2 (Abajo) -->
           <div class="timeline-point point-bottom" onclick="openModal('modal-part-2')">
             <div class="point-circle"></div>
             <div class="point-meta">
@@ -206,20 +198,18 @@
             </div>
           </div>
 
-          <!-- Evento 3 (Arriba) -->
           <div class="timeline-point point-top" onclick="openModal('modal-part-3')">
             <div class="point-circle"></div>
             <div class="point-meta">
               <span class="point-date">2026</span>
-              <span class="point-name">Membresia IEEE</span>
+              <span class="point-name">Membresía IEEE</span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- PAGINA 5: CERTIFICACIONES (CARRUSEL DE IMAGENES) -->
+    <!-- CERTIFICACIONES (RESTAURADO TAMAÑO GRANDE) -->
     <section id="certificaciones" class="section">
       <h2>Certificaciones</h2>
       <div class="carousel-wrapper">
@@ -227,35 +217,16 @@
         
         <div class="carousel-track-container">
           <div class="carousel-track" id="cert-track">
-            
-            <div class="cert-item">
-              <img src="certificados/operations.png" alt="Certificado AWS Academy">
-            </div>
-            <div class="cert-item">
-              <img src="certificados/muje-lideres.png" alt="Certificado AWS Academy">
-            </div>
-            <div class="cert-item">
-              <img src="certificados/foundations.png" alt="Certificado AWS Academy">
-            </div>
-
-            <div class="cert-item">
-              <img src="certificados/redes.png" alt="Certificado Coursera">
-            </div>
-
-           <div class="cert-item">
-              <img src="certificados/python.png" alt="Certificado AWS Academy">
-            </div>
-            <div class="cert-item">
-              <img src="certificados/sl-css.png" alt="Certificado AWS Academy">
-            </div>
-            <div class="cert-item">
-              <img src="certificados/sl-html.jpeg" alt="Certificado AWS Academy">
-            </div>
-            <div class="cert-item">
-              <img src="certificados/it.png" alt="Certificado AWS Academy">
-            </div>
-            
-
+            <div class="cert-item"><img src="certificados/operations.png" alt="AWS Operations"></div>
+            <div class="cert-item"><img src="certificados/sql-fundamentals.png" alt="SQL Fundamentals"></div>
+            <div class="cert-item"><img src="certificados/muje-lideres.png" alt="Mujeres Líderes"></div>
+            <div class="cert-item"><img src="certificados/foundations.png" alt="AWS Foundations"></div>
+            <div class="cert-item"><img src="certificados/redes.png" alt="Redes"></div>
+            <div class="cert-item"><img src="certificados/python.png" alt="Python"></div>
+            <div class="cert-item"><img src="certificados/sl-css.png" alt="CSS"></div>
+            <div class="cert-item"><img src="certificados/sl-html.jpeg" alt="HTML"></div>
+            <div class="cert-item"><img src="certificados/academica.png" alt="Académica"></div>
+            <div class="cert-item"><img src="certificados/it.png" alt="IT"></div>
           </div>
         </div>
 
@@ -263,32 +234,36 @@
       </div>
     </section>
 
-    <!-- PAGINA 6: IDIOMAS -->
+    <!-- IDIOMAS -->
     <section id="idiomas" class="section">
       <h2>Idiomas</h2>
       <div class="languages-row">
         <div class="language-pill-box">
-          <span class="lang-title">Espanol</span>
+          <span class="lang-title">Español</span>
           <span class="lang-level">Lengua materna</span>
         </div>
         <div class="language-pill-box">
-          <span class="lang-title">Ingles</span>
+          <span class="lang-title">Inglés</span>
           <span class="lang-level">Nivel A2</span>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- MODALES DE PROYECTOS (PAGINA 3 DEL BOCETO) -->
+  <!-- MODALES -->
   <div id="modal-p1" class="modal">
     <div class="modal-box">
       <span class="close-x" onclick="closeModal('modal-p1')">&times;</span>
       <h3>Magic Library</h3>
       <div class="modal-body-content">
-        <p><strong>De que trata:</strong> Sistema web y API para gestion integral de catalogo y prestamos de libros.</p>
-        <p><strong>Como funciona:</strong> Implementa arquitectura limpia, controladores RESTful y autenticacion para control de inventario.</p>
-        <p><strong>Stack:</strong> ASP.NET Core, C#, Entity Framework Core, SQL.</p>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-pill">Ver repositorio</a>
+        <p><strong>De qué trata:</strong> Plataforma web diseñada para ayudar a desarrollar y mantener el hábito de la lectura.</p>
+        <p><strong>Cómo funciona:</strong></p>
+        <p>• Motor de Metas de Lectura con cálculo en tiempo real.</p>
+        <p>• Gestión de inventario literario (Terminados, En Proceso, Pendientes).</p>
+        <p>• Recomendaciones inteligentes mediante consumo de APIs de LLMs.</p>
+        <p>• Sistema de alertas asíncronas con Background Services (<code>IHostedService</code>).</p>
+        <p><strong>Stack:</strong> ASP.NET Core, C#, Entity Framework Core, SQL Server, AWS RDS, Elastic Beanstalk.</p>
+        <a href="https://github.com/astritcetzal/ArqSoft-Proyecto-Astrit.git" target="_blank" rel="noopener noreferrer" class="btn-pill btn-purple">Ver repositorio</a>
       </div>
     </div>
   </div>
@@ -296,12 +271,16 @@
   <div id="modal-p2" class="modal">
     <div class="modal-box">
       <span class="close-x" onclick="closeModal('modal-p2')">&times;</span>
-      <h3>Sistema de Citas</h3>
+      <h3>Menú Área Refrescante</h3>
       <div class="modal-body-content">
-        <p><strong>De que trata:</strong> Backend robusto para programacion y seguimiento de reservas en tiempo real.</p>
-        <p><strong>Como funciona:</strong> Administra persistencia relacional con endpoints optimizados y validacion de reglas de negocio.</p>
-        <p><strong>Stack:</strong> Java, Spring Boot, PostgreSQL, Docker.</p>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-pill">Ver repositorio</a>
+        <p><strong>De qué trata:</strong> Aplicación web serverless para digitalización del menú de bebidas.</p>
+        <p><strong>Cómo funciona:</strong></p>
+        <p>• Almacenamiento NoSQL en Amazon DynamoDB.</p>
+        <p>• Lógica backend con función AWS Lambda en Python 3.12 y políticas IAM estrictas.</p>
+        <p>• Exposición segura del servicio mediante AWS API Gateway.</p>
+        <p>• Consumo de API en frontend con JavaScript Fetch inyectando datos al DOM.</p>
+        <p><strong>Stack:</strong> Python, AWS Lambda, DynamoDB, API Gateway, JavaScript, HTML, CSS, GitHub Pages.</p>
+        <a href="https://github.com/astritcetzal/AreaRefrescanteMenu.git" target="_blank" rel="noopener noreferrer" class="btn-pill btn-purple">Ver repositorio</a>
       </div>
     </div>
   </div>
@@ -309,17 +288,19 @@
   <div id="modal-p3" class="modal">
     <div class="modal-box">
       <span class="close-x" onclick="closeModal('modal-p3')">&times;</span>
-      <h3>Visualizador Dijkstra</h3>
+      <h3>Restaurant Backend API</h3>
       <div class="modal-body-content">
-        <p><strong>De que trata:</strong> Herramienta visual e interactiva para calcular rutas de costo minimo en grafos.</p>
-        <p><strong>Como funciona:</strong> Renderizado dinamico con colas de prioridad y representacion de nodos paso a paso.</p>
-        <p><strong>Stack:</strong> Java, Java Swing, Estructuras de Datos.</p>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-pill">Ver repositorio</a>
+        <p><strong>De qué trata:</strong> API RESTful para administración integral de órdenes, mesas y catálogo gastronómico.</p>
+        <p><strong>Cómo funciona:</strong></p>
+        <p>• Arquitectura en Capas DDD (Web, Dominio y Persistencia).</p>
+        <p>• Persistencia en PostgreSQL mediante Spring Data JPA y mapeo con MapStruct.</p>
+        <p>• Autenticación sin estado con JWT y documentación OpenAPI/Swagger.</p>
+        <p><strong>Stack:</strong> Java, Spring Boot, PostgreSQL, Spring Data JPA, JWT, MapStruct, Swagger.</p>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-pill btn-purple">Ver repositorio</a>
       </div>
     </div>
   </div>
 
-  <!-- MODALES DE PARTICIPACIONES (PAGINA 4 DEL BOCETO) -->
   <div id="modal-part-1" class="modal">
     <div class="modal-box">
       <span class="close-x" onclick="closeModal('modal-part-1')">&times;</span>
@@ -327,7 +308,7 @@
       <div class="modal-body-content">
         <img src="imagenes/bootcamp.jpeg" alt="Bootcamp Starknet" class="modal-preview-img">
         <p><strong>Fecha:</strong> Marzo 2026</p>
-        <p><strong>De que trato:</strong> Entrenamiento tecnico intensivo en desarrollo de contratos inteligentes y herramientas de Starknet (Scarb, Starkli, Katana).</p>
+        <p><strong>De qué trató:</strong> Entrenamiento intensivo en contratos inteligentes y herramientas de Starknet (Scarb, Starkli, Katana).</p>
       </div>
     </div>
   </div>
@@ -339,7 +320,7 @@
       <div class="modal-body-content">
         <img src="imagenes/iftp.jpg" alt="Invent for the planet" class="modal-preview-img">
         <p><strong>Fecha:</strong> Mayo 2026</p>
-        <p><strong>De que trato:</strong> Competencia de innovacion colaborativa de 48 horas resolviendo problematicas globales de sostenibilidad en equipo.</p>
+        <p><strong>De qué trató:</strong> Competencia global de innovación colaborativa de 48 horas resolviendo problemáticas de sostenibilidad.</p>
       </div>
     </div>
   </div>
@@ -347,19 +328,20 @@
   <div id="modal-part-3" class="modal">
     <div class="modal-box">
       <span class="close-x" onclick="closeModal('modal-part-3')">&times;</span>
-      <h3>Membresia Estudiantil IEEE</h3>
+      <h3>Membresía Estudiantil IEEE</h3>
       <div class="modal-body-content">
-        <img src="imagenes/tech.jpg" alt="IEEE Membresia" class="modal-preview-img">
+        <img src="imagenes/tech.jpg" alt="IEEE Membresía" class="modal-preview-img">
         <p><strong>Periodo:</strong> Febrero 2026 - Presente</p>
-        <p><strong>De que trato:</strong> Participacion activa en actividades academicas, desarrollo tecnologico y comunidad estudiantil en ciencias e ingenieria.</p>
+        <p><strong>De qué trató:</strong> Participación activa en actividades académicas y comunidad estudiantil en ciencias e ingeniería.</p>
       </div>
     </div>
   </div>
 
   <footer>
-    <p>2026 Astrit Airan Cetzal Cetzal - Portafolio de Desarrollo de Software</p>
+    <p>© 2026 Astrit Airan Cetzal Cetzal - Portafolio de Desarrollo de Software</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

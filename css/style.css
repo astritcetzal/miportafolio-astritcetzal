@@ -2,15 +2,15 @@
    1. PALETA PASTEL Y VARIABLES GLOBALES
    ========================================= */
 :root {
-    --fondo-gradiente: linear-gradient(135deg, #a0c4ff 0%, #bdb2ff 40%, #ffc6ff 80%, #ffd6a5 100%);
+    --fondo-gradiente: linear-gradient(135deg, #a0c4ff 0%, #bdb2ff 35%, #ffc6ff 70%, #ffd6a5 100%);
     --lila-pastel: #E2D1F9;
     --morado-pastel: #BDB2FF;
     --rosa-pastel: #FFC6FF;
     --azul-pastel: #A0C4FF;
-    --azul-suave: #CAE9FF;
     --blanco-puro: #ffffff;
-    --texto-oscuro: #2C1A4D;
-    --borde-tarjeta: rgba(44, 26, 77, 0.15);
+    --texto-oscuro: #2D1B4E;
+    --texto-suave: #5C477D;
+    --borde-tarjeta: rgba(45, 27, 78, 0.15);
     --sombra-pastel: rgba(189, 178, 255, 0.35);
 }
 
@@ -18,7 +18,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -26,18 +25,47 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
     color: var(--texto-oscuro);
+    font-family: 'Plus Jakarta Sans', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
 }
 
 /* =========================================
-   2. ENCABEZADO Y NAVEGACION
+   2. BURBUJAS FLOTANTES DE FONDO
+   ========================================= */
+.bubble {
+    position: absolute;
+    bottom: -80px;
+    border-radius: 50%;
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 1;
+    animation: subirBurbuja linear infinite;
+}
+
+@keyframes subirBurbuja {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0.55;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-1200px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* =========================================
+   3. ENCABEZADO Y MENÚ DE NAVEGACIÓN
    ========================================= */
 header {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-    padding: 15px 40px;
+    backdrop-filter: blur(10px);
+    padding: 16px 40px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -48,14 +76,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
 }
 
 .logo {
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
     color: var(--texto-oscuro);
 }
 
@@ -78,7 +106,167 @@ header {
 }
 
 /* =========================================
-   3. SECCIONES Y CONTENEDORES GENERALES
+   4. HERO / SOBRE MÍ
+   ========================================= */
+.hero-section {
+    width: 100%;
+    padding: 50px 20px 70px 20px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1100px;
+    width: 92%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+/* Título con Efecto Máquina de Escribir */
+.cloud-title {
+    font-family: 'Fredoka', cursive, sans-serif;
+    font-size: clamp(3rem, 6.5vw, 4.5rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    display: inline-block;
+    min-height: 1.2em;
+    text-shadow: 
+        3px 3px 0px var(--texto-oscuro),
+        -2.5px -2.5px 0px var(--texto-oscuro),
+        2.5px -2.5px 0px var(--texto-oscuro),
+        -2.5px 2.5px 0px var(--texto-oscuro),
+        0 12px 28px rgba(189, 178, 255, 0.85);
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    color: var(--texto-oscuro);
+    font-weight: 300;
+    margin-left: 4px;
+    animation: parpadearCursor 0.8s infinite;
+}
+
+@keyframes parpadearCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Escenario del Avatar */
+.avatar-stage {
+    position: relative;
+    width: 480px;
+    height: 310px;
+    margin: 0 auto 25px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-center {
+    width: auto;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.astrit-avatar {
+    width: auto;
+    height: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 10px 20px rgba(45, 27, 78, 0.2));
+}
+
+/* Stickers Flotantes */
+.floating-sticker {
+    position: absolute;
+    display: block !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 6px 12px rgba(45, 27, 78, 0.15));
+    transition: transform 0.2s ease;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.floating-sticker:hover {
+    transform: scale(1.2) !important;
+}
+
+.sticker-dog {
+    width: 70px;
+    height: 70px;
+    top: 5px;
+    left: 20px;
+}
+
+.sticker-vinyl {
+    width: 62px;
+    height: 62px;
+    bottom: 25px;
+    left: 20px;
+}
+
+.sticker-books {
+    width: 70px;
+    height: 70px;
+    top: 5px;
+    right: 20px;
+}
+
+.sticker-icecream {
+    width: 58px;
+    height: 58px;
+    bottom: 20px;
+    right: 25px;
+}
+
+.deco-flower {
+    font-size: 1.6rem;
+}
+
+.flower-left {
+    top: 110px;
+    left: -10px;
+}
+
+.flower-right {
+    top: 105px;
+    right: -10px;
+}
+
+/* Tarjeta de Biografía */
+.hero-bio-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 2px solid #FFFFFF;
+    border-radius: 28px;
+    padding: 35px 50px;
+    box-shadow: 0 12px 30px var(--sombra-pastel);
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.bio-main {
+    font-size: 1.15rem;
+    color: var(--texto-oscuro);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.bio-sub {
+    font-size: 1rem;
+    color: var(--texto-suave);
+}
+
+/* =========================================
+   5. ESTRUCTURA Y CONTENEDORES GENERALES
    ========================================= */
 section {
     width: 100%;
@@ -87,19 +275,19 @@ section {
 }
 
 .section-container,
-.hero-container,
 .projects-grid,
-.timeline-container,
 .carousel-wrapper,
 .languages-row,
 .marquee-group {
-    max-width: 1050px;
+    max-width: 1200px;
+    width: 92%;
     margin: 0 auto;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 35px;
     color: var(--texto-oscuro);
     position: relative;
     display: inline-block;
@@ -112,174 +300,31 @@ h2::after {
     background-color: var(--morado-pastel);
     display: block;
     margin: 8px auto 0 auto;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 /* =========================================
-   4. HERO / SOBRE MI Y STICKERS
-   ========================================= */
-.hero-section {
-    width: 100%;
-    padding: 40px 20px 60px 20px;
-    position: relative;
-    text-align: center;
-}
-
-.hero-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 25px;
-    color: var(--texto-oscuro);
-}
-
-.avatar-stage {
-    position: relative;
-    width: 380px;
-    height: 300px;
-    margin: 0 auto 35px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.avatar-center {
-    width: 210px;
-    height: 210px;
-    border-radius: 50%;
-    background-color: var(--blanco-puro);
-    box-shadow: 0 10px 30px var(--sombra-pastel);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 5;
-    border: 3px solid var(--texto-oscuro);
-}
-
-.astrit-avatar {
-    width: 100% !important;
-    height: 100% !important;
-    display: block;
-    object-fit: contain;
-}
-
-.floating-sticker {
-    position: absolute;
-    filter: drop-shadow(3px 5px 8px var(--sombra-pastel));
-    transition: transform 0.3s ease;
-    z-index: 6;
-}
-
-.floating-sticker:hover {
-    transform: scale(1.2);
-}
-
-/* Posiciones y Dimensiones de Stickers */
-.sticker-dog {
-    width: 72px;
-    height: 72px;
-    top: 5px;
-    left: 10px;
-    animation: flotarSuave 4s ease-in-out infinite;
-    animation-delay: 0s;
-}
-
-.sticker-vinyl {
-    width: 65px;
-    height: 65px;
-    bottom: 15px;
-    left: 10px;
-    animation: girarDisco 6s linear infinite, flotarSuave 4s ease-in-out infinite;
-    animation-delay: 0.5s;
-}
-
-.sticker-books {
-    width: 72px;
-    height: 72px;
-    top: 5px;
-    right: 10px;
-    animation: flotarSuave 4s ease-in-out infinite;
-    animation-delay: 1s;
-}
-
-.sticker-icecream {
-    width: 60px;
-    height: 60px;
-    bottom: 10px;
-    right: 15px;
-    animation: flotarSuave 4s ease-in-out infinite;
-    animation-delay: 1.5s;
-}
-
-.hero-bio {
-    max-width: 750px;
-    margin: 20px auto 0 auto;
-    font-size: 1.15rem;
-    clear: both;
-    position: relative;
-    z-index: 10;
-}
-
-.sub-bio {
-    font-size: 1rem;
-    margin-top: 12px;
-    opacity: 0.9;
-}
-
-/* Botones de enlace en el Hero */
-.hero-links {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.hero-links a,
-.btn-pill {
-    background-color: var(--blanco-puro);
-    color: var(--texto-oscuro);
-    text-decoration: none !important;
-    font-weight: 700;
-    font-size: 0.95rem;
-    padding: 12px 26px;
-    border-radius: 30px;
-    border: 2px solid var(--texto-oscuro);
-    box-shadow: 3px 3px 0px var(--texto-oscuro);
-    transition: all 0.25s ease;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.hero-links a:hover,
-.btn-pill:hover {
-    background-color: var(--lila-pastel);
-    transform: translateY(-3px);
-    box-shadow: 5px 5px 0px var(--texto-oscuro);
-}
-
-/* =========================================
-   5. HABILIDADES EN MOVIMIENTO CONTINUO
+   6. HABILIDADES EN MOVIMIENTO
    ========================================= */
 .marquee-group {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     text-align: left;
 }
 
 .marquee-label {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
     color: var(--texto-oscuro);
-    font-weight: bold;
+    font-weight: 700;
     padding-left: 5px;
 }
 
 .marquee-wrapper {
     overflow: hidden;
     white-space: nowrap;
-    padding: 10px 0;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    padding: 8px 0;
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 .marquee-track {
@@ -301,13 +346,13 @@ h2::after {
 
 .skill-pill {
     display: inline-block;
-    padding: 10px 24px;
+    padding: 10px 22px;
     border-radius: 50px;
-    font-weight: bold;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 0.9rem;
     color: var(--texto-oscuro);
-    border: 2px solid var(--texto-oscuro);
-    box-shadow: 2px 2px 0px var(--texto-oscuro);
+    border: 1.5px solid var(--texto-oscuro);
+    box-shadow: 2px 3px 0px var(--texto-oscuro);
 }
 
 .color-lila   { background-color: var(--lila-pastel); }
@@ -316,7 +361,7 @@ h2::after {
 .color-morado { background-color: var(--morado-pastel); }
 
 /* =========================================
-   6. PROYECTOS
+   7. PROYECTOS
    ========================================= */
 .projects-grid {
     display: grid;
@@ -325,26 +370,27 @@ h2::after {
 }
 
 .project-card {
-    background-color: var(--blanco-puro);
-    border-radius: 20px;
-    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 22px;
+    padding: 16px;
     border: 2px solid var(--texto-oscuro);
-    box-shadow: 4px 4px 0px var(--texto-oscuro);
+    box-shadow: 4px 5px 0px var(--texto-oscuro);
     cursor: pointer;
     transition: transform 0.25s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 }
 
 .project-thumb {
     width: 100%;
-    height: 170px;
+    height: 190px;
     border-radius: 14px;
     overflow: hidden;
     position: relative;
     border: 1.5px solid var(--borde-tarjeta);
+    background-color: var(--lila-pastel);
 }
 
 .project-thumb img {
@@ -357,11 +403,11 @@ h2::after {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: rgba(44, 26, 77, 0.85);
-    color: #fff;
-    font-size: 0.75rem;
-    padding: 6px;
-    font-weight: bold;
+    background-color: rgba(45, 27, 78, 0.88);
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    padding: 8px;
+    font-weight: 700;
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -372,27 +418,30 @@ h2::after {
 }
 
 .project-card h4 {
-    margin-top: 14px;
-    font-size: 1.05rem;
+    margin-top: 15px;
+    font-size: 1.1rem;
     color: var(--texto-oscuro);
+    font-weight: 700;
 }
 
 /* =========================================
-   7. PARTICIPACIONES (LINEA DE TIEMPO)
+   8. PARTICIPACIONES (LÍNEA DE TIEMPO)
    ========================================= */
 .timeline-container {
     position: relative;
-    padding: 70px 10px;
+    padding: 80px 20px;
     margin: 20px auto;
+    max-width: 1150px;
+    width: 95%;
 }
 
 .timeline-main-bar {
     position: absolute;
     top: 50%;
-    left: 5%;
-    width: 90%;
+    left: 2%;
+    width: 96%;
     height: 6px;
-    background-color: var(--blanco-puro);
+    background-color: #FFFFFF;
     border: 2px solid var(--texto-oscuro);
     border-radius: 4px;
     transform: translateY(-50%);
@@ -402,7 +451,8 @@ h2::after {
 .timeline-events {
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 40px;
     z-index: 2;
 }
 
@@ -415,66 +465,66 @@ h2::after {
 }
 
 .point-circle {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background-color: var(--rosa-pastel);
     border: 3px solid var(--texto-oscuro);
-    box-shadow: 2px 2px 0px var(--texto-oscuro);
+    box-shadow: 2px 3px 0px var(--texto-oscuro);
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .timeline-point:hover .point-circle {
-    transform: scale(1.3);
+    transform: scale(1.25);
     background-color: var(--azul-pastel);
 }
 
 .point-meta {
     position: absolute;
-    width: 140px;
-    background-color: var(--blanco-puro);
+    width: 170px;
+    background-color: #FFFFFF;
     border: 1.5px solid var(--texto-oscuro);
-    box-shadow: 2px 2px 0px var(--texto-oscuro);
-    padding: 6px 10px;
-    border-radius: 12px;
+    box-shadow: 3px 3px 0px var(--texto-oscuro);
+    padding: 10px 14px;
+    border-radius: 14px;
     text-align: center;
 }
 
 .point-top .point-meta {
-    bottom: 38px;
+    bottom: 44px;
 }
 
 .point-bottom .point-meta {
-    top: 38px;
+    top: 44px;
 }
 
 .point-date {
     display: block;
     font-size: 0.75rem;
-    font-weight: bold;
-    color: var(--morado-pastel);
+    font-weight: 700;
+    color: var(--texto-suave);
 }
 
 .point-name {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 700;
+    color: var(--texto-oscuro);
 }
 
 /* =========================================
-   8. CERTIFICACIONES (CARRUSEL)
+   9. CERTIFICACIONES (CARRUSEL GRANDE)
    ========================================= */
 .carousel-wrapper {
     position: relative;
     display: flex;
     align-items: center;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .carousel-track-container {
     overflow: hidden;
     width: 100%;
-    padding: px 5px;
 }
 
 .carousel-track {
@@ -486,35 +536,30 @@ h2::after {
 .cert-item {
     min-width: 500px;
     flex: 0 0 calc(33.33% - 14px);
-    background-color: var(--blanco-puro);
-    
+    background-color: transparent;
     text-align: center;
 }
 
 .cert-item img {
     width: 100%;
     height: 350px;
-    object-fit: cover;
-   
-}
-
-.cert-item p {
-    font-size: 0.9rem;
-    font-weight: bold;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(45, 27, 78, 0.15));
+    display: block;
 }
 
 .carousel-nav {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background-color: var(--blanco-puro);
+    background-color: #FFFFFF;
     border: 2px solid var(--texto-oscuro);
     box-shadow: 3px 3px 0px var(--texto-oscuro);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
     flex-shrink: 0;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
     z-index: 10;
 }
 
@@ -524,7 +569,7 @@ h2::after {
 }
 
 /* =========================================
-   9. IDIOMAS
+   10. IDIOMAS
    ========================================= */
 .languages-row {
     display: flex;
@@ -534,7 +579,7 @@ h2::after {
 }
 
 .language-pill-box {
-    background-color: var(--blanco-puro);
+    background-color: #FFFFFF;
     border: 2px solid var(--texto-oscuro);
     box-shadow: 4px 4px 0px var(--texto-oscuro);
     padding: 16px 35px;
@@ -542,21 +587,21 @@ h2::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 220px;
+    min-width: 200px;
 }
 
 .lang-title {
     font-size: 1.15rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .lang-level {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--texto-suave);
 }
 
 /* =========================================
-   10. VENTANAS MODALES
+   11. VENTANAS MODALES
    ========================================= */
 .modal {
     display: none;
@@ -565,8 +610,8 @@ h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(44, 26, 77, 0.6);
-    backdrop-filter: blur(4px);
+    background-color: rgba(45, 27, 78, 0.6);
+    backdrop-filter: blur(6px);
     z-index: 200;
     justify-content: center;
     align-items: center;
@@ -578,21 +623,27 @@ h2::after {
 }
 
 .modal-box {
-    background-color: var(--blanco-puro);
+    background-color: #FFFFFF;
     border: 3px solid var(--texto-oscuro);
-    box-shadow: 6px 6px 0px var(--texto-oscuro);
+    box-shadow: 8px 10px 0px var(--texto-oscuro);
     padding: 30px;
-    border-radius: 20px;
-    max-width: 520px;
+    border-radius: 24px;
+    max-width: 560px;
     width: 100%;
     position: relative;
     text-align: left;
-    animation: modalPop 0.3s ease;
+}
+
+.modal-box h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--texto-oscuro);
 }
 
 .modal-preview-img {
     width: 100%;
-    height: 160px;
+    height: 170px;
     object-fit: cover;
     border-radius: 12px;
     border: 1.5px solid var(--texto-oscuro);
@@ -601,8 +652,8 @@ h2::after {
 
 .close-x {
     position: absolute;
-    top: 12px;
-    right: 18px;
+    top: 14px;
+    right: 20px;
     font-size: 1.8rem;
     font-weight: bold;
     cursor: pointer;
@@ -614,8 +665,37 @@ h2::after {
 }
 
 .modal-body-content p {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-size: 0.95rem;
+}
+
+.btn-pill {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 26px;
+    border-radius: 50px;
+    border: 2px solid var(--texto-oscuro);
+    box-shadow: 3px 4px 0px var(--texto-oscuro);
+    transition: all 0.25s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-purple {
+    background-color: var(--morado-pastel);
+    color: var(--texto-oscuro);
+}
+
+.btn-pink {
+    background-color: var(--rosa-pastel);
+    color: var(--texto-oscuro);
+}
+
+.btn-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 6px 0px var(--texto-oscuro);
+    background-color: #FFFFFF;
 }
 
 .modal-body-content .btn-pill {
@@ -623,18 +703,8 @@ h2::after {
 }
 
 /* =========================================
-   11. ANIMACIONES
+   12. ANIMACIONES KEYFRAMES
    ========================================= */
-@keyframes girarDisco {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes flotarSuave {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-}
-
 @keyframes marqueeLeft {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -645,19 +715,14 @@ h2::after {
     100% { transform: translateX(0); }
 }
 
-@keyframes modalPop {
-    from { transform: scale(0.85); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
 /* =========================================
-   12. FOOTER Y RESPONSIVE
+   13. FOOTER Y RESPONSIVE
    ========================================= */
 footer {
     background-color: var(--texto-oscuro);
-    color: var(--blanco-puro);
+    color: #FFFFFF;
     text-align: center;
-    padding: 40px 20px;
+    padding: 35px 20px;
     margin-top: 60px;
     font-size: 0.9rem;
 }
@@ -666,7 +731,15 @@ footer {
     .menu {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 12px;
+    }
+
+    .cloud-title {
+        font-size: 2.2rem;
+    }
+
+    .avatar-stage {
+        width: 100%;
     }
 
     .projects-grid {
@@ -674,12 +747,17 @@ footer {
     }
 
     .cert-item {
-        flex: 0 0 100%;
+        min-width: 300px;
+    }
+
+    .cert-item img {
+        height: 220px;
     }
 
     .timeline-events {
         flex-direction: column;
         gap: 80px;
+        padding: 0;
     }
 
     .timeline-main-bar {
