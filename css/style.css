@@ -1,9 +1,13 @@
 /* ==========================================================================
-   ASTRIT CETZAL — A PERSONAL UNIVERSE (Atmósfera Nocturna Luminosa)
+   ASTRIT CETZAL — A PERSONAL UNIVERSE
+   Hoja de Estilos Principal (Completa, Unificada y 100% Responsive)
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   1. VARIABLES & PALETA DE COLOR (ÍNDIGO CÓSMICO / NOCTURNO SUAVE)
+   -------------------------------------------------------------------------- */
 :root {
-  /* Fondos Cósmicos / Índigo Suave */
+  /* Fondos y Superficies */
   --bg-deep: #161828;
   --bg-secondary: #1E2138;
   --surface: #242742;
@@ -11,7 +15,7 @@
   --surface-border: rgba(185, 167, 232, 0.22);
   --surface-border-hover: rgba(185, 167, 232, 0.45);
 
-  /* Acentos y Luces */
+  /* Acentos */
   --accent-lavender: #C2B0F2;
   --accent-pink: #E2BBD2;
   --accent-ice: #B8D6EB;
@@ -26,9 +30,13 @@
   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
+  /* Transición Global */
   --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* --------------------------------------------------------------------------
+   2. RESET & BASE
+   -------------------------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -46,7 +54,6 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
-  /* Degradados multicapa para evitar el fondo plano */
   background-image: 
     radial-gradient(circle at 50% 18%, rgba(194, 176, 242, 0.14) 0%, transparent 55%),
     radial-gradient(circle at 80% 80%, rgba(184, 214, 235, 0.1) 0%, transparent 50%),
@@ -54,7 +61,7 @@ body {
   background-attachment: fixed;
 }
 
-/* Partículas y Estrellas Sutiles */
+/* Luces Ambientales */
 .ambient-glow {
   position: absolute;
   width: 350px;
@@ -74,7 +81,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   NAVBAR FLOTANTE
+   3. NAVBAR FLOTANTE
    -------------------------------------------------------------------------- */
 .header-universe {
   position: fixed;
@@ -132,26 +139,8 @@ body {
   color: var(--accent-lavender);
 }
 
-.nav-lang-btn {
-  background: var(--surface-glass);
-  border: 1px solid var(--surface-border);
-  color: var(--text-main);
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-}
-
-.nav-lang-btn:hover {
-  color: var(--accent-lavender);
-  border-color: var(--accent-lavender);
-  box-shadow: 0 0 12px rgba(194, 176, 242, 0.25);
-}
-
 /* --------------------------------------------------------------------------
-   HERO: CONEXIÓN Y ATMÓSFERA
+   4. HERO SECTION & RIELES LATERALES
    -------------------------------------------------------------------------- */
 .hero-universe {
   min-height: 100vh;
@@ -162,13 +151,119 @@ body {
   text-align: center;
   padding: 7.5rem 1.5rem 4rem;
   position: relative;
+  overflow: hidden;
   z-index: 1;
+}
+
+.hero-rail-left {
+  position: absolute;
+  left: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.rail-link {
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  transition: var(--transition-smooth);
+}
+
+.rail-link:hover {
+  color: var(--accent-lavender);
+  transform: rotate(180deg) translateY(3px);
+}
+
+.rail-line {
+  width: 1px;
+  height: 60px;
+  background: var(--surface-border);
+}
+
+.hero-rail-right {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.rail-status {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+}
+
+.rail-status span {
+  color: var(--accent-ice);
+}
+
+.hero-floating-badge {
+  position: absolute;
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 1rem 1.4rem;
+  max-width: 210px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.hero-floating-badge:hover {
+  border-color: var(--surface-border-hover);
+  transform: translateY(-3px);
+}
+
+.badge-left {
+  left: 8%;
+  top: 60%;
+}
+
+.badge-right {
+  right: 8%;
+  top: 38%;
+}
+
+.badge-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-lavender);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.badge-text {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.4;
+  font-weight: 500;
 }
 
 .hero-avatar-wrapper {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   margin-bottom: 2rem;
 }
 
@@ -272,7 +367,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   SECCIONES EDITORIALES GLOBALES
+   5. SECCIONES EDITORIALES GLOBALES
    -------------------------------------------------------------------------- */
 .section-universe {
   max-width: 980px;
@@ -300,7 +395,9 @@ body {
   margin-bottom: 2rem;
 }
 
-/* 01 / ABOUT */
+/* --------------------------------------------------------------------------
+   6. SECTION 01: ABOUT
+   -------------------------------------------------------------------------- */
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -349,7 +446,9 @@ body {
   line-height: 1.6;
 }
 
-/* 02 / CURIOSITIES */
+/* --------------------------------------------------------------------------
+   7. SECTION 02: CURIOSITIES
+   -------------------------------------------------------------------------- */
 .curiosity-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -394,7 +493,9 @@ body {
   line-height: 1.5;
 }
 
-/* 03 / WHAT I BUILD */
+/* --------------------------------------------------------------------------
+   8. SECTION 03: CAPABILITIES & HARD SKILLS
+   -------------------------------------------------------------------------- */
 .build-pillars-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -437,7 +538,60 @@ body {
   line-height: 1.6;
 }
 
-/* 04 / PROJECTS */
+.skills-domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.domain-card {
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-border);
+  border-radius: 14px;
+  padding: 2rem 1.6rem;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+}
+
+.domain-card:hover {
+  border-color: var(--surface-border-hover);
+  transform: translateY(-3px);
+  background: var(--surface);
+}
+
+.domain-title {
+  font-family: var(--font-editorial);
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 1.2rem;
+}
+
+.tech-badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tech-badge {
+  background: var(--bg-deep);
+  border: 1px solid var(--surface-border);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: var(--transition-smooth);
+}
+
+.tech-badge:hover {
+  border-color: var(--accent-lavender);
+  color: var(--accent-lavender);
+}
+
+/* --------------------------------------------------------------------------
+   9. SECTION 04: PROJECTS (CASE STUDIES)
+   -------------------------------------------------------------------------- */
 .projects-case-stack {
   display: flex;
   flex-direction: column;
@@ -563,7 +717,9 @@ body {
   transform: translateX(3px);
 }
 
-/* 05 / BEYOND THE CODE */
+/* --------------------------------------------------------------------------
+   10. SECTION 05: BEYOND THE CODE
+   -------------------------------------------------------------------------- */
 .beyond-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -628,106 +784,123 @@ body {
   line-height: 1.6;
 }
 
-/* 06 / HOW I WORK */
-.work-principles-grid {
+/* --------------------------------------------------------------------------
+   11. SECTION 06: HOW I WORK (SOFT SKILLS)
+   -------------------------------------------------------------------------- */
+.soft-skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 1.8rem;
   margin-top: 2.5rem;
 }
 
-.principle-card {
-  border-left: 2px solid var(--surface-border);
-  padding-left: 1.5rem;
+.soft-skill-card {
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-border);
+  border-left: 3px solid var(--accent-lavender);
+  border-radius: 12px;
+  padding: 1.8rem 1.6rem;
+  backdrop-filter: blur(10px);
   transition: var(--transition-smooth);
 }
 
-.principle-card:hover {
+.soft-skill-card:hover {
+  border-color: var(--surface-border-hover);
   border-left-color: var(--accent-lavender);
+  transform: translateY(-3px);
+  background: var(--surface);
 }
 
-.principle-title {
+.soft-skill-name {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--accent-ice);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   text-transform: uppercase;
 }
 
-.principle-core {
+.soft-skill-motto {
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-main);
   margin-bottom: 0.6rem;
+  line-height: 1.4;
 }
 
-.principle-evidence {
-  font-size: 0.85rem;
+.soft-skill-detail {
+  font-size: 0.86rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
 
-/*7. Cettificados*/
+/* --------------------------------------------------------------------------
+   12. SECTION 07: CARRUSEL DE CERTIFICACIONES
+   -------------------------------------------------------------------------- */
 .carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 950px;
+  margin: 2.5rem auto 0;
+  gap: 1rem;
 }
 
 .carousel-track-container {
-    overflow: hidden;
-    width: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 
 .carousel-track {
-    display: flex;
-    gap: 50px;
-    transition: transform 0.4s ease-in-out;
+  display: flex;
+  gap: 25px;
+  transition: transform 0.4s ease-in-out;
 }
 
 .cert-item {
-    min-width: 500px;
-    flex: 0 0 calc(33.33% - 14px);
-    background-color: transparent;
-    text-align: center;
+  min-width: 320px;
+  flex: 0 0 calc(50% - 15px);
+  text-align: center;
 }
 
 .cert-item img {
-    width: 100%;
-    height: 350px;
-    object-fit: contain;
-    border-radius: 12px;
-    border: 2px solid var(--borde-retro);
-    background-color: var(--crema-principal);
-    box-shadow: 5px 5px 0px var(--borde-retro);
-    display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid var(--surface-border);
+  background: var(--surface-glass);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  display: block;
 }
 
 .carousel-nav {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: var(--crema-principal);
-    border: 2.5px solid var(--borde-retro);
-    box-shadow: 3px 3px 0px var(--borde-retro);
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--texto-oscuro);
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-border);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
 }
 
 .carousel-nav:hover {
-    background-color: var(--mostaza-retro);
-    transform: scale(1.1);
+  background: var(--accent-lavender);
+  color: var(--bg-deep);
+  box-shadow: 0 0 15px rgba(185, 167, 232, 0.35);
 }
 
-/* 08 / EXTRA & FOOTER */
+/* --------------------------------------------------------------------------
+   13. SECTION 08: MASCOTA & CIERRE
+   -------------------------------------------------------------------------- */
 .extra-box {
   background: var(--surface-glass);
   border: 1px dashed var(--surface-border);
@@ -841,242 +1014,9 @@ body {
   color: var(--accent-lavender);
 }
 
-@media (max-width: 768px) {
-  .about-grid,
-  .case-card,
-  .case-card-reverse {
-    grid-template-columns: 1fr;
-  }
-  .nav-links {
-    display: none;
-  }
-  .extra-box {
-    flex-direction: column;
-    text-align: center;
-  }
-}
 /* --------------------------------------------------------------------------
-   HARD SKILLS (LENGUAJES, BACKEND Y CLOUD)
+   14. RESPONSIVE ADAPTATION (TABLETS Y MÓVILES)
    -------------------------------------------------------------------------- */
-.skills-domains-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-
-.domain-card {
-  background: var(--surface-glass);
-  border: 1px solid var(--surface-border);
-  border-radius: 14px;
-  padding: 2rem 1.6rem;
-  backdrop-filter: blur(10px);
-  transition: var(--transition-smooth);
-}
-
-.domain-card:hover {
-  border-color: var(--surface-border-hover);
-  transform: translateY(-3px);
-  background: var(--surface);
-}
-
-.domain-title {
-  font-family: var(--font-editorial);
-  font-size: 1.25rem;
-  color: var(--text-main);
-  margin-bottom: 1.2rem;
-}
-
-.tech-badges-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.tech-badge {
-  background: var(--bg-deep);
-  border: 1px solid var(--surface-border);
-  color: var(--text-main);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  transition: var(--transition-smooth);
-}
-
-.tech-badge:hover {
-  border-color: var(--accent-lavender);
-  color: var(--accent-lavender);
-}
-
-/* --------------------------------------------------------------------------
-   SOFT SKILLS (HABILIDADES BLANDAS CON EVIDENCIA)
-   -------------------------------------------------------------------------- */
-.soft-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.8rem;
-  margin-top: 2.5rem;
-}
-
-.soft-skill-card {
-  background: var(--surface-glass);
-  border: 1px solid var(--surface-border);
-  border-left: 3px solid var(--accent-lavender);
-  border-radius: 12px;
-  padding: 1.8rem 1.6rem;
-  backdrop-filter: blur(10px);
-  transition: var(--transition-smooth);
-}
-
-.soft-skill-card:hover {
-  border-color: var(--surface-border-hover);
-  border-left-color: var(--accent-lavender);
-  transform: translateY(-3px);
-  background: var(--surface);
-}
-
-.soft-skill-name {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  color: var(--accent-ice);
-  margin-bottom: 0.6rem;
-  text-transform: uppercase;
-}
-
-.soft-skill-motto {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-main);
-  margin-bottom: 0.6rem;
-  line-height: 1.4;
-}
-
-.soft-skill-detail {
-  font-size: 0.86rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-/* ==========================================================================
-   RIELES LATERALES & MICRO-ELEMENTOS DEL HERO
-   ========================================================================== */
-
-/* Contenedor relativo para posicionar elementos laterales */
-.hero-universe {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Riel Lateral Izquierdo (Socials) */
-.hero-rail-left {
-  position: absolute;
-  left: 2.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  z-index: 10;
-}
-
-.rail-link {
-  color: var(--text-dim);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
-  text-decoration: none;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  transition: var(--transition-smooth);
-}
-
-.rail-link:hover {
-  color: var(--accent-lavender);
-  transform: rotate(180deg) translateY(3px);
-}
-
-.rail-line {
-  width: 1px;
-  height: 60px;
-  background: var(--surface-border);
-}
-
-/* Riel Lateral Derecho (Status & Coordenadas) */
-.hero-rail-right {
-  position: absolute;
-  right: 2.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  z-index: 10;
-}
-
-.rail-status {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  color: var(--text-dim);
-  writing-mode: vertical-rl;
-  text-transform: uppercase;
-}
-
-.rail-status span {
-  color: var(--accent-ice);
-}
-
-/* Micro-Badges Flotantes (Izquierda y Derecha) */
-.hero-floating-badge {
-  position: absolute;
-  background: var(--surface-glass);
-  border: 1px solid var(--surface-border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 12px;
-  padding: 1rem 1.4rem;
-  max-width: 210px;
-  text-align: left;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: var(--transition-smooth);
-}
-
-.hero-floating-badge:hover {
-  border-color: var(--surface-border-hover);
-  transform: translateY(-3px);
-}
-
-.badge-left {
-  left: 8%;
-  top: 60%;
-}
-
-.badge-right {
-  right: 8%;
-  top: 38%;
-}
-
-.badge-label {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  color: var(--accent-lavender);
-  text-transform: uppercase;
-  margin-bottom: 0.3rem;
-  display: block;
-}
-
-.badge-text {
-  font-size: 0.82rem;
-  color: var(--text-main);
-  line-height: 1.4;
-  font-weight: 500;
-}
-
-/* Ocultar en pantallas medianas/pequeñas para no invadir el centro */
 @media (max-width: 1100px) {
   .hero-floating-badge {
     display: none;
@@ -1087,5 +1027,103 @@ body {
   .hero-rail-left,
   .hero-rail-right {
     display: none;
+  }
+
+  .about-grid,
+  .case-card,
+  .case-card-reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .case-visual {
+    border-right: none;
+    border-bottom: 1px solid var(--surface-border);
+    min-height: 220px;
+  }
+
+  .case-card-reverse .case-visual {
+    border-left: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-universe {
+    top: 0.8rem;
+    width: 94%;
+  }
+
+  .nav-universe {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-universe {
+    padding: 6rem 1rem 3rem;
+  }
+
+  .hero-avatar-wrapper {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-tags {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .section-universe {
+    padding: 4rem 0;
+    width: 92%;
+  }
+
+  .section-headline {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-wrapper {
+    gap: 0.5rem;
+  }
+
+  .cert-item {
+    min-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .cert-item img {
+    height: 190px;
+    box-shadow: none;
+  }
+
+  .carousel-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  .extra-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.2rem;
+  }
+
+  .connect-links-grid {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .universe-closing {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
 }
