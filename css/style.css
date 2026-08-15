@@ -1,0 +1,235 @@
+/* ==========================================================================
+   ASTRIT CETZAL — A PERSONAL UNIVERSE
+   Fase 1: Variables de Color, Tipografía y Atmósfera
+   ========================================================================== */
+
+:root {
+  /* Paleta Base */
+  --bg-deep: #090A12;
+  --surface: #111321;
+  --surface-light: #181B2D;
+  --surface-border: rgba(184, 164, 255, 0.12);
+
+  /* Acentos Pastel */
+  --accent-lavender: #B8A4FF;
+  --accent-pink: #E8B7D4;
+  --accent-ice: #B9D7E8;
+
+  /* Tipografía */
+  --text-main: #F1EFF7;
+  --text-muted: #9291A3;
+  --text-dim: #605F70;
+
+  /* Fuentes */
+  --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 50% 15%, rgba(184, 164, 255, 0.04) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(185, 215, 232, 0.03) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar Flotante Minimalista
+   -------------------------------------------------------------------------- */
+.header-universe {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  z-index: 100;
+}
+
+.nav-universe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
+  background: rgba(17, 19, 33, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--surface-border);
+  border-radius: 999px;
+  transition: var(--transition-smooth);
+}
+
+.nav-universe:hover {
+  border-color: rgba(184, 164, 255, 0.25);
+}
+
+.nav-brand {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.nav-brand span {
+  color: var(--text-dim);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover {
+  color: var(--accent-lavender);
+}
+
+.nav-lang-btn {
+  background: transparent;
+  border: 1px solid var(--surface-border);
+  color: var(--text-muted);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.nav-lang-btn:hover {
+  color: var(--accent-lavender);
+  border-color: var(--accent-lavender);
+}
+
+/* --------------------------------------------------------------------------
+   Hero: Cosmic Atmosphere & Identity
+   -------------------------------------------------------------------------- */
+.hero-universe {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 1.5rem 4rem;
+  position: relative;
+}
+
+.hero-avatar-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-avatar-glow {
+  position: absolute;
+  inset: -15px;
+  background: radial-gradient(circle, rgba(184, 164, 255, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.hero-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(184, 164, 255, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+
+.hero-subtitle {
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-lavender);
+  margin-bottom: 1.5rem;
+}
+
+.hero-tags {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+.hero-tags span {
+  display: inline-block;
+}
+
+.hero-tags .dot {
+  color: var(--accent-pink);
+  font-size: 0.6rem;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border: 1px solid var(--accent-lavender);
+  border-radius: 999px;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(184, 164, 255, 0.03);
+  backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+}
+
+.hero-cta:hover {
+  background: var(--accent-lavender);
+  color: var(--bg-deep);
+  box-shadow: 0 0 25px rgba(184, 164, 255, 0.25);
+}
+
+.hero-footer-text {
+  margin-top: 3.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
