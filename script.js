@@ -1,4 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {4
+
+// Lógica del Menú Desplegable
+  const menuBtn = document.getElementById('menu-toggle');
+  const dropdownMenu = document.getElementById('dropdown-menu');
+  
   // 1. Registro de plugins de GSAP si están disponibles
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
@@ -46,6 +51,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Inicialización del carrusel
   initCarousel('cert-track', 'cert-prev', 'cert-next');
+
+  if (menuBtn && dropdownMenu) {
+    // Abrir / Cerrar al hacer clic en el botón
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdownMenu.classList.toggle('open');
+      menuBtn.classList.toggle('active', isOpen);
+      menuBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Cerrar al hacer clic en cualquier enlace del menú
+    dropdownMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        dropdownMenu.classList.remove('open');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Cerrar si se hace clic fuera del menú
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        dropdownMenu.classList.remove('open');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 });
 
 // ==========================================

@@ -81,7 +81,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   3. NAVBAR FLOTANTE
+   3. NAVBAR FLOTANTE & MENÚ DESPLEGABLE
    -------------------------------------------------------------------------- */
 .header-universe {
   position: fixed;
@@ -89,7 +89,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 950px;
+  max-width: 860px;
   z-index: 100;
 }
 
@@ -97,32 +97,33 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1.8rem;
-  background: rgba(30, 33, 56, 0.75);
+  padding: 0.7rem 1.6rem;
+  background: rgba(30, 33, 56, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--surface-border);
   border-radius: 999px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  position: relative;
   transition: var(--transition-smooth);
 }
 
 .nav-brand {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--text-main);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav-brand span {
   color: var(--text-dim);
 }
 
-.nav-links {
+.nav-quick-links {
   display: flex;
-  gap: 1.8rem;
-  list-style: none;
+  gap: 1.6rem;
 }
 
 .nav-link {
@@ -139,6 +140,123 @@ body {
   color: var(--accent-lavender);
 }
 
+/* Contenedor del Botón Desplegable */
+.nav-dropdown-wrapper {
+  position: relative;
+}
+
+.nav-menu-btn {
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-border);
+  color: var(--text-main);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: var(--transition-smooth);
+}
+
+.nav-menu-btn:hover,
+.nav-menu-btn.active {
+  color: var(--accent-lavender);
+  border-color: var(--accent-lavender);
+  box-shadow: 0 0 14px rgba(194, 176, 242, 0.25);
+}
+
+.dropdown-chevron {
+  transition: transform 0.3s ease;
+}
+
+.nav-menu-btn.active .dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+/* Panel Desplegable hacia abajo */
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 1rem);
+  right: 0;
+  width: 320px;
+  background: rgba(30, 33, 56, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: 1.4rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  
+  /* Oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.nav-dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dropdown-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-pink);
+  margin-bottom: 0.2rem;
+}
+
+.dropdown-item {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  transition: var(--transition-smooth);
+}
+
+.dropdown-item:hover {
+  color: var(--text-main);
+  background: var(--surface);
+  padding-left: 0.85rem;
+}
+
+.dropdown-item.highlight {
+  color: var(--accent-lavender);
+  font-weight: 600;
+  border-top: 1px solid var(--surface-border);
+  padding-top: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+/* En celulares se ocultan los enlaces directos y queda solo el botón */
+@media (max-width: 600px) {
+  .nav-quick-links {
+    display: none;
+  }
+  
+  .nav-dropdown-menu {
+    width: 280px;
+    right: -10px;
+  }
+}
 /* --------------------------------------------------------------------------
    4. HERO SECTION & RIELES LATERALES
    -------------------------------------------------------------------------- */

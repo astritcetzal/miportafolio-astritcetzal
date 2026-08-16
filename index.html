@@ -17,21 +17,53 @@
   <div class="ambient-glow glow-hero"></div>
 
   <!-- Navbar -->
+ <!-- Navbar con Menú Desplegable -->
   <header class="header-universe">
     <nav class="nav-universe">
-      <a href="#" class="nav-brand">Mi portafolio<span>/ 2026</span></a>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link">Sobre mí</a></li>
-        <li><a href="#curiosities" class="nav-link">Curiosisdades</a></li>
-        <li><a href="#how-i-works" class="nav-link">Habilidades Blandas</a></li>
-        <li><a href="#skills" class="nav-link">Habilidades tecnicas</a></li>
-        <li><a href="#what-i-build" class="nav-link">Capacidades</a></li>
-        <li><a href="#project" class="nav-link">Proyectos</a></li>
-          <li><a href="#beyond" class="nav-link">Comunidad</a></li>
-            <li><a href="#certificaciones" class="nav-link">Certificados</a></li>
-            <li><a href="#extra" class="nav-link">Agradecimiento</a></li>
-        <li><a href="#contact" class="nav-link">Contacto</a></li>
-      </ul>
+      <a href="#" class="nav-brand">Mi portafolio <span>/ 2026</span></a>
+      
+      <!-- Enlaces directos clave -->
+      <div class="nav-quick-links">
+        <a href="#about" class="nav-link">Sobre mí</a>
+        <a href="#projects" class="nav-link">Proyectos</a>
+        <a href="#contact" class="nav-link">Contacto</a>
+      </div>
+
+      <!-- Botón Desplegable -->
+      <div class="nav-dropdown-wrapper">
+        <button class="nav-menu-btn" id="menu-toggle" aria-expanded="false">
+          <span>SECCIONES</span>
+          <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Panel Desplegable hacia abajo -->
+        <div class="nav-dropdown-menu" id="dropdown-menu">
+          <div class="dropdown-group">
+            <span class="dropdown-label">// EXPLORACIÓN</span>
+            <a href="#about" class="dropdown-item">01. Sobre mí</a>
+            <a href="#curiosities" class="dropdown-item">02. Curiosidades</a>
+            <a href="#how-i-work" class="dropdown-item">03. Habilidades Blandas</a>
+          </div>
+
+          <div class="dropdown-group">
+            <span class="dropdown-label">// INGENIERÍA</span>
+            <a href="#skills" class="dropdown-item">03.1 Habilidades Técnicas</a>
+            <a href="#what-i-build" class="dropdown-item">04. Capacidades</a>
+            
+            <a href="#projects" class="dropdown-item">05. Proyectos</a>
+          </div>
+
+          <div class="dropdown-group">
+            <span class="dropdown-label">// TRAYECTORIA</span>
+            <a href="#beyond" class="dropdown-item">06. Eventod & Comunidad</a>
+            <a href="#certificaciones" class="dropdown-item">07. Certificados</a>
+            <a href="#extra" class="dropdown-item">08. Mascota & Cierre</a>
+            <a href="#contact" class="dropdown-item highlight">09. Contacto &rarr;</a>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -61,7 +93,7 @@
 
   <div class="hero-tags">
     <span>Backend</span>
-    <span class="dot">·</span>
+    <span class="dot">&</span>
     <span>Cloud</span>
     <span class="dot"></span>
   </div>
@@ -489,7 +521,7 @@
       </a>
       <a href="mailto:astritcetzal@gmail.com" class="connect-link-item">
         <span class="connect-link-label">Directo</span>
-        <span class="connect-link-value">Email &rarr;</span>
+        <span class="connect-link-value">Email &rarr;<img src="certificados/mail.png" class="skill-icon" alt="Mail" </span>
       </a>
     </div>
 
