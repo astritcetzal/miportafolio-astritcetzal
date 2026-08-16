@@ -863,7 +863,7 @@ body {
 
 .beyond-thumb {
   width: 100%;
-  height: 180px;
+  height: 235px;
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--surface-border);
   overflow: hidden;
