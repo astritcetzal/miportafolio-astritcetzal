@@ -1251,3 +1251,42 @@ body {
     margin-right: 8px; /* Separación entre el logo y la palabra */
     vertical-align: middle;
 }
+/* Contenedor del fondo */
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Elemento estrella */
+.star {
+  position: absolute;
+  bottom: -40px;
+  color: #c084fc; /* Tono morado claro / lila */
+  user-select: none;
+  will-change: transform, opacity;
+  animation: floatUp linear infinite;
+}
+
+/* Animación: ascenso, giro y desvanecimiento */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg) scale(1.1);
+    opacity: 0;
+  }
+}

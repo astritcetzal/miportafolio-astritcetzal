@@ -141,3 +141,34 @@ function initCarousel(trackId, prevBtnId, nextBtnId) {
     updateCarousel();
   });
 }
+function createFloatingStars(count = 25) {
+  const container = document.getElementById('stars-container');
+  if (!container) return;
+
+  const starSymbols = ['✦', '★', '✧', '⋆', '✵'];
+
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('span');
+    star.classList.add('star');
+    
+    // Símbolo aleatorio
+    star.textContent = starSymbols[Math.floor(Math.random() * starSymbols.length)];
+
+    // Propiedades aleatorias
+    const left = Math.random() * 100; // Posición horizontal (0 a 100%)
+    const duration = Math.random() * 8 + 6; // Velocidad entre 6s y 14s
+    const delay = Math.random() * 10; // Inicio escalonado
+    const size = Math.random() * 14 + 10; // Tamaño entre 10px y 24px
+
+    star.style.left = `${left}%`;
+    star.style.fontSize = `${size}px`;
+    star.style.animationDuration = `${duration}s`;
+    star.style.animationDelay = `${delay}s`;
+
+    container.appendChild(star);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  createFloatingStars(30);
+});
