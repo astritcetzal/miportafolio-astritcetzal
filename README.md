@@ -99,3 +99,12 @@ The portfolio itself is built with core web technologies to ensure fast loading 
 ├── /imagenes        # Graphic assets, project screenshots, and photos
 ├── /certificados  
 └── README.md        # Repository documentation
+```
+
+## AI Usage Declaration
+As part of my modern software engineering workflow, I leverage Artificial Intelligence tools (such as Gemini) as programming assistants. In this project, AI was utilized exclusively for code optimization, animation brainstorming, and copywriting review. All architecture, core logic, visual design, and final integration are entirely my own work.
+
+## Copyright & Terms of Use
+© 2026 Astrit Cetzal. All rights reserved.
+
+The source code, custom design, animations, and media content in this repository are strictly for personal portfolio demonstration. It is prohibited to copy, clone, redistribute, or use the code and visual assets of this repository for your own personal or commercial projects without prior explicit consent.
