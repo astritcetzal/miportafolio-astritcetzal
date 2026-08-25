@@ -1,4 +1,4 @@
-# Astrit Cetzal | Portafolio Profesional 🚀
+# Astrit Cetzal | Portafolio Profesional 
 
 *[Click here to skip to the English version](#english-version)*
 
@@ -58,7 +58,7 @@ El código fuente, diseño, animaciones y contenido de este portafolio son de us
 
 <a id="english-version"></a>
 
-# Astrit Cetzal | Professional Portfolio 🚀
+# Astrit Cetzal | Professional Portfolio 
 
 *[Haz clic aquí para volver a la versión en Español](#astrit-cetzal--portafolio-profesional-)*
 
@@ -68,7 +68,7 @@ Hello! Welcome to my personal portfolio repository. This project was developed f
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 This project is not just a static page; it includes several technical and visual implementations:
 
